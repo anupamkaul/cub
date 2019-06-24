@@ -1,0 +1,9 @@
+1. Handling of expressions (stack): to handle more-than-unary operators in a production.
+
+2. False keywords for type and function.
+
+3. Sending of position: to avoid changing the yacc syntax.
+
+4. Stack for typelists: to handle let-scope issues (discovery of declarations starts from inner-most let)
+
+5. Handling of functionlist, against scope of let + nested functions. 

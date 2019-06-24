@@ -1,0 +1,44 @@
+* * * * *
+1. symbols implementation (replace STR with sym)
+2. implementation of constructor functions, including memory management
+3. passing pos from lex to yac, changing syntax and checking it works
+4. adding the function calls at appropriate places in the yacc code, and finally checking that it works.
+5. adding a pretty printer so that the original code can still be constructed from the syntax tree.
+
+* * * * *
+
+4: Try implementing an expression-pointer stack instead of the current double/triple global expression pointer
+   maintainance (absyn_exp, absyn_exp_other)
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  On a smaller scale
+
+  1. print for typedecl complete to check nulling of typedec list is ok.
+     for the print, make fn for each data-type, starting from record parameter-list.
+
+  2. add vardec type also to A_decList.
+
+  3. conditions for nullifying A_decList.
+
+  3.5 add assign-expv, check. 
+
+  4. expseq-list 
+
+  5. function-dec list
+
+  - always other bug-solvings related to these. 
+
+  - This should complete the types. Pretty print should show the 3 declarations
+    with function omitting the left-out exp-ptrs.
+
+  6. Add the remaining expression pointers.
+
+  7. End(?) with let-exp.
+
+  8. Organize a formal pretty-print function (new file) that takes a_exp and prints
+     clearly & simply the tree. Associations could be shown by number-tags instead
+     of doing any visual tab-shifts.
+
+ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _

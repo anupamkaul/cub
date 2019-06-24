@@ -1,0 +1,204 @@
+let 
+type foo = bar
+type meguil = baroda
+type lashid = tamquan
+
+type b=c
+type c = b 
+
+type testarray = array of hit  
+
+var try_hit := 2 + elf
+var corona := abcd * zyngert * (now + then - current)
+
+type intarray = array of int  
+type strarray = array of string  
+
+type rectype = {hd: foo, t1: intlist, t2: stringlist, t3: string }
+
+type rectype2 = {
+hd: foo2,
+t1: intlist2,
+t2: stringlist2
+}
+
+function type1() = ( if (mix = fox) then (
+                    a := b;
+                    b := b + 1 ;
+                    c := b;
+                    d := fyou() ;
+                    e := d
+                         ))
+
+function treeLeaveas2(t : tree) = 
+(
+  let  
+  var ihit : int := ( 67 + intarray[5] ) 
+  var more_hit := 2 
+  var tmp := try_mix
+  var arr_hit := [ N + 2 ] intArray of ( tempworkers + backup_workers ) 
+  var more_hit := 3 
+  var i2hit := ( 67 + intarray[5] ) 
+  in (
+  t := treeLeaves();
+  t := rectype.ele1.arry1[ ele2.this + ele3.that ];
+  t1 := rectypo1.ele1.arry1[ ele2.this + ele3.that ].ele5.ele6;
+  t1 := rectypo2.ele1[ 1 + 3 ].arry1[ ele2.this + ele3.that ].ele5.ele6;
+  t2 := rectypo3.ele1[ 1 + 3 ][ ele2.this + ele3.that ].ele5.ele6;
+  more_hit := 1;
+  double_hit := 1 + 2 + 3 + 4 / elope * with - me;
+
+  if ( a = b ) then (c := d) ;
+
+  list {first = a.first, rest = merge(a.rest, b)};
+
+  if ( a = b ) then (c1 := d;
+                     c2 := d1;
+                     c3 := d2;
+                     f()
+                    ) ;
+
+  while ( a + b < 50 )
+  do (
+   a := a + b;
+   b := b - a
+  );
+
+  if (b = c ) then (
+  mme := you
+  );
+
+  if (b = c ) then 
+  (
+  mme := you
+  );
+
+  if (b = c ) then 
+  (
+        if ( a = b ) then (c := d); 
+  	mme := you
+  )
+  ) end  ; 
+
+  let  
+  var i3hit := i2hit in  
+  ( i3hit := more_hit + i2hit )  end  
+
+)
+
+function test1() = (
+        if ( a = b ) then (c := d);
+        mme := you;
+
+        while (a > b) do (
+        if ( a = c ) then ( break );
+        a := a - b ;
+        f(a);
+        b := b + f(a)
+        );
+
+        let  
+        var artysme: fitr := get_tree( f(a) )
+        var arborral: klad := get_tree( f(g(a)) )
+        var brazencult := [ get_number( tree_root ) ] treeArray of last_value( tree_root )
+        var nagobertic := get_sample(avec_call, label_data, ramp_3() ) + make_algo( trimester(me), 1 + 2, equals(3,4))
+
+        in   
+        (
+           for abc := 3 to 10 do (
+           f(abc);
+           if ( b > abc  ) then ( abc := abc + 1 ) else (abc := abc - 1); 
+           print(abc)
+           )
+        ) end   
+)
+
+function treeLeaves() : type_int = 
+(
+  let type ele1 = ele2
+  in ( tr(ele1) )
+  end ;
+
+  t := rectype.ele1.arry1[ ele2.this ]
+)
+
+var a: treetype := temp_mix() 
+
+function nest1() : type_string = 
+(
+   b := c + d;
+   c := e -f;
+
+   let 
+   function nest2() : type_string = 
+   (
+         b := c + d;
+         c := e -f
+   )
+   in ( 
+   dummy() )
+   end 
+
+)
+
+function treeLeaves(t : tree) : type_int = 
+(
+  t := arry1[ 1 + rec1.ele1 + rec1.ele1.ele2 & rec1.ele1.ele2.arry2[ rec1.ele1 * rec2.ele2 ] ] ;
+  m := you;
+
+  let type foo = bar
+    in  ( print(i) ; use(i) )
+    end  ;
+
+  
+  let type foo = bara
+      type i = foo
+    in  ( print(i) ; use(i) )
+    end  ;  
+
+  let  
+   var am := 1 + f(a,b) + r.e + a[r.e]  var bm := 2  
+  in (
+   try( ) )  
+  end   
+
+)
+
+var am := 1 + f(a,b) + r.e + a[r.e]
+var bm := 2 + f(a, b, f(a, b, c, d, e), r.e1.e2, ar1[e1].e2 ) 
+var cm : int := get_tree( f(g(h(a)))) 
+var dm : treeLeaves := 4
+var em : string := 100 + 4 + 349 + 2 
+var fm := 100 + ( 41 + 3490 + 21 ) - ( tiglork - 45 ) + (98) 
+var fm1 := 100 + ( 4 + 349 * rec.ident ) - ( tiglork / 45 ) / (98) & arry[element]
+var fm2 := 100 + -( 4 >= 349 * (factor | nofactor) ) - ( (tiglora & k) / -45 ) / (98 = temperature) 
+
+type gagola = cherubee
+
+var gaga := 4 
+type nagui = shacha
+
+type argulza = amerlxio
+var xstrazzi : argulza := 19245
+
+type orpheillo = nazarienna
+
+type rr = array of stars
+type yy = { gg: rodents, yy: cats }
+type zz = { dd: only_dogs } 
+
+in ( 
+     treeLeaves(0);
+
+     
+if ( mix = trytmp ) then  
+(
+   action_one();
+   action_two()
+)
+
+   )
+
+end 
+
+	

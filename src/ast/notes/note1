@@ -1,0 +1,59 @@
+In this version,
+
+1. Its necessary to malloc again for Apos in the constructor functions, as malloc for the original pointer (eg a_exp)
+   will allocate space for the struct, hence space to HOLD one pointer of type Apos, but this will be init=0/unint.
+
+   (It will be a free space without having any address as contents). A malloc to apos, will then reserve space for
+   contents of Apos (which is a struct called _apos_ )(again unit/init=0), and we put this returned address as the
+   value of the apos of the aexp.
+
+2. When assigning the int i, in intexp, its better to use atoi(strdup(string)). This way I can be sure that
+   I have Delinked from the char* pointed by YYLVAL. (This is the struct which links to yacc/lex). Note that all
+   information is coming from yylval, which is controlled by the lex/yacc interface. The attempt is to have no links
+   between this structure and our AST.
+
+3. The contents of apos maybe int, or int* (BOTH will work, please). Better to keep it simple (int). Working is evidenced
+   in 'test6'. Here the function interface of IntExp passes directly the ints (line, col) from yylval instead of having
+   a global absyn_pos etc.
+
+4. Stack maintanance has problems, as evidenced in test6, where a static array has been used to store exp-pointers.
+   It works! and so the idea of storing just the expression-pointers, may finally work !! :) 
+
+5. Note that the challenge is to keep the mechanics of lex/yacc (the control flow, the data struct yylval) etc not
+   interfere with the generation of our AST. Once we are able to access the AST regardless of the lex/yacc mechanics,
+   we are on our own! 
+
+_ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ __ 
+
+Note: (10 Jul):
+
+For SEND_FALSE_FUNCTION, you have to be careful about the current scope of the "let" for mutually recursive cases.
+Simply allowing it to be blocked by every let, type or var, will not work. (See test_input)
+
+Positionally, if a function declaration begins right after another ends, without being interrupted by a let,
+type or var, then the two functions are in the same list. The only abberations are the let-type-vars occuring
+inside the definition of a function. Thus only certain let-key-vars may declare a previous list to be completed
+(the ones positionally outside a previous valid function list). 
+
+This information about the scope (and hence distinguishing valid  and invalid candidates for declaring the time to send a new false function keyword) may have to come from Yacc. (This could be the famous 'escape sequence', brought about by the nature of mutually recursive functions in tiger)
+
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ __ _ 
+
+Sol: Use stack-remembrance with false_kwd. Divide solution into 2: 1) For type&var interruptions. 2) For Nested Function interruptions.
+
+For 1): 
+ Scope level can ONLY happen after a let. So with every let discovery, push the stack (the func-list data type). Let lex still send the false keyword (opened on every type & var). When the false keyword is recieved, pop from the stack if non-empty. This should "still continue" the old list. If the stack was empty, that means it was the same scope, and so the interruption is justified. In this case begin a new list. Thus we have a stack of the function lists. On interruption by false function, either an older list is retrieved and continued, or a new list is begun. 
+
+For 2):
+
+For 1): Use beginning and end of lex to control the points (+,-) of sending the false kwd. Begin is detected by let kwd in lex, and end is detected in yacc in let(end) production.
+
+Similarily for nested functions, the function kwd is the beginning and the func decl in yacc could be the end.
+
+(+,-) maybe represented by stack. - leads to whatever state of SEND_FALSE_KWD existed before the push. 
+
+
+
+
+   
+   

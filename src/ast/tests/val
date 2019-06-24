@@ -1,0 +1,17 @@
+To validate, in order:
+
+1. Print expression for ASN expressions (added recently)
+2. Print expression for IF, FOR etc (to check if the order of popping is correct)
+3. In the explist production, whether the Pop from A_exp matches the one we expect at that point.
+
+4. Add the function-productions in the absyn tree.
+
+   : The same state cycle of SEND_FUNCTION can be maintained, except that yacc also uses a 
+     stack whenever the scope changes via a let statement. 
+
+   :Lex will push, on let-begin and yacc will pop, at let-end.
+
+5. Add the let expression in the absyn tree.
+6. Pretty printer to verify the output in a new file. 
+
+7. Move to chapter 5. 

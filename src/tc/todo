@@ -1,0 +1,197 @@
+1. semant.c
+2. env : fill the default bases
+
+LANGUAGE EXTENSION: Note, I have always wanted to include a IN_THIS_SET construct during IF operations.
+Possible to add this construct to tiger? 
+
+>>> 
+
+1. semant.c
+
+- Exp Typecheck
+  1. binop - add/sub/m/d - type shd be int or real
+           - GT/NGT/LT   - type shd be Comparable (int, str?), records will not be used, pointers don't exist.
+           - EQ/NEQ      - type should be SAME types (hence int, str, records(recursive search?), array, name(recursive
+                           search), void(?), NIL.
+           - AND/OR      - types of LHS and RHS should be equal. Morever, types have to be ORable & ANDable qtys,
+	                   which means they can be, Ty_Int (there is no short, long, byte etc here). They cannot
+			   be anything else.
+
+ 2.  varexp -
+
+            0. If var is not being declared at this point, then check if var exists in the env.
+            1. when var = exp, call exp-transcheck, and assign the type to the var?
+               - wht happens if the final expression is non-calculatable type?
+	        - so check that the return type is not Ty_Void, Ty_NIL .. (only Int and STR allowed?)
+		- assuming that Ty_Name is parsed to its base-type.
+
+            2. when var:type = exp, call exp-check and check if the types are the same.
+
+            3. put the var-type in venv. 
+
+ 3. callexp - (function call) 
+
+            - Match, for the function call, the return type, and the type of each of the paramaters.
+              Do recursive search for records. For name type also.   
+
+            - On functions which return a type, need to check this type with assigned variable.
+            - For void returning func, check that its not assigned to a var.
+
+ 4. intexp - assign type Int to the operand encountered.
+
+ 5. strexp - assign type STR to operand. (what is this str? "xx"?)
+           - which types can be the LHS to this type? 
+
+           - variables (simple, subscript, record types), array-fields 
+
+ 6. nilexp - assign nil
+
+ 7. recexp - This is the record creation statement. Traverse over this structure, and 
+             for evey type assignment, call the typecheck-exp routine. This will eventually go 
+             to the assignment case, where LHS and RHS types have to be matched for equality. 
+ 
+             Then assign the LHS type, and submit the symbol.
+
+             (Note that operator is eq-op instead of asn-op??)
+
+             Need to add this record-symbol type to venv for value (record type var). tenv needed? 
+             (value of 0 can be useful to keep for div by zero check?)
+
+             Recursive for records search. Name match recursive.
+
+             Assume no mutually-recursive types appear initially.
+
+	     At Record Usage, I want:
+	     1. record type not defined
+	     2. record has no member by the name of xx.
+	     3. duplicate member-names for record.
+	     4. record xx already defined before in this scope.
+
+ 8. arrexp - This is array creation statement. Var LHS needs to be submitted in venv. 
+
+             - check that the assigned initialized value's type matches the type of the array
+             - check that the type of SIZE is Ty_Int (ultimately)
+             - assign the LHS symbol as a subscript variable in venv. 
+             - of course if at any time, a type is not defined, report it (initial: no mutually recursive types)
+
+9. seqexp - nothing to do, just traverse over each expression, and submit them to translate expressions.
+
+            if the sequential expression has an LHS (possible?) compare the types before assigning the LHS to venv.
+
+            NOTE - no local variables allowed to be defined within seqexp .. 
+            so no augmentation of the tables will take place here.
+
+10 asnexp - check the LHS and RHS types, after submittng RHS to typecheck-expression. No need to assign
+            anything to venv or tenv.
+
+11. ifexp - condition expression - submit to typecheck, get final type, and check that it should be something
+            that can be evaluated to a 0 or 1. (can be Ty_Int only, even a.b.c, where c is an int, surely or ultimately)
+
+          - body - submit to expressioncheck, will call seqexp, bad things may happen in assignments, function-calls,
+            variables not defined etc. In this case, check the quit sequence of the typecheck ; how long does it 
+            need to stay alive?
+
+12 whileexp - same as ifexp.
+
+13. brkexp - nothing for the moment.
+
+           - Later check that its within breakable statements (how?)
+
+14 for-exp  The i's should be INTs? Any complexities to be handled? Any limits to be checked statically?
+
+            for i = a to b do 
+
+            i, a, b should be INTS strictly
+
+            submit body to type-check
+
+15 letexp - the king. 
+
+            submit the declarations part to declaration-check. 
+            declaration-check will augment the environments. 
+            call BeginScope to indicate new scope level for the environments.
+            submit the body to an expression-check.
+            call Endscope to remove the materials that were required for this scope.
+________________________________________________________________________________________________________________
+
+2.
+
+__________________________________________________________________________________________________
+
+Loop for typecheck of field_var
+
+
+case field_var:
+
+    r = get(a_var);
+    establish_stack;
+
+    push NULL in stack 
+    push r.component in stack
+
+    r = r.next;
+
+L1:    while( r->kind != simple)
+    {
+
+	if( r->kind == record)
+        {
+	   push r.component in stack
+           r = r.next
+           goto L1     
+        }
+
+        if( r->kind == array)
+        {
+              typecheck expression.
+              if determinable, check that index is bound.
+              r = r.next
+
+	     while(r->kind == array)
+             {
+			
+              typecheck expression.
+              if determinable, check that index is bound.
+              r = r.next
+             }
+
+             check that type(r->name/r->component) = record (to confirm an array of records) 
+             goto L1
+        }
+
+   } // end of main while loop
+
+   process the case of simple,
+   push r.simple.name in stack
+
+   begin stack processing now. 
+
+   pop_first_element
+   check if already declared
+   check type is record
+   get reference of 'type' of record. (x_Ty_Rec)
+
+   while(stack->elm != NULL)
+   {
+      pop next element.
+      x_Ty_Rec = x_Ty_Rec->next
+   
+      if only X_ty_rec NULL, too many elements in our field
+      if only element, too few.
+
+      compare string matches with next string of type
+      if not, no such field.
+
+      all other cases are error cases.
+   }
+   
+    check that next element of x_Ty_Rec is NULL.
+    if not, too few elements in our field.    
+
+return the actual-type of (stack->elm) (the last one)
+as the returning-type in this case.
+
+
+
+
+

@@ -1,0 +1,44 @@
+12.02.2012:
+
+1. Define our standard types to enable type parsing ..... (DOING)
+2. Activity 2                                       ..... (DONE)
+3. Activity 3
+
+
+-----------------------------------------------------------------------------
+On field-var/subs-var parsing: 
+
+1 . Before translating the AST, it may be a good idea to just take 
+   a branch of semant.c and parse the AST, to debug some issues on
+   which there are doubts, like field-vars, subscript-vars etc.
+
+   (Don't put action items but just take a skeleton of the AST parser
+   code for debugging)
+
+2. When you write a complex case for a field-var or subsc-var, always
+   try to imagine what the type declaration would be like. If its not
+   possible to do so by tiger semantics, then we are wasting time over
+   a non-existent case.
+
+3. If some issue (+ sol) is known but too time-consuming to handle, 
+   make a note, apologize and move on to the next issue.
+
+______________________________________________________________________________
+
+1. define S_table now
+2. complete the conversion routines between the AST and the IET (the typecheck)
+3. test the symbol table (contiguous elements, hashing, collision frequency, update with table reallocation
+   scheme when collision crosses comfort limit, test if works)
+
+_______________________________________________________________________________________________________
+
+
+1. symtab.c - remaining - rehash elements to an array of double size when average collision increases by known
+   amount. Use stack to empty all the symbols and to rehash. table2 = rehash(table1) will kill table1 and create table2.
+   Size needs to be internally kept. Write tests to check.
+
+2. semant.c - write the conversion routines for typecheck. Fill other files accordingly.
+
+3. S_Table's (symbol table) format is defined in symtab.c. The binding pointer (void)* will
+   be either Ty_Ty (type.h) for symbols that are typedefs, or E_enventry (env.h) for symbols
+   that are variables or function-names. 

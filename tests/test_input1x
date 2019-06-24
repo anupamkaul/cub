@@ -1,0 +1,21 @@
+let 
+type bomb = babu
+type lashid = tamquan
+
+in ( 
+     treeLeaves(3);
+
+     /* syntax error bcoz assignment not done yet */
+     a := 5 + 6; 
+     
+if ( mama = papa ) then  
+(
+   try1();
+   tryr()
+)
+
+   )
+
+end 
+
+	

@@ -1,0 +1,214 @@
+ GNU Bison on DOS notes 
+ _____________________________________
+ 1.
+
+ when I name the input as "tig.yac"
+ and run bison -d tig.yac,
+
+ the following 2 files are created:
+ tig.yac.hac and tig.yac.cac
+
+ - This may be a bug in bison, where the
+ ("h"ac) and ("c" ac) stand for the h and c files :)
+
+ _______________________________________
+
+ 2.
+
+ anything that bison sees is not reducing to the
+ start production (root of tree), it labels as
+ "useless non-terminal". This can check if everything
+ goes to the root, at compile time.
+
+ ________________________________________
+
+ 3.
+
+ if at runtime, bison reaches the root of the tree, and
+ there are still productions/tokens coming from lex,
+ it believes that everything now is a syntax error, as
+ it has already attained the root.
+
+ Be careful: bison must reach the root only after ALL the
+ input that I want has been processed.
+
+ _________________________________________
+
+ 4.  Position Independence .. (1)
+
+  To have a set of repeatable objects (collections) with
+  position dependence, use things like the following:
+
+  type_decls:         type_decl type_decls
+            |         type_decl;
+
+  var_decls :         var_decl var_decls
+            |         var_decl;
+
+  Thus this captures a set of position-dependent typedefs
+  or vardecls, but these cannot be intermixed at this level.
+
+  Bison complained of shift-reductions if the same abstraction
+  was carried forth to a higher level to mix these, viz:
+
+  decls:             type_decls decls
+       |             var_decls decls
+       |             type_decls
+       |             var_decls;
+
+  Position Independence, in this case, can be obtained by omitting
+  the classification of "type_decls" and "var_decls" altogether.
+
+  Such a classification of semi-objects itself was redundant since we
+  now look at declarations as a whole.
+
+  The set of position independent objects is therefore, the general
+  "decls", and may be declared as follows:
+
+  decls     :         type_decl decls
+            |         var_decl  decls
+
+            |         type_decl
+            |         var_decl;
+
+
+ This declaration allows for any-order declaration of types and
+ variables in a completely position independent manner. Semantic
+ analysis can later check the validity of such an order. (Indeed,
+ such a free-flow language can remove a lot of language constraints
+ for the user, viz, perl)
+
+ "Stricter" enforcement of "types BEFORE variables", would have
+ precluded the definitions of "type_decls" and "var_decls" as described
+ previously, and "decls" would have been altered to be:
+
+ decls      :       type_decls
+                    var_decls;
+
+ _____________________________________________
+
+TODO 
+
+6. Some bugs in tig.lex:
+
+   a. IF_KWD is recognized by a space or a \n to the right. This misses cases like
+      if(a = b) where if is followed by an lparan. Lex passes this to yacc
+      as "if (ident)" which spoils things up further.
+
+      2 cases:  (if and if(
+      more:    <tab>if  
+
+   b. Check that in (' '|\n), the \n part works .. for yacc 
+
+      note: if the 'if(' problem is not corrected, yacc makes the
+      mistake of taking it as a func call, and crying later.
+
+   - The kwd$ case, (without an explicit \n) is not recognized.
+     The kwd is classified as an ident (bug).
+
+  c. All kwds have a problem if they end the last line with a space and
+     immediatly the next line starts (prob b)
+
+  d. Not checked the case <tok>$  (EOL) 
+
+ ____________________________________________
+
+TODO
+
+It should be possible for the THEN part to begin without a brace (the s/r
+conflict in 'lparan'  b/w expseq and expliteral(expv). But not when there
+is a semicolon (implicit or required). 
+
+Side Issue:
+
+CHECK for the case of multiple recursive IFs, does it require that
+expseq could also begin without an lbrace? Currently expseq always starts with
+an lbrace.  (use explist in that case?)
+
+ __________________________________________
+
+TODO 
+
+1. The last semicolon before the expseq should be a dontcare
+2. I note that an IF declaration ends with a semicolon, does it need to?
+
+ __________________________________________
+
+TODO
+
+1. Assignment of an lvalue to be added. (expuv-> assignment with :=)
+ 
+ __________________________________________
+
+TODO
+
+1. Comments are not flushed out when transferring to yacc. (There is no return
+   statement during the comment mode in lex, so yacc gets the entire string with 
+   the next token .. )
+
+ __________________________________________
+
+TODO
+
+Having only one position placeholder for a symbol is a limitation.
+Even the positions for one symbol may need to be stored on a stack for that symbol.
+
+1. In the present version of passing pos, since there is only one pos for a symbol,
+   eg, for plus operator, therefore in A = B + C + D + E, the only valid pos available
+   during the DFA stack analysis of yacc, is the pos between D & E .. we miss out on the
+   other pos (B+C) and (C+D).
+
+   Same problem will occur for the :(colon) position in A_fieldList i.e. in a 
+   rec-declaration or in the parameter declaration of a function.
+
+   Solution: A_pushpos() to push in lex (to one of the POS_MAX stacks)
+   - and should pass A_poppos() directly in the absyn.h constructor interfaces. Internally in the
+   constructors, one may do the aposmalloc and A_intdup etc. So make the interface of
+   yylex similar to the internal representation of A_pos. 
+ ___________________________________________
+
+TODO
+
+1. In order to handle mutually recursive types and function declaration (NameTyList & functionList),
+   add a couple of productions for both, to catch a 'group' of type-decl and func-decl. Name them
+   type-decls and func-decls. These then get added to decls, instead of the original single ones.
+   Type-decls and func-decls could of-course contain single ones, but they will provide one level
+   of indirection in order to catch the possibily mutually-recursive definitions of types & functions.
+ 
+   OR
+
+   Use global variables to keep track of the current group, and to determine when to change
+   to a new group (for list of type & function declarations)
+
+   When creating NameTylist, always pop from stack, change and push it in.
+   (except for the first case, create, change and push it in)
+
+   Whenever doing type_group++, ensure that the next call to NameTy takes the next ptr,
+   so move (push a new pointer = NULL). (Better to set an indicator to create a new-ptr
+   next time while creating NameTylist in the type productions) 
+
+   The conventions for Type:
+   1. In the type_rhs production(s), call A_nameTy, A_arrayTy, A_recordTy, returning an A_ty.
+   2. In the type_decl production, call a) A_Namety and b) A_NametyList (pop, change, push)
+   3. In the decls production, for cases a) type_decl decls and b) type_decl, call A_TypeDec followed
+      by A_DecList. 
+
+  __________________________________________
+
+Warnings:
+
+1. compulsory warning whenever any of the internal stack
+   is in null state and being popped / peeped (internal error).
+
+2. "syntax error" reported by yacc can report the line no. also;
+   with every prodcn, capture the latest line executed by yacc. 
+
+   (lxline will give the current pointer of lex but this may not be
+   the current line being analysed by yacc) 
+
+3. At end of generation, check that all requested ram that can be 
+   freed, is freed. Also check that all stacks should be NULL at 
+   this point. If not, then there is an internal error. 
+
+  __________________________________________
+

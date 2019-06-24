@@ -1,0 +1,10 @@
+
+/* Note that when passing a pointer to a function, gcc makes a copy of this
+   pointer and puts it in the parameter stack. Thus, the contents of the pointer
+   can be violated, but the orig. pointer can never be violated from inside the function,
+   unless it is also assigned to the output of the function. 
+
+   The only exception is if you call Free(ptr), then & only then can the 'pointer' variable
+   be affected. (nullme and nullme_proc examples)
+
+*/

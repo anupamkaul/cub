@@ -1,0 +1,156 @@
+# #############################################################
+# This is the shell script for running the system
+
+# Note: invoke as "sh runl" from bash, because bash 
+# expands by default on $BASH_ENV which points to .bashrc .. 
+# ############################################################
+
+rm -f lex.yy.c y.tab.c  y.tab.h *.o *.txt debug tparse 
+
+# #################################
+# OPTIONS
+ydumptxt=0 # 0->off, 1->on
+ydumpexp=0 # 0->off, 1->on
+ydumpvar=1 # 0=>off, 1->on
+ydumpmrc=0 # 0=>off, 1->on
+ydumptlt=0 # 0=>off, 1->on
+ydumpvlt=0 # 0=>off, 1->on
+ydumpasn=0 # 0=>off, 1->on
+ydumpifx=0 # 0=>off, 1->on
+
+# #################################
+
+cfiles='lex.yy.c y.tab.c absyn.c absyn_malloc.c prn_exp.c';
+cobjs='lex.yy.o y.tab.o absyn.o absyn_malloc.o prn_exp.o';
+
+echo lexing ..
+if [ -f tig.lex ]; then
+  lex tig.lex 1>dbg 2>dbg
+
+  if [ -s dbg ]; then
+  echo Error messages by lexer in file dbg
+  exit
+  fi
+
+else
+  echo Error: Lex File tig.lex is not present
+  exit
+fi
+
+echo yacc-ing ..
+if [ -f tig.yac ]; then
+  yacc -d -v tig.yac 1>dbg 2>dbg 
+
+  if [ -s dbg ]; then
+  echo Error messages by yacc in file dbg .. open?
+        read choice
+  	if [ $choice = y ]; then
+  	vi dbg
+  	fi
+  exit
+  fi
+
+else
+  echo Error: Yacc File tig.yac is not present
+  exit
+fi
+
+if [ $ydumptxt = 1 ]; then
+dumptxt='-DYDUMPTXT'
+else
+dumptxt=' '
+fi
+
+if [ $ydumpexp = 1 ]; then
+dumpexp='-DYDUMPEXP'
+else
+dumpexp=' '
+fi
+
+if [ $ydumpvar = 1 ]; then
+dumpvar='-DYDUMPVAR'
+else
+dumpvar=' '
+fi
+
+if [ $ydumpmrc = 1 ]; then
+dumpmrc='-DYDUMPMRC'
+else
+dumpmrc=' '
+fi
+
+if [ $ydumptlt = 1 ]; then
+dumptlt='-DYDUMP_TYLIST'
+else
+dumptlt=' '
+fi
+
+if [ $ydumpvlt = 1 ]; then
+dumpvlt='-DYDUMP_VLIST'
+else
+dumpvlt=' '
+fi
+
+if [ $ydumpasn = 1 ]; then
+dumpasn='-DYASNEXP'
+else
+dumpasn=' '
+fi
+
+if [ $ydumpifx = 1 ]; then
+dumpif='-DYDUMPIF'
+else
+dumpif=' '
+fi
+
+echo object-ing ..
+gcc -c $cfiles $dumptxt $dumpexp $dumpvar $dumpmrc $dumptlt $dumpvlt $dumpasn $dumpif -DRUN_AND_TEST_AST 1>dbg 2>dbg
+
+#if [ $ydumptxt == 1 ]; then
+#gcc -c lex.yy.c y.tab.c -DYDUMPTXT 1>dbg 2>dbg
+#else
+#gcc -c -g lex.yy.c y.tab.c 1>dbg 2>dbg
+#fi
+
+  if [ -s dbg ]; then
+  echo "Error messages by gcc (pre-linking) in file dbg"
+  exit
+  fi
+
+echo linking ..
+gcc -o tparse $cobjs -lfl 1>dbg 2>dbg
+
+  if [ -s dbg ]; then
+  echo "Error messages by gcc (at link time) in file dbg"
+  exit
+  fi
+
+rm -f dbg
+echo done ! .. now some inputs ..
+
+# interact with user 
+echo tparse is created. Run tparse ?
+read choice
+
+	if [ $choice = y ]; then
+	echo running
+	tparse tests/test_input 
+	else
+	exit
+	fi
+ 
+echo open yac dump?
+read choice 
+
+	if [ $choice = y ]; then
+	vi ydump.txt
+	fi
+
+echo open lex dump?
+read choice 
+
+	if [ $choice = y ]; then
+	vi ldump.txt
+	fi
+
+# end of script 

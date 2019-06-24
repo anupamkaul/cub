@@ -1,0 +1,10 @@
+let 
+var fm2 := 200 + 5 + 300 + 500 + 600 
+
+in ( 
+     treeLeaves()
+
+   )
+
+end 
+

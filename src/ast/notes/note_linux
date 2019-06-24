@@ -1,0 +1,8 @@
+
+
+1. bash expands the $BASH_ENV to run any shell-script, hence I will run a shell script
+   by calling "sh <script_name>"
+
+  (Currently $BASH_ENV points to .bashrc)
+
+

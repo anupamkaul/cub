@@ -1,0 +1,10 @@
+validate while, for
+write func_declaration, let-exp
+
+Results
+-------
+
+1. while ->  while ( a + b < 50 ) case, evaluation of default priority in this case should be ...
+
+2. for   -> simple case looks ok (no priority evaluation required for test expression?)
+

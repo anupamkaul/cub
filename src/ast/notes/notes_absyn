@@ -1,0 +1,218 @@
+
+        Notes on creating the abstract syntax tree for the tiger language
+        _________________________________________________________________
+
+ types
+ _____
+
+  lhs = rhs, where:
+
+  1. lhs id (string namespace)
+
+          - this char* typeid, may be allocated at type RHS discovery.
+  2. rhs: 
+           - id
+             : another string namespace (union with below)
+
+          - record type
+             : so we first define a record descriptor structure
+               ( id: typeid1, id: typid2, id:typeid3 .. etc)
+ 
+             typedef _tig_rec *tig_rec;
+
+             struct _tig_rec{
+             char *id;
+             char *typeid;
+             _tig_rec* next;
+             } TIGREC;  
+
+             A link list of the above struct( pointed by tig_rec ) constitues a SINGLE record definition
+             in tiger. The list ends by pointing to NULL. 
+
+             This structure is filled up at a new record definition syntax (not at type time). 
+             Since in tiger every record is new heap allocated (there are no optimizations for sameness etc) 
+             therefore every new record definition will allocate a new *tig_rec.
+
+             The pointer will be allocated to the type union at type compile-time discovery.
+
+          - array type
+             : type of each element and no. of elements
+
+             we define an array descriptor structure:
+
+             typedef _tig_array *tig_array;
+             struct _tig_array
+             {
+		long  maxlen;
+                char *typeid
+             }; 
+
+            - array is going to be filled up at rhs array discovery for a type
+
+            *** The type struct can therefore be as follows: ***
+ 
+            typedef char*  string;
+            typedef _tig_type *tig_type;
+
+            struct _tig_type {
+            enum {IDTYPE, RECTYPE, ARRTYPE} which;
+            char *lhs_id;
+              union rhs {
+              string    typeid;
+              tig_rec   typerec;
+              tig_array typearray;
+             } u; 
+            } ttype;
+
+           -- which can be an ENUM instead of a char:
+           enum{ SIMPLE_ID, RECTYPE, ARRTYPE } which; 
+
+           ** should the recognized types (lhs_id) be stored as some hash for faster
+           ** recognition during the type-check?
+            
+ variables
+ _________
+
+   Part 1: Variable Declaration
+
+   cases: 
+   a) varname = exp
+   b) varname : type = exp
+
+   typedef tig_exp_ *tig_exp;
+   typedef tig_var_ *tig_var;
+
+  Part 2: Variable usage (concept of lvalue)
+  
+  cases
+  a) var as "a"       (simple var)
+  b) var as "a[exp]"  (subscript var)
+  c) var as "a.f"     (field var)
+
+  Combining the above two concepts,
+
+  typedef tig_var_ *tig_var;
+  typedef tig_exp_ *tig_exp;
+  typedef tig_var_decl_ *tig_var_decl;
+
+  such that, tig_var encapsulates the 
+  "variable", whether in left or right form.
+
+  struct tig_var_ {
+  enum{ SIMPLE, SUBS, RECFIELD } which;
+  union u_vartype{
+  	String varname;
+
+ 	struct subs {
+  	String varname;
+  	tig_exp subscript;
+  	};
+
+        struct fld {
+        String varname;
+        tig_exp field;
+        }
+
+    } vartype;
+  } TIGVAR;
+
+  and,
+
+  struct tig_var_decl_ {
+  enum {TY_EXPLICIT, TY_IMPLICIT} which;
+  tig_var var_lhs;
+  tig_exp exp_rhs;
+  string  type_explicit;
+  }
+  
+  where, the definition of tig_exp is explained below. 
+
+  (Note, we also require a Collection of tig_var, called a tig_varList. 
+   Its usage comes during function calls, and so is explained below)
+
+ functions
+ _________
+
+ Part 1: Function Definition
+ ____________________________
+
+ cases:
+
+ a) func_name func_body
+ b) func_name output_type func_body
+ c) func_name input_type func_body
+ d) func_name input_type, output_type func_body
+
+  Functions is the first time when we have to look at a body or
+  sequence of expressions. Thus we require a Collection of Expressions
+  to denote the body of the function.
+
+  Therefore, the one we have for expression, now becomes:
+
+  typedef tig_exp_ *tig_exp;
+  AND
+  typedef tig_expseq_ *tig_expseq; // this encapsulates a series of expressions. 
+
+
+  typedef tig_func_decl_ *tig_func_decl;
+  typedef tig_func_call_ *tig_func_call;
+
+  where,
+  struct tig_func_decl_ {
+  enum{TY_SIMPLE, TY_OP, TY_IP, TY_IPOP} which;
+        String funcname;
+  	tig_rec paramList;
+  	String ty_output;
+  	tig_exp_seq func_body;
+  } TIGFUNC_DECL;
+
+  and,
+  struct tig_func_call {
+  	String funcname;
+        tig_varList paramList;
+  }
+
+  where tigvarList is a link list of all tig_var_,
+
+  typedef tig_varList_  *tig_varList;
+
+  struct tig_varList_ {
+  tig_var thisvar;
+  tig_varList_ *next;
+  } TIG_VARLIST;
+
+ Expressions
+ ___________
+
+  - expressions mustbe broken into their constituents as specified in the concrete syntax.
+
+  - any "doable" computations at compile time may be performed, the rest must be allocated
+    to the expression tree (eg 1 + 2 = 3, but not, m + 2) (However, this may be done AFTER
+    the absyn tree, as it is easy after that, and NOT easy in the concrete syntax, where this
+    would be referred to as EXP PLUS EXP without knowledge of type of the constituents). 
+
+  1. valued expressions
+
+
+  2. un-valued expressions
+
+    - if then (else)
+
+         - condition expression
+ 
+         - body (expseq, without the punctuation)
+	
+    - while
+
+         - condition expression
+ 
+         - body (expseq, without the punctuation)
+
+
+ let statement (for scope)
+
+
+  
+
+
+ 

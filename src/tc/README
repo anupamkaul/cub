@@ -1,0 +1,5 @@
+
+
+The main file is semant.c (function tc_main()) which takes the AST and starts parsing it for the next step (semantic analysis and type check, error corrections, symbol table creation and lookup, and any other register optimizations etc).
+
+

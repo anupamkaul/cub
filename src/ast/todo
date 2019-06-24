@@ -1,0 +1,20 @@
+1. Function declarations (simple, then scoped, then mutually recursive fns collection)
+2. Let declaration
+3. A_popexp(0) .. should not be with a parameter.
+
+
+-- >
+
+1. absyn_decList should also be stacked, so that every let expression gets its correct declaration list.
+   Therefore, no need of this global variable.
+
+2. Let expression declaration -> pop the absyn_decList current from the stack ; make the let expression as a form of a_exp.
+   Push this a_exp to the local stack for a_exp. Also mark it by the header expression of the AST. (AST_head)
+
+3. In the Let calling (in expression sequence), pop from local expression stack and add to expression-list ; this let
+   was not the final let expression. That's ok, because in the end AST_head will point to the actual LET start of the 
+   program.
+
+4. Check via printfs, the code from fundec (simple individual function discovery), upto the Let syntax.
+
+5. Determine the best way to parse this AST. Export the AST_head to programs that want to use it at later stages.
