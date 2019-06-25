@@ -1,0 +1,196 @@
+GOING IN TYPE (FRST, FALSE) ;)
+
+<BISON> EVALD a type_decl: type foo = bar
+GOING IN TYPE FOR symbol foo ;)
+
+<BISON> EVALD a type_decl: type slashid = manqueist
+GOING IN TYPE FOR symbol slashid ;)
+
+<BISON> EVALD a type_decl: type queryid = frombart
+GOING IN TYPE FOR symbol queryid ;)
+MAIN BAPU TYPE DECL START
+
+
+NEW TYPE LIST DETAILS
+1 TYPE HEADER
+ TYPE LHS = foo
+ TYPE RHS: ID TYPE
+ id: bar
+2 TYPE HEADER
+ TYPE LHS = slashid
+ TYPE RHS: ID TYPE
+ id: manqueist
+3 TYPE HEADER
+ TYPE LHS = queryid
+ TYPE RHS: ID TYPE
+ id: frombart
+[END TYPE LIST]
+
+
+AVEC A NULL
+3. EXPLITERAL (pure num): 3 (8, 17)
+Discovered an EXPLITEral: 3
+
+<BISON> EVALD a func call: treeLeaves(3)
+1. SIMPLE VAR (l:10, c:6): a
+3. EXPLITERAL (pure num): 5 (10, 11)
+3. EXPLITERAL (pure num): 6 (10, 15)
+Discovered an EXPLITEral: 6
+ADD EXP (l:10, c:13): 5 + 6
+In the ADD EXP, exp_left:
+PRNSTAT-EXP: INT EXP : 6
+PRNSTAT-EXP: INT EXP (l:10, c:15)
+
+In the ADD EXP, exp_right:
+PRNSTAT-EXP: INT EXP : 5
+PRNSTAT-EXP: INT EXP (l:10, c:11)
+
+On adding the asn-exp,
+PRNSTAT-EXP: ASN-EXP (l:10, c:8)
+
+LHS of Assign Statement:
+PRNSTAT-VAR: SIMPLE VAR (l:10, c:6): a
+
+RHS of Assign Statement:
+PRNSTAT-EXP: BOP EXP (l:10, c:13): OpType=PLUS
+
+ Printing about Left SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 5
+PRNSTAT-EXP: INT EXP (l:10, c:11)
+
+ Printing about Right SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 6
+PRNSTAT-EXP: INT EXP (l:10, c:15)
+
+(End of Assign Statement)
+On discovering the asn-exp,
+
+Expression List:
+------------------
+[EXPLIST] expression no. 1 is as follows: 
+PRNSTAT-EXP: ASN-EXP (l:10, c:8)
+
+LHS of Assign Statement:
+PRNSTAT-VAR: SIMPLE VAR (l:10, c:6): a
+
+RHS of Assign Statement:
+PRNSTAT-EXP: BOP EXP (l:10, c:13): OpType=PLUS
+
+ Printing about Left SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 5
+PRNSTAT-EXP: INT EXP (l:10, c:11)
+
+ Printing about Right SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 6
+PRNSTAT-EXP: INT EXP (l:10, c:15)
+
+(End of Assign Statement)
+[EXPLIST] expression no. 2 is as follows: 
+PRNSTAT-EXP: FUNC-CALL (l:8, c:6) of function 'treeLeaves'
+
+Parameters passed to this function are as follows:
+
+Expression List:
+------------------
+[EXPLIST] expression no. 1 is as follows: 
+PRNSTAT-EXP: INT EXP : 3
+PRNSTAT-EXP: INT EXP (l:8, c:17)
+
+[end expression list]
+
+
+[end expression list]
+
+
+1. SIMPLE VAR (l:12, c:6): mpx
+3. EXPLITERAL (lvalue): mpx
+1. SIMPLE VAR (l:12, c:12): dpy
+3. EXPLITERAL (lvalue): dpy
+Discovered an EXPLITEral: dpy
+EQUAL COMPARE EXP (l:12, c:10): mpx = dpy
+In the EQ-COMP EXP, exp_left:
+PRNSTAT-EXP: VAR EXP (l:12, c:12): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:12, c:12): dpy
+
+In the EQ-COMP EXP, exp_right:
+PRNSTAT-EXP: VAR EXP (l:12, c:6): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:12, c:6): mpx
+
+Discovered an EXPLITEral: ( mpx = dpy )
+
+<BISON> EVALD a func call: try1()
+<BISON> EVALD a func call: tryr()
+<BISON> EVALD an if_then_decl: if ( mpx = dpy )  then ( try1() ;
+tryr() )
+PRNSTAT-EXP: IF-EXP (l:12, c:1)
+
+IF TEST CONDITION EXPRESSION:
+PRNSTAT-EXP: BOP EXP (l:12, c:10): OpType=EQ(COMP)
+
+ Printing about Left SubExp of EQ(COMP) now:
+PRNSTAT-EXP: VAR EXP (l:12, c:6): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:12, c:6): mpx
+
+ Printing about Right SubExp of EQ(COMP) now:
+PRNSTAT-EXP: VAR EXP (l:12, c:12): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:12, c:12): dpy
+
+IF THENBODY EXPRESSION:
+PRNSTAT-EXP: SEQ-EXP (l:15, c:8)
+
+BLOCK EXPRESSION STATEMENT IS AS FOLLOWS:
+
+Expression List:
+------------------
+[EXPLIST] expression no. 1 is as follows: 
+PRNSTAT-EXP: FUNC-CALL (l:15, c:4) of function 'tryr'
+
+Parameters passed to this function are as follows:
+
+Expression List:
+------------------
+[end expression list]
+
+
+[EXPLIST] expression no. 2 is as follows: 
+PRNSTAT-EXP: FUNC-CALL (l:14, c:4) of function 'try1'
+
+Parameters passed to this function are as follows:
+
+Expression List:
+------------------
+[end expression list]
+
+
+[end expression list]
+
+
+END OF IF-EXP
+
+<BISON> EVALD a LET_decl (occurance 1,1): let
+[Type]
+false_type
+in
+[Body]
+( treeLeaves(3) ;
+a := 5 + 6 ;
+if ( mpx = dpy )  then ( try1() ;
+tryr() ) )
+end
+[END]
+
+
+
+(test) ROOT REACHED at : let
+[Type]
+false_type
+in
+[Body]
+( treeLeaves(3) ;
+a := 5 + 6 ;
+if ( mpx = dpy )  then ( try1() ;
+tryr() ) )
+end
+[END]
+
+
