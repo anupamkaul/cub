@@ -66,10 +66,12 @@ int main()
 {
 
     char *arrayMem = NULL;
+    //int maxMem = 2048;
+    int maxMem = 6000;
 
     printf("Dyn Array!\n");
 
-    for (int i = 0; i < 2048; i++) {
+    for (int i = 0; i < maxMem; i++) {
 
         printf("Req for new mem size of %d bytes", i);
         arrayMem = GetArrayMem(i);
