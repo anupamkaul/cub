@@ -37,6 +37,8 @@ ________________________________________________________________________________
    amount. Use stack to empty all the symbols and to rehash. table2 = rehash(table1) will kill table1 and create table2.
    Size needs to be internally kept. Write tests to check.
 
+   --> covered with scratch/dyn_array implementation (need to add more tests and extend it out for integrating into cub)
+
 2. semant.c - write the conversion routines for typecheck. Fill other files accordingly.
 
 3. S_Table's (symbol table) format is defined in symtab.c. The binding pointer (void)* will

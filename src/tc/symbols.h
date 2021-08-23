@@ -36,6 +36,9 @@ symbol next;
  * Variable declarations
  */
 
+// TODO: If this is our definition of the symbol table then it is weak (linear lookup?) and 
+// not evident here from lack of comments
+
 symbol internal_array[MAXINDEX];
 
 /**
@@ -50,6 +53,7 @@ char * Name(symbol);
 #define NULLIFY(a, st, end)     { int i; for( i=(st) ; i<=(end); i++ ) \
 				{ a[i] = NULL; } } 
 
+/// TODO : This definition should be bumped to a higher hierarchy..
 #define _NODBG(s, ...) ;
 	
 #ifdef DEBUG

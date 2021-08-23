@@ -60,7 +60,7 @@ char *Name(symbol s)
  return s->name;
 }
 
-/*
+/* - TODO : Check that these are separate test suites for symbol conversion */
 main()
 {
 	symbol a;
