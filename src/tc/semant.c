@@ -437,6 +437,11 @@ Ty_ty transTy(S_table tenv, A_ty t)
 
 /* Debug versions of AST parsers */
 
+/* TODO: 11.13.2021 : parseASTExp is the main entry point for semantic analysis
+ * of tiger. Need to finish the definitions/interpretations of all possible configurations
+ * of an A_exp
+ */
+
 struct expty parseASTExp(S_table venv, S_table tenv, A_exp e)
 {
 	fprintf(stderr, "[%s] %s:\n", __FILE__,  __PRETTY_FUNCTION__);
