@@ -19,6 +19,7 @@
 #include <string.h>
 #include "pos_def.h"
 #include "y.tab.h"
+#include "absyn.h"
 extern FILE *llout;
 char rec_cmt[100];    /* max 100 internally recursive comments */
 int  lvl = 1;

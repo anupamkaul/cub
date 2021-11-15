@@ -85,6 +85,10 @@ FILE *llout;
 extern FILE *yyin, *yyout;
 extern int lxline; 
 
+/* add this to avoid gcc's implicit function prototype legacy warning */
+extern int yylex(void); 
+// #define yyerror  goto yyerrorlab
+
 /* sockets between lex n yacc */
 extern int SEND_FALSE_FUNCTION;
 extern int NULL_DECLIST;
@@ -97,7 +101,7 @@ extern int NULL_DECLIST;
 char *strmemcat(char* source, char* dest);
 
 
-#line 101 "y.tab.c" /* yacc.c:339  */
+#line 105 "y.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -239,7 +243,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 36 "tig.yac" /* yacc.c:355  */
+#line 40 "tig.yac" /* yacc.c:355  */
 
 
  struct strinfo_{
@@ -257,7 +261,7 @@ union YYSTYPE
  }intinfo;
  
 
-#line 261 "y.tab.c" /* yacc.c:355  */
+#line 265 "y.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -274,7 +278,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 278 "y.tab.c" /* yacc.c:358  */
+#line 282 "y.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -576,15 +580,15 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   142,   142,   156,   201,   212,   221,   233,   242,   268,
-     298,   308,   321,   344,   352,   367,   388,   409,   426,   427,
-     428,   441,   450,   461,   497,   532,   569,   613,   637,   658,
-     687,   709,   731,   759,   802,   830,   855,   881,   909,   936,
-     963,   990,  1017,  1044,  1072,  1098,  1126,  1136,  1158,  1176,
-    1190,  1204,  1217,  1241,  1260,  1278,  1298,  1318,  1330,  1348,
-    1366,  1390,  1409,  1430,  1448,  1455,  1468,  1475,  1488,  1495,
-    1508,  1515,  1528,  1535,  1548,  1575,  1588,  1598,  1614,  1627,
-    1639,  1656,  1680,  1705,  1743
+       0,   146,   146,   160,   205,   216,   225,   237,   246,   272,
+     302,   312,   325,   348,   356,   371,   392,   413,   430,   431,
+     432,   445,   454,   465,   501,   536,   573,   617,   641,   662,
+     691,   713,   735,   763,   806,   834,   859,   885,   913,   940,
+     967,   994,  1021,  1048,  1076,  1102,  1130,  1140,  1162,  1180,
+    1194,  1208,  1221,  1245,  1264,  1282,  1302,  1322,  1334,  1352,
+    1370,  1394,  1413,  1434,  1452,  1459,  1472,  1479,  1492,  1499,
+    1512,  1519,  1532,  1539,  1552,  1579,  1592,  1602,  1618,  1631,
+    1643,  1660,  1684,  1709,  1747
 };
 #endif
 
@@ -1474,7 +1478,7 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 142 "tig.yac" /* yacc.c:1646  */
+#line 146 "tig.yac" /* yacc.c:1646  */
     {
 
 #ifdef YDUMPTXT
@@ -1487,11 +1491,11 @@ yyreduce:
 			   AST_root = A_popexp();
 
                            }
-#line 1491 "y.tab.c" /* yacc.c:1646  */
+#line 1495 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 156 "tig.yac" /* yacc.c:1646  */
+#line 160 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n[Type]\n");
@@ -1524,11 +1528,11 @@ yyreduce:
                            A_pushexp(A_LetExp(absyn_pos, A_popLetdecList(), A_popexp()));
 
                            }
-#line 1528 "y.tab.c" /* yacc.c:1646  */
+#line 1532 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 202 "tig.yac" /* yacc.c:1646  */
+#line 206 "tig.yac" /* yacc.c:1646  */
     {
                              	/* pop tyList and add to current decList */
                              	/* (note: absyn_pos is not defined ..) */
@@ -1539,11 +1543,11 @@ yyreduce:
                              	//absyn_decList = A_DecList(A_TypeDec(absyn_pos, A_poptyList()),absyn_decList);
                              	A_pushLetdecList(A_DecList(A_TypeDec(absyn_pos, A_poptyList()),A_popLetdecList()));
                            }
-#line 1543 "y.tab.c" /* yacc.c:1646  */
+#line 1547 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 212 "tig.yac" /* yacc.c:1646  */
+#line 216 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* TO BE TESTED */
@@ -1553,11 +1557,11 @@ yyreduce:
                                 A_pushLetdecList(A_DecList(A_FunctionDec(absyn_pos, A_popfnList()), A_popLetdecList()));
 
                            }
-#line 1557 "y.tab.c" /* yacc.c:1646  */
+#line 1561 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 222 "tig.yac" /* yacc.c:1646  */
+#line 226 "tig.yac" /* yacc.c:1646  */
     {
 #ifdef YDUMP_VLIST
                                 fprintf(yyout, "VARLIST - ALSO ADDED (%s)\n",A_peepVardec(0)->dectype.vardec.var);
@@ -1569,11 +1573,11 @@ yyreduce:
                                 A_pushLetdecList(A_DecList(A_popVardec(), A_popLetdecList()));
 
                            }
-#line 1573 "y.tab.c" /* yacc.c:1646  */
+#line 1577 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 233 "tig.yac" /* yacc.c:1646  */
+#line 237 "tig.yac" /* yacc.c:1646  */
     { 
                            /* TO BE TESTED */
 
@@ -1583,11 +1587,11 @@ yyreduce:
                                 //absyn_decList = A_DecList(A_FunctionDec(absyn_pos, A_popfnList()), NULL);
                                 A_pushLetdecList(A_DecList(A_FunctionDec(absyn_pos, A_popfnList()), NULL));
                            }
-#line 1587 "y.tab.c" /* yacc.c:1646  */
+#line 1591 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 243 "tig.yac" /* yacc.c:1646  */
+#line 247 "tig.yac" /* yacc.c:1646  */
     {
 			     	/* pop tyList and add to a null decList */
                              	/* (note: absyn_pos is not defined ..) */
@@ -1613,11 +1617,11 @@ yyreduce:
                              	A_pushLetdecList(A_DecList(A_TypeDec(absyn_pos, A_poptyList()),A_popLetdecList()));
                              	}
                            }
-#line 1617 "y.tab.c" /* yacc.c:1646  */
+#line 1621 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 269 "tig.yac" /* yacc.c:1646  */
+#line 273 "tig.yac" /* yacc.c:1646  */
     {
 			   	if(NULL_DECLIST) {
 #ifdef YDUMP_VLIST
@@ -1642,11 +1646,11 @@ yyreduce:
                                 A_pushLetdecList(A_DecList(A_popVardec(), A_popLetdecList()));
                                 }
                            }
-#line 1646 "y.tab.c" /* yacc.c:1646  */
+#line 1650 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 298 "tig.yac" /* yacc.c:1646  */
+#line 302 "tig.yac" /* yacc.c:1646  */
     { 
                            
 		          /* pop, affect, push */
@@ -1656,11 +1660,11 @@ yyreduce:
 			  fprintf(yyout, "GOING IN TYPE FOR symbol %s ;)\n", absyn_namety->sym); 
 #endif
                            }
-#line 1660 "y.tab.c" /* yacc.c:1646  */
+#line 1664 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 308 "tig.yac" /* yacc.c:1646  */
+#line 312 "tig.yac" /* yacc.c:1646  */
     { 
 
 			   /* create new level */
@@ -1669,11 +1673,11 @@ yyreduce:
 			   fprintf(yyout, "GOING IN TYPE (FRST, FALSE) ;)\n"); 
 #endif
                            }
-#line 1673 "y.tab.c" /* yacc.c:1646  */
+#line 1677 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 321 "tig.yac" /* yacc.c:1646  */
+#line 325 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -1696,11 +1700,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a type_decl: %s\n", (yyval.strinfo.strval));                            
 #endif
                            }
-#line 1700 "y.tab.c" /* yacc.c:1646  */
+#line 1704 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 344 "tig.yac" /* yacc.c:1646  */
+#line 348 "tig.yac" /* yacc.c:1646  */
     {
 
 		           absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -1709,11 +1713,11 @@ yyreduce:
                            absyn_ty_rhs = A_nameTy(absyn_pos, (yyvsp[0].strinfo.strval));
 
                            }
-#line 1713 "y.tab.c" /* yacc.c:1646  */
+#line 1717 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 353 "tig.yac" /* yacc.c:1646  */
+#line 357 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -1728,11 +1732,11 @@ yyreduce:
                            absyn_ty_rhs = A_ArrayTy(absyn_pos, (yyvsp[0].strinfo.strval));
                            
                            }
-#line 1732 "y.tab.c" /* yacc.c:1646  */
+#line 1736 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 368 "tig.yac" /* yacc.c:1646  */
+#line 372 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -1751,11 +1755,11 @@ yyreduce:
 #endif
 
                            }
-#line 1755 "y.tab.c" /* yacc.c:1646  */
+#line 1759 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 389 "tig.yac" /* yacc.c:1646  */
+#line 393 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -1775,11 +1779,11 @@ yyreduce:
 
                            absyn_fieldList = A_FieldList(A_Field(absyn_pos, (yyvsp[-2].strinfo.strval), (yyvsp[0].strinfo.strval)), absyn_fieldList);
                            }
-#line 1779 "y.tab.c" /* yacc.c:1646  */
+#line 1783 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 410 "tig.yac" /* yacc.c:1646  */
+#line 414 "tig.yac" /* yacc.c:1646  */
     {
 
 		           absyn_pos->line = A_intdup(yylval.strinfo.pos[colon_pos].line);
@@ -1795,11 +1799,11 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
                            }
-#line 1799 "y.tab.c" /* yacc.c:1646  */
+#line 1803 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 441 "tig.yac" /* yacc.c:1646  */
+#line 445 "tig.yac" /* yacc.c:1646  */
     { 
 
 #ifdef YDUMPMRCF
@@ -1809,11 +1813,11 @@ yyreduce:
                           A_pushfnList(A_FundecList(absyn_fundec, A_popfnList()));
 
                            }
-#line 1813 "y.tab.c" /* yacc.c:1646  */
+#line 1817 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 450 "tig.yac" /* yacc.c:1646  */
+#line 454 "tig.yac" /* yacc.c:1646  */
     { 
 
 #ifdef YDUMPMRCF
@@ -1823,11 +1827,11 @@ yyreduce:
                           A_pushfnList(NULL);
 
                            }
-#line 1827 "y.tab.c" /* yacc.c:1646  */
+#line 1831 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 461 "tig.yac" /* yacc.c:1646  */
+#line 465 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* 1. a procedure without input parameters */
@@ -1861,11 +1865,11 @@ yyreduce:
 
 #endif
                            }
-#line 1865 "y.tab.c" /* yacc.c:1646  */
+#line 1869 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 497 "tig.yac" /* yacc.c:1646  */
+#line 501 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* mark the position */
@@ -1898,11 +1902,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a function_decl (some input, no output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 1902 "y.tab.c" /* yacc.c:1646  */
+#line 1906 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 532 "tig.yac" /* yacc.c:1646  */
+#line 536 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* mark the position */
@@ -1937,11 +1941,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a function_decl (no input, some output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 1941 "y.tab.c" /* yacc.c:1646  */
+#line 1945 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 569 "tig.yac" /* yacc.c:1646  */
+#line 573 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* mark the position */
@@ -1980,11 +1984,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a function_decl (some input, some output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 1984 "y.tab.c" /* yacc.c:1646  */
+#line 1988 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 613 "tig.yac" /* yacc.c:1646  */
+#line 617 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2008,11 +2012,11 @@ yyreduce:
 #endif
 #endif
                                                         }
-#line 2012 "y.tab.c" /* yacc.c:1646  */
+#line 2016 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 637 "tig.yac" /* yacc.c:1646  */
+#line 641 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2032,11 +2036,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
 #endif
                                                         }
-#line 2036 "y.tab.c" /* yacc.c:1646  */
+#line 2040 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 658 "tig.yac" /* yacc.c:1646  */
+#line 662 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2062,11 +2066,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
 #endif
                                                         }
-#line 2066 "y.tab.c" /* yacc.c:1646  */
+#line 2070 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 687 "tig.yac" /* yacc.c:1646  */
+#line 691 "tig.yac" /* yacc.c:1646  */
     {
 
 		           absyn_pos->line = A_intdup(yylval.strinfo.pos[lbrace_pos].line);
@@ -2088,11 +2092,11 @@ yyreduce:
 #endif
 
                            }
-#line 2092 "y.tab.c" /* yacc.c:1646  */
+#line 2096 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 709 "tig.yac" /* yacc.c:1646  */
+#line 713 "tig.yac" /* yacc.c:1646  */
     {
 
                            absyn_efieldList=A_EfieldList(A_Efield((yyvsp[-2].strinfo.strval), A_popexp()), 
@@ -2114,11 +2118,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a Rec Creation Parm: %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 2118 "y.tab.c" /* yacc.c:1646  */
+#line 2122 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 731 "tig.yac" /* yacc.c:1646  */
+#line 735 "tig.yac" /* yacc.c:1646  */
     {
 
                            absyn_efieldList=A_EfieldList(A_Efield((yyvsp[-2].strinfo.strval), A_popexp()),
@@ -2134,11 +2138,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a Rec Creation Parm: %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 2138 "y.tab.c" /* yacc.c:1646  */
+#line 2142 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 759 "tig.yac" /* yacc.c:1646  */
+#line 763 "tig.yac" /* yacc.c:1646  */
     {
 
                            A_exp size, initval;
@@ -2171,11 +2175,11 @@ yyreduce:
                            A_pushexp(A_ArrayExp(absyn_pos, (yyvsp[-2].strinfo.strval), size, initval));
 
                            }
-#line 2175 "y.tab.c" /* yacc.c:1646  */
+#line 2179 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 802 "tig.yac" /* yacc.c:1646  */
+#line 806 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2203,11 +2207,11 @@ yyreduce:
 #endif
                            
                            }
-#line 2207 "y.tab.c" /* yacc.c:1646  */
+#line 2211 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 830 "tig.yac" /* yacc.c:1646  */
+#line 834 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2232,11 +2236,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_minusOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2236 "y.tab.c" /* yacc.c:1646  */
+#line 2240 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 855 "tig.yac" /* yacc.c:1646  */
+#line 859 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2262,11 +2266,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_timesOp, A_popexp(), A_popexp()));
 
                            }
-#line 2266 "y.tab.c" /* yacc.c:1646  */
+#line 2270 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 881 "tig.yac" /* yacc.c:1646  */
+#line 885 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2292,11 +2296,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_divideOp, A_popexp(), A_popexp()));
 
                            }
-#line 2296 "y.tab.c" /* yacc.c:1646  */
+#line 2300 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 909 "tig.yac" /* yacc.c:1646  */
+#line 913 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2322,11 +2326,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_eqOp, A_popexp(), A_popexp()));
 
                            }
-#line 2326 "y.tab.c" /* yacc.c:1646  */
+#line 2330 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 936 "tig.yac" /* yacc.c:1646  */
+#line 940 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2352,11 +2356,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_neqOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2356 "y.tab.c" /* yacc.c:1646  */
+#line 2360 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 963 "tig.yac" /* yacc.c:1646  */
+#line 967 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2382,11 +2386,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_gtOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2386 "y.tab.c" /* yacc.c:1646  */
+#line 2390 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 990 "tig.yac" /* yacc.c:1646  */
+#line 994 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2412,11 +2416,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_ltOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2416 "y.tab.c" /* yacc.c:1646  */
+#line 2420 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 1017 "tig.yac" /* yacc.c:1646  */
+#line 1021 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2442,11 +2446,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_geOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2446 "y.tab.c" /* yacc.c:1646  */
+#line 2450 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 1044 "tig.yac" /* yacc.c:1646  */
+#line 1048 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2472,11 +2476,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_leOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2476 "y.tab.c" /* yacc.c:1646  */
+#line 2480 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 1072 "tig.yac" /* yacc.c:1646  */
+#line 1076 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2502,11 +2506,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_andOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2506 "y.tab.c" /* yacc.c:1646  */
+#line 2510 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 1098 "tig.yac" /* yacc.c:1646  */
+#line 1102 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2532,32 +2536,32 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_orOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2536 "y.tab.c" /* yacc.c:1646  */
+#line 2540 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 1126 "tig.yac" /* yacc.c:1646  */
+#line 1130 "tig.yac" /* yacc.c:1646  */
     { 
                        
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
                            }
-#line 2547 "y.tab.c" /* yacc.c:1646  */
+#line 2551 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 1137 "tig.yac" /* yacc.c:1646  */
+#line 1141 "tig.yac" /* yacc.c:1646  */
     {
 #ifdef YDUMPEXP                          
                            fprintf(yyout, "Discovered an EXPLITEral: %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 2557 "y.tab.c" /* yacc.c:1646  */
+#line 2561 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 1158 "tig.yac" /* yacc.c:1646  */
+#line 1162 "tig.yac" /* yacc.c:1646  */
     {
 
 #ifdef YDUMPEXP                          
@@ -2575,11 +2579,11 @@ yyreduce:
 #endif
 
 			  }
-#line 2579 "y.tab.c" /* yacc.c:1646  */
+#line 2583 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 1176 "tig.yac" /* yacc.c:1646  */
+#line 1180 "tig.yac" /* yacc.c:1646  */
     {
 
 #ifdef YDUMPEXP                          
@@ -2593,11 +2597,11 @@ yyreduce:
 #endif
 
 			  }
-#line 2597 "y.tab.c" /* yacc.c:1646  */
+#line 2601 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 1190 "tig.yac" /* yacc.c:1646  */
+#line 1194 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2611,11 +2615,11 @@ yyreduce:
                            */
 
                           }
-#line 2615 "y.tab.c" /* yacc.c:1646  */
+#line 2619 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 1217 "tig.yac" /* yacc.c:1646  */
+#line 1221 "tig.yac" /* yacc.c:1646  */
     {
 
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -2639,11 +2643,11 @@ yyreduce:
 #endif
 
                           }
-#line 2643 "y.tab.c" /* yacc.c:1646  */
+#line 2647 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 1241 "tig.yac" /* yacc.c:1646  */
+#line 1245 "tig.yac" /* yacc.c:1646  */
     {
 
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -2662,11 +2666,11 @@ yyreduce:
 #endif
 
                           }
-#line 2666 "y.tab.c" /* yacc.c:1646  */
+#line 2670 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 1260 "tig.yac" /* yacc.c:1646  */
+#line 1264 "tig.yac" /* yacc.c:1646  */
     {
 
 #ifdef YDUMPVAR                          
@@ -2681,11 +2685,11 @@ yyreduce:
 			  A_pushvar(A_SimpleVar(absyn_pos, (yyval.strinfo.strval))); 
 
                           }
-#line 2685 "y.tab.c" /* yacc.c:1646  */
+#line 2689 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 1278 "tig.yac" /* yacc.c:1646  */
+#line 1282 "tig.yac" /* yacc.c:1646  */
     {
 
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -2705,11 +2709,11 @@ yyreduce:
 #endif
  
                           }
-#line 2709 "y.tab.c" /* yacc.c:1646  */
+#line 2713 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 1298 "tig.yac" /* yacc.c:1646  */
+#line 1302 "tig.yac" /* yacc.c:1646  */
     {
 
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -2729,11 +2733,11 @@ yyreduce:
                           fprintf(yyout, "\n<BISON> EVALD a func call: %s\n", (yyval.strinfo.strval));
 #endif
                           }
-#line 2733 "y.tab.c" /* yacc.c:1646  */
+#line 2737 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 1318 "tig.yac" /* yacc.c:1646  */
+#line 1322 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2746,22 +2750,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2750 "y.tab.c" /* yacc.c:1646  */
+#line 2754 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 1330 "tig.yac" /* yacc.c:1646  */
+#line 1334 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push, raise level in the stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
 		          }
-#line 2761 "y.tab.c" /* yacc.c:1646  */
+#line 2765 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 1348 "tig.yac" /* yacc.c:1646  */
+#line 1352 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2780,11 +2784,11 @@ yyreduce:
 #endif
 
                          }
-#line 2784 "y.tab.c" /* yacc.c:1646  */
+#line 2788 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 1366 "tig.yac" /* yacc.c:1646  */
+#line 1370 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2804,11 +2808,11 @@ yyreduce:
 #endif
 
                          }
-#line 2808 "y.tab.c" /* yacc.c:1646  */
+#line 2812 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 1390 "tig.yac" /* yacc.c:1646  */
+#line 1394 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2828,11 +2832,11 @@ yyreduce:
 #endif
 
                           }
-#line 2832 "y.tab.c" /* yacc.c:1646  */
+#line 2836 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 1409 "tig.yac" /* yacc.c:1646  */
+#line 1413 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2853,11 +2857,11 @@ yyreduce:
 #endif
 
                           }
-#line 2857 "y.tab.c" /* yacc.c:1646  */
+#line 2861 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 1430 "tig.yac" /* yacc.c:1646  */
+#line 1434 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2875,22 +2879,22 @@ yyreduce:
 #endif
 
                           }
-#line 2879 "y.tab.c" /* yacc.c:1646  */
+#line 2883 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 1448 "tig.yac" /* yacc.c:1646  */
+#line 1452 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 2890 "y.tab.c" /* yacc.c:1646  */
+#line 2894 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 1455 "tig.yac" /* yacc.c:1646  */
+#line 1459 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2903,22 +2907,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2907 "y.tab.c" /* yacc.c:1646  */
+#line 2911 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 1468 "tig.yac" /* yacc.c:1646  */
+#line 1472 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 2918 "y.tab.c" /* yacc.c:1646  */
+#line 2922 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 1475 "tig.yac" /* yacc.c:1646  */
+#line 1479 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2931,22 +2935,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2935 "y.tab.c" /* yacc.c:1646  */
+#line 2939 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 1488 "tig.yac" /* yacc.c:1646  */
+#line 1492 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 2946 "y.tab.c" /* yacc.c:1646  */
+#line 2950 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 69:
-#line 1495 "tig.yac" /* yacc.c:1646  */
+#line 1499 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2959,22 +2963,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2963 "y.tab.c" /* yacc.c:1646  */
+#line 2967 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 1508 "tig.yac" /* yacc.c:1646  */
+#line 1512 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 2974 "y.tab.c" /* yacc.c:1646  */
+#line 2978 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 71:
-#line 1515 "tig.yac" /* yacc.c:1646  */
+#line 1519 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2987,22 +2991,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2991 "y.tab.c" /* yacc.c:1646  */
+#line 2995 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 72:
-#line 1528 "tig.yac" /* yacc.c:1646  */
+#line 1532 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 3002 "y.tab.c" /* yacc.c:1646  */
+#line 3006 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 73:
-#line 1535 "tig.yac" /* yacc.c:1646  */
+#line 1539 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3015,22 +3019,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 3019 "y.tab.c" /* yacc.c:1646  */
+#line 3023 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 74:
-#line 1548 "tig.yac" /* yacc.c:1646  */
+#line 1552 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 3030 "y.tab.c" /* yacc.c:1646  */
+#line 3034 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 75:
-#line 1575 "tig.yac" /* yacc.c:1646  */
+#line 1579 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3043,22 +3047,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 3047 "y.tab.c" /* yacc.c:1646  */
+#line 3051 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 76:
-#line 1588 "tig.yac" /* yacc.c:1646  */
+#line 1592 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 3058 "y.tab.c" /* yacc.c:1646  */
+#line 3062 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 1598 "tig.yac" /* yacc.c:1646  */
+#line 1602 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3074,11 +3078,11 @@ yyreduce:
 			   A_pushexplist(A_ExpList(A_BreakExp(absyn_pos), A_popexplist()));
 
                           }
-#line 3078 "y.tab.c" /* yacc.c:1646  */
+#line 3082 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 78:
-#line 1614 "tig.yac" /* yacc.c:1646  */
+#line 1618 "tig.yac" /* yacc.c:1646  */
     {
 
 		           absyn_pos->line = A_intdup(yylval.strinfo.pos[break_kwd_pos].line);
@@ -3088,11 +3092,11 @@ yyreduce:
                            A_pushexplist(A_ExpList(A_BreakExp(absyn_pos),NULL));
 
                           }
-#line 3092 "y.tab.c" /* yacc.c:1646  */
+#line 3096 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 79:
-#line 1627 "tig.yac" /* yacc.c:1646  */
+#line 1631 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3105,22 +3109,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 3109 "y.tab.c" /* yacc.c:1646  */
+#line 3113 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 80:
-#line 1639 "tig.yac" /* yacc.c:1646  */
+#line 1643 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 3120 "y.tab.c" /* yacc.c:1646  */
+#line 3124 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 81:
-#line 1656 "tig.yac" /* yacc.c:1646  */
+#line 1660 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3144,11 +3148,11 @@ yyreduce:
 #endif
 
                            }
-#line 3148 "y.tab.c" /* yacc.c:1646  */
+#line 3152 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 1680 "tig.yac" /* yacc.c:1646  */
+#line 1684 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3173,11 +3177,11 @@ yyreduce:
 #endif
 
                            }
-#line 3177 "y.tab.c" /* yacc.c:1646  */
+#line 3181 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 83:
-#line 1705 "tig.yac" /* yacc.c:1646  */
+#line 1709 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3214,11 +3218,11 @@ yyreduce:
 #endif
 
                            }
-#line 3218 "y.tab.c" /* yacc.c:1646  */
+#line 3222 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 84:
-#line 1743 "tig.yac" /* yacc.c:1646  */
+#line 1747 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3250,11 +3254,11 @@ yyreduce:
 #endif
 
                           }
-#line 3254 "y.tab.c" /* yacc.c:1646  */
+#line 3258 "y.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 3258 "y.tab.c" /* yacc.c:1646  */
+#line 3262 "y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -3482,16 +3486,16 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 1776 "tig.yac" /* yacc.c:1906  */
+#line 1780 "tig.yac" /* yacc.c:1906  */
 
 
 /* Definition of yacc's main follows: */
 
 #ifdef RUN_AND_TEST_AST
-main (int argc, char *argv[]) { 
+int main (int argc, char *argv[]) { 
 
 #else
-ast_main (int argc, char *argv[]) {
+int ast_main (int argc, char *argv[]) {
 
 #endif
 
@@ -3540,6 +3544,8 @@ fclose(yyout);
 fclose(yyin);
 
 free(absyn_pos);
+
+return 0;
 
 } /* end of main */
 

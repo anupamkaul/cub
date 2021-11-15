@@ -774,13 +774,21 @@ struct expty parseASTDec(S_table venv, S_table tenv, A_dec d)
                         while(d->dectype.typedec.type) {
                             fprintf(stderr, "[%s]: TYPE DECL for symbol %s (NEEDS HANDLING)\n", __FILE__, d->dectype.typedec.type->head->sym);
 
-                            // Discover if the type is pre-defined 
+                            /* Discover if the type is pre-defined
+                             *  TODO: We need to define Standard Types first. 
+                             * This symbol should either be a standard type or 
+                             * be a symbol that ultimately boils down to a standard type (unless we support prototyping)..
+                             */
 
-                            // Chicken n Egg: We need to define Standard Types first. This symbol should either be a standard type or be a symbol that ultimately boils down to a standard type (unless we support prototyping)..
 
                             if (d->dectype.typedec.type->head->ty->kind == 1) { /* type is a name */
                             fprintf(stderr, "[%s]: is of Type %d with symbol name (%s)\n", __FILE__, d->dectype.typedec.type->head->ty->kind, d->dectype.typedec.type->head->ty->which.nametype.sym);
                             }
+
+                            /* TODO : Check if the rvalue (symbol) exists in our symbol table yet.
+                             * If it does not, we throw an error.
+                             */
+
 
                             // Go to the next type
                             d->dectype.typedec.type = d->dectype.typedec.type->tail;

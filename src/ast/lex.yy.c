@@ -620,6 +620,7 @@ char *yytext;
 #include <string.h>
 #include "pos_def.h"
 #include "y.tab.h"
+#include "absyn.h"
 extern FILE *llout;
 char rec_cmt[100];    /* max 100 internally recursive comments */
 int  lvl = 1;
@@ -637,7 +638,7 @@ int SEND_FALSE_FUNCTION=1;
 int NULL_DECLIST=0;
 
 
-#line 641 "lex.yy.c"
+#line 642 "lex.yy.c"
 
 #define INITIAL 0
 #define cmtmode 1
@@ -859,10 +860,10 @@ YY_DECL
 		}
 
 	{
-#line 42 "tig.lex"
+#line 43 "tig.lex"
 
 
-#line 866 "lex.yy.c"
+#line 867 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -923,7 +924,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 44 "tig.lex"
+#line 45 "tig.lex"
 {
 
                  /* 1. Tiger KEYWORDS are handled in this section */
@@ -958,7 +959,7 @@ YY_RULE_SETUP
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 75 "tig.lex"
+#line 76 "tig.lex"
 { 
                 /* token: let_kwd */
 
@@ -994,7 +995,7 @@ YY_RULE_SETUP
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 107 "tig.lex"
+#line 108 "tig.lex"
 {
                 if(SEND_FALSE_TYPE)
                 {
@@ -1041,7 +1042,7 @@ YY_RULE_SETUP
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 150 "tig.lex"
+#line 151 "tig.lex"
 {
 
                 if(SEND_FALSE_TYPE)
@@ -1093,7 +1094,7 @@ YY_RULE_SETUP
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 199 "tig.lex"
+#line 200 "tig.lex"
 {
                 /* token: var_kwd */
 
@@ -1121,7 +1122,7 @@ YY_RULE_SETUP
 case 6:
 /* rule 6 can match eol */
 YY_RULE_SETUP
-#line 223 "tig.lex"
+#line 224 "tig.lex"
 {
                 /* token: var_kwd */
 
@@ -1153,7 +1154,7 @@ YY_RULE_SETUP
 case 7:
 /* rule 7 can match eol */
 YY_RULE_SETUP
-#line 252 "tig.lex"
+#line 253 "tig.lex"
 {
                 if(SEND_FALSE_FUNCTION)
                 {
@@ -1202,7 +1203,7 @@ YY_RULE_SETUP
 case 8:
 /* rule 8 can match eol */
 YY_RULE_SETUP
-#line 297 "tig.lex"
+#line 298 "tig.lex"
 {
                 if(SEND_FALSE_FUNCTION)
                 {
@@ -1255,7 +1256,7 @@ YY_RULE_SETUP
 case 9:
 /* rule 9 can match eol */
 YY_RULE_SETUP
-#line 347 "tig.lex"
+#line 348 "tig.lex"
 {
                 /* token: int_kwd */
 
@@ -1280,7 +1281,7 @@ YY_RULE_SETUP
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 368 "tig.lex"
+#line 369 "tig.lex"
 {
                 /* token: int_kwd */
 
@@ -1313,7 +1314,7 @@ YY_RULE_SETUP
 case 11:
 /* rule 11 can match eol */
 YY_RULE_SETUP
-#line 397 "tig.lex"
+#line 398 "tig.lex"
 {
                 /* token: string_kwd */
 
@@ -1338,7 +1339,7 @@ YY_RULE_SETUP
 case 12:
 /* rule 12 can match eol */
 YY_RULE_SETUP
-#line 418 "tig.lex"
+#line 419 "tig.lex"
 {
                 /* token: string_kwd */
 
@@ -1367,7 +1368,7 @@ YY_RULE_SETUP
 case 13:
 /* rule 13 can match eol */
 YY_RULE_SETUP
-#line 444 "tig.lex"
+#line 445 "tig.lex"
 {
                 /* token: array_kwd */
 
@@ -1392,7 +1393,7 @@ YY_RULE_SETUP
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
-#line 465 "tig.lex"
+#line 466 "tig.lex"
 {
                 /* token: array_kwd */
 
@@ -1421,7 +1422,7 @@ YY_RULE_SETUP
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 490 "tig.lex"
+#line 491 "tig.lex"
 {
                 /* token: of_kwd */
 
@@ -1446,7 +1447,7 @@ YY_RULE_SETUP
 case 16:
 /* rule 16 can match eol */
 YY_RULE_SETUP
-#line 511 "tig.lex"
+#line 512 "tig.lex"
 {
                 /* token: of_kwd */
 
@@ -1475,7 +1476,7 @@ YY_RULE_SETUP
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 536 "tig.lex"
+#line 537 "tig.lex"
 {
                 /* token: if_kwd */
 
@@ -1500,7 +1501,7 @@ YY_RULE_SETUP
 case 18:
 /* rule 18 can match eol */
 YY_RULE_SETUP
-#line 557 "tig.lex"
+#line 558 "tig.lex"
 {
                 /* token: if_kwd */
 
@@ -1529,7 +1530,7 @@ YY_RULE_SETUP
 case 19:
 /* rule 19 can match eol */
 YY_RULE_SETUP
-#line 583 "tig.lex"
+#line 584 "tig.lex"
 {
                 /* token: then_kwd */
 
@@ -1554,7 +1555,7 @@ YY_RULE_SETUP
 case 20:
 /* rule 20 can match eol */
 YY_RULE_SETUP
-#line 604 "tig.lex"
+#line 605 "tig.lex"
 {
                 /* token: then_kwd */
 
@@ -1583,7 +1584,7 @@ YY_RULE_SETUP
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 630 "tig.lex"
+#line 631 "tig.lex"
 {
                 /* token: else_kwd */
 
@@ -1608,7 +1609,7 @@ YY_RULE_SETUP
 case 22:
 /* rule 22 can match eol */
 YY_RULE_SETUP
-#line 651 "tig.lex"
+#line 652 "tig.lex"
 {
                 /* token: else_kwd */
 
@@ -1637,7 +1638,7 @@ YY_RULE_SETUP
 case 23:
 /* rule 23 can match eol */
 YY_RULE_SETUP
-#line 677 "tig.lex"
+#line 678 "tig.lex"
 {
                 /* token: in_kwd */
 
@@ -1662,7 +1663,7 @@ YY_RULE_SETUP
 case 24:
 /* rule 24 can match eol */
 YY_RULE_SETUP
-#line 698 "tig.lex"
+#line 699 "tig.lex"
 {
                 /* token: in_kwd */
 
@@ -1691,7 +1692,7 @@ YY_RULE_SETUP
 case 25:
 /* rule 25 can match eol */
 YY_RULE_SETUP
-#line 724 "tig.lex"
+#line 725 "tig.lex"
 {
                 /* token: nil_kwd */
 
@@ -1716,7 +1717,7 @@ YY_RULE_SETUP
 case 26:
 /* rule 26 can match eol */
 YY_RULE_SETUP
-#line 745 "tig.lex"
+#line 746 "tig.lex"
 {
                 /* token: nil_kwd */
 
@@ -1745,7 +1746,7 @@ YY_RULE_SETUP
 case 27:
 /* rule 27 can match eol */
 YY_RULE_SETUP
-#line 771 "tig.lex"
+#line 772 "tig.lex"
 {
                 /* token: break_kwd */
 
@@ -1770,7 +1771,7 @@ YY_RULE_SETUP
 case 28:
 /* rule 28 can match eol */
 YY_RULE_SETUP
-#line 792 "tig.lex"
+#line 793 "tig.lex"
 {
                 /* token: break_kwd */
 
@@ -1799,7 +1800,7 @@ YY_RULE_SETUP
 case 29:
 /* rule 29 can match eol */
 YY_RULE_SETUP
-#line 817 "tig.lex"
+#line 818 "tig.lex"
 {
                 /* token: while_kwd */
 
@@ -1824,7 +1825,7 @@ YY_RULE_SETUP
 case 30:
 /* rule 30 can match eol */
 YY_RULE_SETUP
-#line 838 "tig.lex"
+#line 839 "tig.lex"
 {
                 /* token: while_kwd */
 
@@ -1853,7 +1854,7 @@ YY_RULE_SETUP
 case 31:
 /* rule 31 can match eol */
 YY_RULE_SETUP
-#line 863 "tig.lex"
+#line 864 "tig.lex"
 {
                 /* token: do_kwd */
 
@@ -1878,7 +1879,7 @@ YY_RULE_SETUP
 case 32:
 /* rule 32 can match eol */
 YY_RULE_SETUP
-#line 884 "tig.lex"
+#line 885 "tig.lex"
 {
                 /* token: do_kwd */
 
@@ -1907,7 +1908,7 @@ YY_RULE_SETUP
 case 33:
 /* rule 33 can match eol */
 YY_RULE_SETUP
-#line 910 "tig.lex"
+#line 911 "tig.lex"
 {
                 /* token: for_kwd */
 
@@ -1932,7 +1933,7 @@ YY_RULE_SETUP
 case 34:
 /* rule 34 can match eol */
 YY_RULE_SETUP
-#line 931 "tig.lex"
+#line 932 "tig.lex"
 {
                 /* token: for_kwd */
 
@@ -1961,7 +1962,7 @@ YY_RULE_SETUP
 case 35:
 /* rule 35 can match eol */
 YY_RULE_SETUP
-#line 956 "tig.lex"
+#line 957 "tig.lex"
 {
                 /* token: to_kwd */
 
@@ -1986,7 +1987,7 @@ YY_RULE_SETUP
 case 36:
 /* rule 36 can match eol */
 YY_RULE_SETUP
-#line 977 "tig.lex"
+#line 978 "tig.lex"
 {
                 /* token: to_kwd */
 
@@ -2015,7 +2016,7 @@ YY_RULE_SETUP
 case 37:
 /* rule 37 can match eol */
 YY_RULE_SETUP
-#line 1002 "tig.lex"
+#line 1003 "tig.lex"
 {
                 /* token: end_kwd */
 
@@ -2040,7 +2041,7 @@ YY_RULE_SETUP
 case 38:
 /* rule 38 can match eol */
 YY_RULE_SETUP
-#line 1023 "tig.lex"
+#line 1024 "tig.lex"
 {
                 /* token: end_kwd */
 
@@ -2068,7 +2069,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 1049 "tig.lex"
+#line 1050 "tig.lex"
 {
 
                 /* token: ident */
@@ -2084,7 +2085,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 1062 "tig.lex"
+#line 1063 "tig.lex"
 {
 
                 /* no token */
@@ -2095,7 +2096,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 1071 "tig.lex"
+#line 1072 "tig.lex"
 {
 
                 /* no token */
@@ -2106,7 +2107,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 1080 "tig.lex"
+#line 1081 "tig.lex"
 {
 
                 /* Tiger type-declaration symbols are
@@ -2127,7 +2128,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 1099 "tig.lex"
+#line 1100 "tig.lex"
 {
 
                 /* token: colon */
@@ -2142,7 +2143,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 1111 "tig.lex"
+#line 1112 "tig.lex"
 {
 
                 /* token: lbrace */
@@ -2157,7 +2158,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 1123 "tig.lex"
+#line 1124 "tig.lex"
 {
 
                 /* token: rbrace */
@@ -2172,7 +2173,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 1135 "tig.lex"
+#line 1136 "tig.lex"
 {
 
                 /* token: comma */
@@ -2187,7 +2188,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 1147 "tig.lex"
+#line 1148 "tig.lex"
 {
 
                 /* Tiger Function/Array (extra) declaration symbols
@@ -2206,7 +2207,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 1163 "tig.lex"
+#line 1164 "tig.lex"
 {
 
                 /* token: rparan */
@@ -2222,7 +2223,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 1176 "tig.lex"
+#line 1177 "tig.lex"
 {
 
                 /* token: sqLbrace */
@@ -2237,7 +2238,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 1188 "tig.lex"
+#line 1189 "tig.lex"
 {
 
                 /* token: sqRbrace */
@@ -2252,7 +2253,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 1200 "tig.lex"
+#line 1201 "tig.lex"
 {
 
                 /* token: not_eq */
@@ -2267,7 +2268,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 1212 "tig.lex"
+#line 1213 "tig.lex"
 {
 
                 /* token: gr_op */
@@ -2282,7 +2283,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 1224 "tig.lex"
+#line 1225 "tig.lex"
 {
 
                 /* token: le_op */
@@ -2297,7 +2298,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 1236 "tig.lex"
+#line 1237 "tig.lex"
 {
 
                 /* token: le_eq_op */
@@ -2312,7 +2313,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 1248 "tig.lex"
+#line 1249 "tig.lex"
 {
 
                 /* token: gr_eq_op */
@@ -2327,7 +2328,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 1260 "tig.lex"
+#line 1261 "tig.lex"
 {
 
                 /* token: add_op */
@@ -2342,7 +2343,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 1272 "tig.lex"
+#line 1273 "tig.lex"
 {
 
                 /* token: minus_op (two tokens: negation (unary) and subtraction (binary) */
@@ -2357,7 +2358,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 1284 "tig.lex"
+#line 1285 "tig.lex"
 {
 
                 /* token: mult_op (no pointers) */
@@ -2372,7 +2373,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 1296 "tig.lex"
+#line 1297 "tig.lex"
 {
 
                 /* token: div_op */
@@ -2387,7 +2388,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 1308 "tig.lex"
+#line 1309 "tig.lex"
 {
 
                 /* token: and_op (logical, no address reference) */
@@ -2402,7 +2403,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 1320 "tig.lex"
+#line 1321 "tig.lex"
 {
 
                 /* token: or_op */
@@ -2417,7 +2418,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 1332 "tig.lex"
+#line 1333 "tig.lex"
 {
 
                 /* token: semicolon */
@@ -2432,7 +2433,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 1344 "tig.lex"
+#line 1345 "tig.lex"
 {
 
                 /* token: dquote */
@@ -2447,7 +2448,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 1356 "tig.lex"
+#line 1357 "tig.lex"
 {
 
                 /* token: squote */
@@ -2462,7 +2463,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 1368 "tig.lex"
+#line 1369 "tig.lex"
 {
 
                 /* token: asn_op */
@@ -2477,7 +2478,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 1380 "tig.lex"
+#line 1381 "tig.lex"
 {
 
                 /* token: pure_num */
@@ -2493,7 +2494,7 @@ YY_RULE_SETUP
 case 67:
 /* rule 67 can match eol */
 YY_RULE_SETUP
-#line 1392 "tig.lex"
+#line 1393 "tig.lex"
 {
 
                 /* token: pure_str */
@@ -2508,7 +2509,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 1404 "tig.lex"
+#line 1405 "tig.lex"
 {
            
                 /* token: period */
@@ -2525,7 +2526,7 @@ YY_RULE_SETUP
 case 69:
 /* rule 69 can match eol */
 YY_RULE_SETUP
-#line 1417 "tig.lex"
+#line 1418 "tig.lex"
 {
                 	if(yytext[yyleng-1] == '\n') {
                 	lxline++;
@@ -2540,10 +2541,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 1429 "tig.lex"
+#line 1430 "tig.lex"
 ECHO;
 	YY_BREAK
-#line 2547 "lex.yy.c"
+#line 2548 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(cmtmode):
 	yyterminate();
@@ -3548,7 +3549,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 1429 "tig.lex"
+#line 1430 "tig.lex"
 
 
 

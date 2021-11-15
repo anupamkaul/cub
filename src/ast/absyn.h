@@ -7,6 +7,12 @@
  */
 #ifndef ABSYN_H
 #define ABSYN_H 
+
+
+/* including stdlib.h for atoi call */
+#include <stdlib.h>
+
+
 #include "absyn_def.h"
 
 typedef char* S_symbol;

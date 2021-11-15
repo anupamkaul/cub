@@ -9,14 +9,14 @@ rm -f lex.yy.c y.tab.c  y.tab.h *.o *.txt debug tparse
 
 # #################################
 # OPTIONS
-ydumptxt=0 # 0->off, 1->on
-ydumpexp=0 # 0->off, 1->on
+ydumptxt=1 # 0->off, 1->on
+ydumpexp=1 # 0->off, 1->on
 ydumpvar=1 # 0=>off, 1->on
-ydumpmrc=0 # 0=>off, 1->on
-ydumptlt=0 # 0=>off, 1->on
-ydumpvlt=0 # 0=>off, 1->on
-ydumpasn=0 # 0=>off, 1->on
-ydumpifx=0 # 0=>off, 1->on
+ydumpmrc=1 # 0=>off, 1->on
+ydumptlt=1 # 0=>off, 1->on
+ydumpvlt=1 # 0=>off, 1->on
+ydumpasn=1 # 0=>off, 1->on
+ydumpifx=1 # 0=>off, 1->on
 
 # #################################
 
@@ -103,8 +103,17 @@ else
 dumpif=' '
 fi
 
+## exit
+
 echo object-ing ..
-gcc -c $cfiles $dumptxt $dumpexp $dumpvar $dumpmrc $dumptlt $dumpvlt $dumpasn $dumpif -DRUN_AND_TEST_AST 1>dbg 2>dbg
+
+# make gcc report implicit-function-declarations (functions without prototype) legacy warnings
+# as errors as I want to catch and correct all of them
+
+# -- turn gcc_opts flag on to catch gcc's legacy implicit_function_declaration (turn these warnings into errors)
+#gcc_opts='-Werror-implicit-function-declaration'
+gcc_opts=''
+gcc -c $cfiles $dumptxt $dumpexp $dumpvar $dumpmrc $dumptlt $dumpvlt $dumpasn $dumpif -DRUN_AND_TEST_AST $gcc_opts 1>dbg 2>dbg
 
 #if [ $ydumptxt == 1 ]; then
 #gcc -c lex.yy.c y.tab.c -DYDUMPTXT 1>dbg 2>dbg
@@ -114,7 +123,8 @@ gcc -c $cfiles $dumptxt $dumpexp $dumpvar $dumpmrc $dumptlt $dumpvlt $dumpasn $d
 
   if [ -s dbg ]; then
   echo "Error messages by gcc (pre-linking) in file dbg"
-  exit
+  ## exit (find a way to escape if only warnings)
+  # exit
   fi
 
 echo linking ..
@@ -134,7 +144,7 @@ read choice
 
 	if [ $choice = y ]; then
 	echo running
-	tparse tests/test_input 
+	./tparse tests/test_input 
 	else
 	exit
 	fi

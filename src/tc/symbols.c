@@ -61,6 +61,8 @@ char *Name(symbol s)
 }
 
 /* - TODO : Check that these are separate test suites for symbol conversion */
+
+/*
 main()
 {
 	symbol a;

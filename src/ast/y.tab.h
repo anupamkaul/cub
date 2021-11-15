@@ -152,7 +152,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 36 "tig.yac" /* yacc.c:1909  */
+#line 40 "tig.yac" /* yacc.c:1909  */
 
 
  struct strinfo_{
