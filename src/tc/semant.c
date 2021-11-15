@@ -761,6 +761,10 @@ struct expty parseASTVar(S_table venv, S_table tenv, A_var a_var)
 	return tr_exp;
 }
 
+/* parsing a series of declarations (like inside a LET top-half constuct
+ * or like a namespace evaluation for tiger
+ */
+
 struct expty parseASTDec(S_table venv, S_table tenv, A_dec d)
 {
 	fprintf(stderr, "[%s] %s:\n", __FILE__,  __PRETTY_FUNCTION__);
