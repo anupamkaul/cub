@@ -4,10 +4,10 @@
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x793770 (0x0x793770) TO HIGH = 0x8215b0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x2441770 (0x0x2441770) TO HIGH = 0x24cf5b0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x799610 (0x0x799610) TO HIGH = 0x827450
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x2447610 (0x0x2447610) TO HIGH = 0x24d5450
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:

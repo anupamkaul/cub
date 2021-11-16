@@ -1,0 +1,6 @@
+let type a = {x: int, y: int}
+    type c = a
+    var i : a := ...
+    var j : c := ...
+in i := j
+end

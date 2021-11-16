@@ -9,13 +9,13 @@ in^KWD(7,1)^  (^LPARAN(7,4)^
 
      a^IDENT(10,6)^  :=^ASN_OP(10,8)^  5^PURE_NUM(10,11)^  +^ADD_OP(10,13)^  6^PURE_NUM(10,15)^ ;^SEMICOLON(10,16)^  
      
-if^KWD(12,1)^  (^LPARAN(12,4)^  mpx^IDENT(12,6)^  =^EQ_OP(12,10)^  dpy^IDENT(12,12)^  )^rparan^ )^RPARAN(12,16)^  then^KWD(12,17)^   
-(^LPARAN(13,1)^ 
-   try1^IDENT(14,4)^ (^LPARAN(14,8)^ )^rparan^ )^RPARAN(14,9)^ ;^SEMICOLON(14,10)^ 
-   tryr^IDENT(15,4)^ (^LPARAN(15,8)^ )^rparan^ )^RPARAN(15,9)^ 
-)^rparan^ )^RPARAN(16,1)^ 
+    if^KWD(12,4)^  (^LPARAN(12,8)^  mpx^IDENT(12,10)^  =^EQ_OP(12,14)^  dpy^IDENT(12,16)^  )^rparan^ )^RPARAN(12,20)^  then^KWD(12,21)^   
+    (^LPARAN(13,5)^ 
+       try1^IDENT(14,8)^ (^LPARAN(14,12)^ )^rparan^ )^RPARAN(14,13)^ ;^SEMICOLON(14,14)^ 
+       tryr^IDENT(15,8)^ (^LPARAN(15,12)^ )^rparan^ )^RPARAN(15,13)^ 
+    )^rparan^ )^RPARAN(16,5)^ 
 
-   )^rparan^ )^RPARAN(18,4)^ 
+)^rparan^ )^RPARAN(18,1)^ 
 
 end^KWD(20,1)^  
 
