@@ -4,10 +4,10 @@
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x2441770 (0x0x2441770) TO HIGH = 0x24cf5b0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1d04c50 (0x0x1d04c50) TO HIGH = 0x1d92a90
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x2447610 (0x0x2447610) TO HIGH = 0x24d5450
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1d0aaf0 (0x0x1d0aaf0) TO HIGH = 0x1d98930
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -16,17 +16,20 @@
 [./src/tc/semant.c] parseASTDec:
 [./src/tc/semant.c]: CASE OF TYPE DECLS
 [./src/tc/semant.c]: TYPE DECL for symbol foo (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (bar)
-[./src/tc/semant.c]: TYPE DECL for symbol slashid (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (manqueist)
-[./src/tc/semant.c]: TYPE DECL for symbol queryid (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (frombart)
+[./src/tc/semant.c]: is of Type 1 with symbol name (inty)
+[./src/tc/semant.c]: TYPE DECL for symbol foo1 (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (intx)
+[./src/tc/semant.c]: TYPE DECL for symbol bar (NEEDS HANDLING)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
 [./src/tc/semant.c] parseASTExp:
 [./src/tc/semant.c]: CASE OF SEQEXP
 [./src/tc/semant.c] parseASTExp:
-[./src/tc/semant.c]: CASE OF IFEXP
-[./src/tc/semant.c] parseASTExp:
 [./src/tc/semant.c]: CASE OF ASNEXP
-[./src/tc/semant.c] parseASTExp:
-[./src/tc/semant.c]: CASE OF CALLEXP
 [tiger]: phase2: Type check and IMT generation .. completed

@@ -1,181 +1,182 @@
-GOING IN TYPE (FRST, FALSE) ;)
+ scope1 for our type and var defs  TODO : this line has a syntax error at 'int'  type foo = "int"--> I have to replace "int" with "inty" for now  this should work:  type foo = int GOING IN TYPE (FRST, FALSE) ;)
 
-<BISON> EVALD a type_decl: type foo = bar
+<BISON> EVALD a type_decl:  type foo = inty
 GOING IN TYPE FOR symbol foo ;)
 
-<BISON> EVALD a type_decl: type slashid = manqueist
-GOING IN TYPE FOR symbol slashid ;)
+<BISON> EVALD a type_decl:  type foo1 = intx
+GOING IN TYPE FOR symbol foo1 ;)
 
-<BISON> EVALD a type_decl: type queryid = frombart
-GOING IN TYPE FOR symbol queryid ;)
-MAIN BAPU TYPE DECL START
+<BISON> EVALD a type_decl:  type bar =  array  of foo
+GOING IN TYPE FOR symbol bar ;)
+3. EXPLITERAL (pure num): 512 (15, 14)
+ unnecessary defs Discovered an EXPLITEral: 512
+
+<BISON> EVALD a var_decl:  var N := 512
+TEST: N
+TEST (pos line IS WRONG): 18
+3. EXPLITERAL (pure num): 0 (18, 19)
+ this should work: (and looks like multi line commenting is broken! )  var a := bar [ N ] of 0  var b := bar [ N ] of 1  var a := bar [ N ] of zeroes  var b := bar [ N ] of zeroes Discovered an EXPLITEral: 0
+
+<BISON> EVALD a var_decl:  var zeroes := 0
+TEST: zeroes
+TEST (pos line IS WRONG): 27
+3. EXPLITERAL (pure num): 8 (27, 14)
+3. EXPLITERAL (pure num): 3 (27, 18)
+Discovered an EXPLITEral: 3
+ADD EXP (l:27, c:16): 8 + 3
+In the ADD EXP, exp_left:
+PRNSTAT-EXP: INT EXP : 3
+PRNSTAT-EXP: INT EXP (l:27, c:18)
+
+In the ADD EXP, exp_right:
+PRNSTAT-EXP: INT EXP : 8
+PRNSTAT-EXP: INT EXP (l:27, c:14)
+
+
+<BISON> EVALD a var_decl:  var a := 8 + 3
+TEST: a
+TEST (pos line IS WRONG): 28
+3. EXPLITERAL (pure num): 5 (28, 14)
+3. EXPLITERAL (pure num): 2 (28, 18)
+ execution of the scope  this in clause by itself should work  in b+a Discovered an EXPLITEral: 2
+ADD EXP (l:28, c:16): 5 + 2
+In the ADD EXP, exp_left:
+PRNSTAT-EXP: INT EXP : 2
+PRNSTAT-EXP: INT EXP (l:28, c:18)
+
+In the ADD EXP, exp_right:
+PRNSTAT-EXP: INT EXP : 5
+PRNSTAT-EXP: INT EXP (l:28, c:14)
+
+
+<BISON> EVALD a var_decl:  var b := 5 + 2
+TEST: b
+TEST (pos line IS WRONG): 28
+VARLIST (LOOKS FIRST), ADDED TO NULL (b)
+Expression associated with this var is as follows:
+PRNSTAT-EXP: BOP EXP (l:28, c:16): OpType=PLUS
+
+ Printing about Left SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 5
+PRNSTAT-EXP: INT EXP (l:28, c:14)
+
+ Printing about Right SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 2
+PRNSTAT-EXP: INT EXP (l:28, c:18)
+
+END-OF-EXP
+
+VARLIST - ALSO ADDED (a)
+Expression associated with this var is as follows:
+PRNSTAT-EXP: BOP EXP (l:27, c:16): OpType=PLUS
+
+ Printing about Left SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 8
+PRNSTAT-EXP: INT EXP (l:27, c:14)
+
+ Printing about Right SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 3
+PRNSTAT-EXP: INT EXP (l:27, c:18)
+
+END-OF-EXP
+
+VARLIST - ALSO ADDED (zeroes)
+Expression associated with this var is as follows:
+PRNSTAT-EXP: INT EXP : 0
+PRNSTAT-EXP: INT EXP (l:18, c:19)
+
+END-OF-EXP
+
+VARLIST - ALSO ADDED (N)
+Expression associated with this var is as follows:
+PRNSTAT-EXP: INT EXP : 512
+PRNSTAT-EXP: INT EXP (l:15, c:14)
+
+END-OF-EXP
+
+MAIN BAPU TYPE DECL CONTD
 
 
 NEW TYPE LIST DETAILS
 1 TYPE HEADER
  TYPE LHS = foo
  TYPE RHS: ID TYPE
- id: bar
+ id: inty
 2 TYPE HEADER
- TYPE LHS = slashid
+ TYPE LHS = foo1
  TYPE RHS: ID TYPE
- id: manqueist
+ id: intx
 3 TYPE HEADER
- TYPE LHS = queryid
- TYPE RHS: ID TYPE
- id: frombart
+ TYPE LHS = bar
+ TYPE RHS: ARRAY TYPE
+ array: foo
 [END TYPE LIST]
 
 
-AVEC A NULL
-3. EXPLITERAL (pure num): 3 (8, 17)
-Discovered an EXPLITEral: 3
-
-<BISON> EVALD a func call: treeLeaves(3)
-1. SIMPLE VAR (l:10, c:6): a
-3. EXPLITERAL (pure num): 5 (10, 11)
-3. EXPLITERAL (pure num): 6 (10, 15)
-Discovered an EXPLITEral: 6
-ADD EXP (l:10, c:13): 5 + 6
+1. SIMPLE VAR (l:36, c:5): a
+1. SIMPLE VAR (l:36, c:10): a
+3. EXPLITERAL (lvalue): a
+1. SIMPLE VAR (l:36, c:14): b
+3. EXPLITERAL (lvalue): b
+3. EXPLITERAL (pure num): 10 (36, 18)
+Discovered an EXPLITEral: 10
+ADD EXP (l:36, c:16): b + 10
 In the ADD EXP, exp_left:
-PRNSTAT-EXP: INT EXP : 6
-PRNSTAT-EXP: INT EXP (l:10, c:15)
+PRNSTAT-EXP: INT EXP : 10
+PRNSTAT-EXP: INT EXP (l:36, c:18)
 
 In the ADD EXP, exp_right:
-PRNSTAT-EXP: INT EXP : 5
-PRNSTAT-EXP: INT EXP (l:10, c:11)
+PRNSTAT-EXP: VAR EXP (l:36, c:14): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:36, c:14): b
+
+ADD EXP (l:36, c:16): a + b + 10
+In the ADD EXP, exp_left:
+PRNSTAT-EXP: BOP EXP (l:36, c:16): OpType=PLUS
+
+ Printing about Left SubExp of PLUS now:
+PRNSTAT-EXP: VAR EXP (l:36, c:14): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:36, c:14): b
+
+ Printing about Right SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 10
+PRNSTAT-EXP: INT EXP (l:36, c:18)
+
+In the ADD EXP, exp_right:
+PRNSTAT-EXP: VAR EXP (l:36, c:10): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:36, c:10): a
 
 On adding the asn-exp,
-PRNSTAT-EXP: ASN-EXP (l:10, c:8)
+PRNSTAT-EXP: ASN-EXP (l:36, c:7)
 
 LHS of Assign Statement:
-PRNSTAT-VAR: SIMPLE VAR (l:10, c:6): a
+PRNSTAT-VAR: SIMPLE VAR (l:36, c:5): a
 
 RHS of Assign Statement:
-PRNSTAT-EXP: BOP EXP (l:10, c:13): OpType=PLUS
+PRNSTAT-EXP: BOP EXP (l:36, c:16): OpType=PLUS
 
  Printing about Left SubExp of PLUS now:
-PRNSTAT-EXP: INT EXP : 5
-PRNSTAT-EXP: INT EXP (l:10, c:11)
+PRNSTAT-EXP: VAR EXP (l:36, c:10): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:36, c:10): a
 
  Printing about Right SubExp of PLUS now:
-PRNSTAT-EXP: INT EXP : 6
-PRNSTAT-EXP: INT EXP (l:10, c:15)
-
-(End of Assign Statement)
-On discovering the asn-exp,
-
-Expression List:
-------------------
-[EXPLIST] expression no. 1 is as follows: 
-PRNSTAT-EXP: ASN-EXP (l:10, c:8)
-
-LHS of Assign Statement:
-PRNSTAT-VAR: SIMPLE VAR (l:10, c:6): a
-
-RHS of Assign Statement:
-PRNSTAT-EXP: BOP EXP (l:10, c:13): OpType=PLUS
+PRNSTAT-EXP: BOP EXP (l:36, c:16): OpType=PLUS
 
  Printing about Left SubExp of PLUS now:
-PRNSTAT-EXP: INT EXP : 5
-PRNSTAT-EXP: INT EXP (l:10, c:11)
+PRNSTAT-EXP: VAR EXP (l:36, c:14): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:36, c:14): b
 
  Printing about Right SubExp of PLUS now:
-PRNSTAT-EXP: INT EXP : 6
-PRNSTAT-EXP: INT EXP (l:10, c:15)
+PRNSTAT-EXP: INT EXP : 10
+PRNSTAT-EXP: INT EXP (l:36, c:18)
 
 (End of Assign Statement)
-[EXPLIST] expression no. 2 is as follows: 
-PRNSTAT-EXP: FUNC-CALL (l:8, c:6) of function 'treeLeaves'
-
-Parameters passed to this function are as follows:
-
-Expression List:
-------------------
-[EXPLIST] expression no. 1 is as follows: 
-PRNSTAT-EXP: INT EXP : 3
-PRNSTAT-EXP: INT EXP (l:8, c:17)
-
-[end expression list]
-
-
-[end expression list]
-
-
-1. SIMPLE VAR (l:12, c:10): mpx
-3. EXPLITERAL (lvalue): mpx
-1. SIMPLE VAR (l:12, c:16): dpy
-3. EXPLITERAL (lvalue): dpy
-Discovered an EXPLITEral: dpy
-EQUAL COMPARE EXP (l:12, c:14): mpx = dpy
-In the EQ-COMP EXP, exp_left:
-PRNSTAT-EXP: VAR EXP (l:12, c:16): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:12, c:16): dpy
-
-In the EQ-COMP EXP, exp_right:
-PRNSTAT-EXP: VAR EXP (l:12, c:10): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:12, c:10): mpx
-
-Discovered an EXPLITEral: ( mpx = dpy )
-
-<BISON> EVALD a func call: try1()
-<BISON> EVALD a func call: tryr()
-<BISON> EVALD an if_then_decl:  if ( mpx = dpy )  then ( try1() ;
-tryr() )
-PRNSTAT-EXP: IF-EXP (l:12, c:4)
-
-IF TEST CONDITION EXPRESSION:
-PRNSTAT-EXP: BOP EXP (l:12, c:14): OpType=EQ(COMP)
-
- Printing about Left SubExp of EQ(COMP) now:
-PRNSTAT-EXP: VAR EXP (l:12, c:10): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:12, c:10): mpx
-
- Printing about Right SubExp of EQ(COMP) now:
-PRNSTAT-EXP: VAR EXP (l:12, c:16): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:12, c:16): dpy
-
-IF THENBODY EXPRESSION:
-PRNSTAT-EXP: SEQ-EXP (l:15, c:12)
-
-BLOCK EXPRESSION STATEMENT IS AS FOLLOWS:
-
-Expression List:
-------------------
-[EXPLIST] expression no. 1 is as follows: 
-PRNSTAT-EXP: FUNC-CALL (l:15, c:8) of function 'tryr'
-
-Parameters passed to this function are as follows:
-
-Expression List:
-------------------
-[end expression list]
-
-
-[EXPLIST] expression no. 2 is as follows: 
-PRNSTAT-EXP: FUNC-CALL (l:14, c:8) of function 'try1'
-
-Parameters passed to this function are as follows:
-
-Expression List:
-------------------
-[end expression list]
-
-
-[end expression list]
-
-
-END OF IF-EXP
 
 <BISON> EVALD a LET_decl (occurance 1,1): let
 [Type]
 false_type
 in
 [Body]
-( treeLeaves(3) ;
-a := 5 + 6 ;
- if ( mpx = dpy )  then ( try1() ;
-tryr() ) )
+( a := a + b + 10 )
 end
 [END]
 
@@ -186,10 +187,7 @@ end
 false_type
 in
 [Body]
-( treeLeaves(3) ;
-a := 5 + 6 ;
- if ( mpx = dpy )  then ( try1() ;
-tryr() ) )
+( a := a + b + 10 )
 end
 [END]
 

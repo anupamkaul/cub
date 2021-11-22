@@ -1,22 +1,41 @@
-let^KWD(1,1)^  
+let^KWD(1,1)^ 
+ 
+    <^CSt^  ^CEnd^>
 
-type^KWD(3,1)^  foo^IDENT(3,6)^  =^EQ_OP(3,10)^  bar^IDENT(3,12)^ 
-type^KWD(4,1)^  slashid^IDENT(4,6)^  =^EQ_OP(4,14)^  manqueist^IDENT(4,16)^ 
-type^KWD(5,1)^  queryid^IDENT(5,6)^  =^EQ_OP(5,14)^  frombart^IDENT(5,16)^ 
+    <^CSt^  ^CEnd^>
+    <^CSt^  ^CEnd^>
 
-in^KWD(7,1)^  (^LPARAN(7,4)^  
-     treeLeaves^IDENT(8,6)^ (^LPARAN(8,16)^ 3^PURE_NUM(8,17)^ )^rparan^ )^RPARAN(8,18)^ ;^SEMICOLON(8,19)^ 
+    <^CSt^  ^CEnd^>
+    <^CSt^  ^CEnd^>
 
-     a^IDENT(10,6)^  :=^ASN_OP(10,8)^  5^PURE_NUM(10,11)^  +^ADD_OP(10,13)^  6^PURE_NUM(10,15)^ ;^SEMICOLON(10,16)^  
-     
-    if^KWD(12,4)^  (^LPARAN(12,8)^  mpx^IDENT(12,10)^  =^EQ_OP(12,14)^  dpy^IDENT(12,16)^  )^rparan^ )^RPARAN(12,20)^  then^KWD(12,21)^   
-    (^LPARAN(13,5)^ 
-       try1^IDENT(14,8)^ (^LPARAN(14,12)^ )^rparan^ )^RPARAN(14,13)^ ;^SEMICOLON(14,14)^ 
-       tryr^IDENT(15,8)^ (^LPARAN(15,12)^ )^rparan^ )^RPARAN(15,13)^ 
-    )^rparan^ )^RPARAN(16,5)^ 
+    type^KWD(11,4)^  foo^IDENT(11,10)^  =^EQ_OP(11,14)^  inty^IDENT(11,16)^ 
+    type^KWD(12,4)^  foo1^IDENT(12,10)^  =^EQ_OP(12,15)^  intx^IDENT(12,17)^ 
+    type^KWD(13,4)^  bar^IDENT(13,10)^  =^EQ_OP(13,14)^  array^KWD(13,15)^  of^KWD(13,21)^  foo^IDENT(13,25)^ 
 
-)^rparan^ )^RPARAN(18,1)^ 
+    var^KWD(15,4)^  N^IDENT(15,9)^  :=^ASN_OP(15,11)^  512^PURE_NUM(15,14)^ 
 
-end^KWD(20,1)^  
+    <^CSt^  ^CEnd^>
+    var^KWD(18,4)^  zeroes^IDENT(18,9)^  :=^ASN_OP(18,16)^  0^PURE_NUM(18,19)^ 
 
-	
+    <^CSt^  ^CEnd^>
+    <^CSt^  ^CEnd^>
+    <^CSt^  ^CEnd^>
+
+    <^CSt^  ^CEnd^>
+    <^CSt^  ^CEnd^>
+
+    var^KWD(27,4)^  a^IDENT(27,9)^  :=^ASN_OP(27,11)^  8^PURE_NUM(27,14)^  +^ADD_OP(27,16)^  3^PURE_NUM(27,18)^ 
+    var^KWD(28,4)^  b^IDENT(28,9)^  :=^ASN_OP(28,11)^  5^PURE_NUM(28,14)^  +^ADD_OP(28,16)^  2^PURE_NUM(28,18)^ 
+
+<^CSt^  ^CEnd^>
+
+<^CSt^  ^CEnd^>
+<^CSt^  ^CEnd^>
+
+in^KWD(35,1)^  (^LPARAN(35,4)^ 
+    a^IDENT(36,5)^  :=^ASN_OP(36,7)^  a^IDENT(36,10)^  +^ADD_OP(36,12)^  b^IDENT(36,14)^  +^ADD_OP(36,16)^  10^PURE_NUM(36,18)^ 
+)^rparan^ )^RPARAN(37,1)^ 
+
+end^KWD(39,1)^ 
+
+

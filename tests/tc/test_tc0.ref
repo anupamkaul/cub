@@ -1,0 +1,19 @@
+let
+ 
+    /* scope1 for our type and var defs */
+
+    type foo = int
+    type foo1 = int
+    type bar = array of foo
+
+    var N := 512
+
+    var a := bar [ N ] of 0 
+    var b := bar [ N ] of 1 
+
+/* execution of the scope */
+in b+a 
+
+end
+
+

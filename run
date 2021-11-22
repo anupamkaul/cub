@@ -1,1 +1,14 @@
-./tiger ./tests/test_input1 1>out 2>&1
+# run script to check tiger's health
+# ----------------------------------
+
+# uncomment this line and comment rest of the stuff to have
+# a constant test run, like so: 
+
+#./tiger ./tests/test_input1 1>out 2>&1
+
+# or use this part and explicitly pass the test you want to
+# run with tiger. In both cases, out, ldump.txt and ydump.txt should
+# get generated, depending on the flags set in the makefile (or when
+# creating 'tparse' in the AST)
+
+./tiger $1 1>out 2>&1 ; cat out

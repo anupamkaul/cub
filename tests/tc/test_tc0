@@ -1,0 +1,41 @@
+let
+ 
+    /* scope1 for our type and var defs */
+
+    /* TODO : this line has a syntax error at 'int' */
+    /* type foo = "int"--> I have to replace "int" with "inty" for now */
+
+    /* this should work: */
+    /* type foo = int */
+
+    type foo = inty
+    type foo1 = intx
+    type bar = array of foo
+
+    var N := 512
+
+    /* unnecessary defs */
+    var zeroes := 0
+
+    /* this should work: (and looks like multi line commenting is broken! ) */
+    /* var a := bar [ N ] of 0 */
+    /* var b := bar [ N ] of 1 */
+
+    /* var a := bar [ N ] of zeroes */
+    /* var b := bar [ N ] of zeroes */
+
+    var a := 8 + 3
+    var b := 5 + 2
+
+/* execution of the scope */
+
+/* this in clause by itself should work */
+/* in b+a */
+
+in (
+    a := a + b + 10
+)
+
+end
+
+
