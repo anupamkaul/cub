@@ -1,96 +1,122 @@
- scope1 for our type and var defs  TODO : this line has a syntax error at 'int'  type foo = "int"--> I have to replace "int" with "inty" for now  this should work:  type foo = int GOING IN TYPE (FRST, FALSE) ;)
+ scope1 for our type and var defs  TODO : this line has a syntax error at 'int'  type foo = "int"--> I have to replace "int" with "inty" for now GOING IN TYPE (FRST, FALSE) ;)
 
-<BISON> EVALD a type_decl:  type foo = inty
+<BISON> EVALD a type_decl:  type foo =  int
 GOING IN TYPE FOR symbol foo ;)
 
 <BISON> EVALD a type_decl:  type foo1 = intx
 GOING IN TYPE FOR symbol foo1 ;)
 
+<BISON> EVALD a type_decl:  type foo2 =  string
+GOING IN TYPE FOR symbol foo2 ;)
+
 <BISON> EVALD a type_decl:  type bar =  array  of foo
 GOING IN TYPE FOR symbol bar ;)
-3. EXPLITERAL (pure num): 512 (15, 14)
+3. EXPLITERAL (pure num): 512 (13, 14)
  unnecessary defs Discovered an EXPLITEral: 512
 
 <BISON> EVALD a var_decl:  var N := 512
 TEST: N
-TEST (pos line IS WRONG): 18
-3. EXPLITERAL (pure num): 0 (18, 19)
+TEST (pos line IS WRONG): 16
+3. EXPLITERAL (pure num): 0 (16, 19)
  this should work: (and looks like multi line commenting is broken! )  var a := bar [ N ] of 0  var b := bar [ N ] of 1  var a := bar [ N ] of zeroes  var b := bar [ N ] of zeroes Discovered an EXPLITEral: 0
 
 <BISON> EVALD a var_decl:  var zeroes := 0
 TEST: zeroes
-TEST (pos line IS WRONG): 27
-3. EXPLITERAL (pure num): 8 (27, 14)
-3. EXPLITERAL (pure num): 3 (27, 18)
+TEST (pos line IS WRONG): 25
+3. EXPLITERAL (pure num): 8 (25, 14)
+3. EXPLITERAL (pure num): 3 (25, 18)
 Discovered an EXPLITEral: 3
-ADD EXP (l:27, c:16): 8 + 3
+ADD EXP (l:25, c:16): 8 + 3
 In the ADD EXP, exp_left:
 PRNSTAT-EXP: INT EXP : 3
-PRNSTAT-EXP: INT EXP (l:27, c:18)
+PRNSTAT-EXP: INT EXP (l:25, c:18)
 
 In the ADD EXP, exp_right:
 PRNSTAT-EXP: INT EXP : 8
-PRNSTAT-EXP: INT EXP (l:27, c:14)
+PRNSTAT-EXP: INT EXP (l:25, c:14)
 
 
 <BISON> EVALD a var_decl:  var a := 8 + 3
 TEST: a
-TEST (pos line IS WRONG): 28
-3. EXPLITERAL (pure num): 5 (28, 14)
-3. EXPLITERAL (pure num): 2 (28, 18)
- execution of the scope  this in clause by itself should work  in b+a Discovered an EXPLITEral: 2
-ADD EXP (l:28, c:16): 5 + 2
+TEST (pos line IS WRONG): 26
+3. EXPLITERAL (pure num): 5 (26, 14)
+3. EXPLITERAL (pure num): 2 (26, 18)
+ array declarations are skewed a bit due to a work-around for a reduce-reduce  conflict in tig.yac (see array_defn)  var c := bar [ N ] of zeroes Discovered an EXPLITEral: 2
+ADD EXP (l:26, c:16): 5 + 2
 In the ADD EXP, exp_left:
 PRNSTAT-EXP: INT EXP : 2
-PRNSTAT-EXP: INT EXP (l:28, c:18)
+PRNSTAT-EXP: INT EXP (l:26, c:18)
 
 In the ADD EXP, exp_right:
 PRNSTAT-EXP: INT EXP : 5
-PRNSTAT-EXP: INT EXP (l:28, c:14)
+PRNSTAT-EXP: INT EXP (l:26, c:14)
 
 
 <BISON> EVALD a var_decl:  var b := 5 + 2
 TEST: b
-TEST (pos line IS WRONG): 28
-VARLIST (LOOKS FIRST), ADDED TO NULL (b)
+TEST (pos line IS WRONG): 33
+1. SIMPLE VAR (l:33, c:16): N
+3. EXPLITERAL (lvalue): N
+Discovered an EXPLITEral: N
+ execution of the scope  this in clause by itself should work  in b+a 1. SIMPLE VAR (l:33, c:27): zeroes
+3. EXPLITERAL (lvalue): zeroes
+Discovered an EXPLITEral: zeroes
+Discovered an ARRAY DEFN: [ N ] bar  of zeroes
+
+<BISON> EVALD a var_decl:  var c := [ N ] bar  of zeroes
+VARLIST (LOOKS FIRST), ADDED TO NULL (c)
 Expression associated with this var is as follows:
-PRNSTAT-EXP: BOP EXP (l:28, c:16): OpType=PLUS
+PRNSTAT-EXP: ARRAY EXP (l:33, c:14) of type = "bar"
+
+ArraySize expression is as follows:
+PRNSTAT-EXP: VAR EXP (l:33, c:16): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:33, c:16): N
+
+ArrayInit expression is as follows:
+PRNSTAT-EXP: VAR EXP (l:33, c:27): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:33, c:27): zeroes
+
+END-OF-EXP
+
+VARLIST - ALSO ADDED (b)
+Expression associated with this var is as follows:
+PRNSTAT-EXP: BOP EXP (l:26, c:16): OpType=PLUS
 
  Printing about Left SubExp of PLUS now:
 PRNSTAT-EXP: INT EXP : 5
-PRNSTAT-EXP: INT EXP (l:28, c:14)
+PRNSTAT-EXP: INT EXP (l:26, c:14)
 
  Printing about Right SubExp of PLUS now:
 PRNSTAT-EXP: INT EXP : 2
-PRNSTAT-EXP: INT EXP (l:28, c:18)
+PRNSTAT-EXP: INT EXP (l:26, c:18)
 
 END-OF-EXP
 
 VARLIST - ALSO ADDED (a)
 Expression associated with this var is as follows:
-PRNSTAT-EXP: BOP EXP (l:27, c:16): OpType=PLUS
+PRNSTAT-EXP: BOP EXP (l:25, c:16): OpType=PLUS
 
  Printing about Left SubExp of PLUS now:
 PRNSTAT-EXP: INT EXP : 8
-PRNSTAT-EXP: INT EXP (l:27, c:14)
+PRNSTAT-EXP: INT EXP (l:25, c:14)
 
  Printing about Right SubExp of PLUS now:
 PRNSTAT-EXP: INT EXP : 3
-PRNSTAT-EXP: INT EXP (l:27, c:18)
+PRNSTAT-EXP: INT EXP (l:25, c:18)
 
 END-OF-EXP
 
 VARLIST - ALSO ADDED (zeroes)
 Expression associated with this var is as follows:
 PRNSTAT-EXP: INT EXP : 0
-PRNSTAT-EXP: INT EXP (l:18, c:19)
+PRNSTAT-EXP: INT EXP (l:16, c:19)
 
 END-OF-EXP
 
 VARLIST - ALSO ADDED (N)
 Expression associated with this var is as follows:
 PRNSTAT-EXP: INT EXP : 512
-PRNSTAT-EXP: INT EXP (l:15, c:14)
+PRNSTAT-EXP: INT EXP (l:13, c:14)
 
 END-OF-EXP
 
@@ -101,73 +127,77 @@ NEW TYPE LIST DETAILS
 1 TYPE HEADER
  TYPE LHS = foo
  TYPE RHS: ID TYPE
- id: inty
+ id:  int
 2 TYPE HEADER
  TYPE LHS = foo1
  TYPE RHS: ID TYPE
  id: intx
 3 TYPE HEADER
+ TYPE LHS = foo2
+ TYPE RHS: ID TYPE
+ id:  string
+4 TYPE HEADER
  TYPE LHS = bar
  TYPE RHS: ARRAY TYPE
  array: foo
 [END TYPE LIST]
 
 
-1. SIMPLE VAR (l:36, c:5): a
-1. SIMPLE VAR (l:36, c:10): a
+1. SIMPLE VAR (l:42, c:5): a
+1. SIMPLE VAR (l:42, c:10): a
 3. EXPLITERAL (lvalue): a
-1. SIMPLE VAR (l:36, c:14): b
+1. SIMPLE VAR (l:42, c:14): b
 3. EXPLITERAL (lvalue): b
-3. EXPLITERAL (pure num): 10 (36, 18)
+3. EXPLITERAL (pure num): 10 (42, 18)
 Discovered an EXPLITEral: 10
-ADD EXP (l:36, c:16): b + 10
+ADD EXP (l:42, c:16): b + 10
 In the ADD EXP, exp_left:
 PRNSTAT-EXP: INT EXP : 10
-PRNSTAT-EXP: INT EXP (l:36, c:18)
+PRNSTAT-EXP: INT EXP (l:42, c:18)
 
 In the ADD EXP, exp_right:
-PRNSTAT-EXP: VAR EXP (l:36, c:14): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:36, c:14): b
+PRNSTAT-EXP: VAR EXP (l:42, c:14): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:42, c:14): b
 
-ADD EXP (l:36, c:16): a + b + 10
+ADD EXP (l:42, c:16): a + b + 10
 In the ADD EXP, exp_left:
-PRNSTAT-EXP: BOP EXP (l:36, c:16): OpType=PLUS
+PRNSTAT-EXP: BOP EXP (l:42, c:16): OpType=PLUS
 
  Printing about Left SubExp of PLUS now:
-PRNSTAT-EXP: VAR EXP (l:36, c:14): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:36, c:14): b
+PRNSTAT-EXP: VAR EXP (l:42, c:14): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:42, c:14): b
 
  Printing about Right SubExp of PLUS now:
 PRNSTAT-EXP: INT EXP : 10
-PRNSTAT-EXP: INT EXP (l:36, c:18)
+PRNSTAT-EXP: INT EXP (l:42, c:18)
 
 In the ADD EXP, exp_right:
-PRNSTAT-EXP: VAR EXP (l:36, c:10): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:36, c:10): a
+PRNSTAT-EXP: VAR EXP (l:42, c:10): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:42, c:10): a
 
 On adding the asn-exp,
-PRNSTAT-EXP: ASN-EXP (l:36, c:7)
+PRNSTAT-EXP: ASN-EXP (l:42, c:7)
 
 LHS of Assign Statement:
-PRNSTAT-VAR: SIMPLE VAR (l:36, c:5): a
+PRNSTAT-VAR: SIMPLE VAR (l:42, c:5): a
 
 RHS of Assign Statement:
-PRNSTAT-EXP: BOP EXP (l:36, c:16): OpType=PLUS
+PRNSTAT-EXP: BOP EXP (l:42, c:16): OpType=PLUS
 
  Printing about Left SubExp of PLUS now:
-PRNSTAT-EXP: VAR EXP (l:36, c:10): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:36, c:10): a
+PRNSTAT-EXP: VAR EXP (l:42, c:10): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:42, c:10): a
 
  Printing about Right SubExp of PLUS now:
-PRNSTAT-EXP: BOP EXP (l:36, c:16): OpType=PLUS
+PRNSTAT-EXP: BOP EXP (l:42, c:16): OpType=PLUS
 
  Printing about Left SubExp of PLUS now:
-PRNSTAT-EXP: VAR EXP (l:36, c:14): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:36, c:14): b
+PRNSTAT-EXP: VAR EXP (l:42, c:14): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:42, c:14): b
 
  Printing about Right SubExp of PLUS now:
 PRNSTAT-EXP: INT EXP : 10
-PRNSTAT-EXP: INT EXP (l:36, c:18)
+PRNSTAT-EXP: INT EXP (l:42, c:18)
 
 (End of Assign Statement)
 

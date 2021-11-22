@@ -386,6 +386,14 @@ char *strmemcat(char* source, char* dest);
                            prn_afieldList(absyn_ty_rhs->which.rectype.record);
 #endif
 
+                           }
+              |            typeid
+                           {
+
+		           absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
+                           absyn_pos->col  = A_intdup(yylval.strinfo.pos[ident_pos].col); 
+
+                           absyn_ty_rhs = A_nameTy(absyn_pos, $1);
                            };
 
 

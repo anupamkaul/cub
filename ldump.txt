@@ -5,17 +5,15 @@ let^KWD(1,1)^
     <^CSt^  ^CEnd^>
     <^CSt^  ^CEnd^>
 
-    <^CSt^  ^CEnd^>
-    <^CSt^  ^CEnd^>
+    type^KWD(8,4)^  foo^IDENT(8,10)^  =^EQ_OP(8,14)^   int^KWD(8,16)^ 
+    type^KWD(9,4)^  foo1^IDENT(9,10)^  =^EQ_OP(9,15)^  intx^IDENT(9,17)^ 
+    type^KWD(10,4)^  foo2^IDENT(10,10)^  =^EQ_OP(10,15)^  string^KWD(10,16)^ 
+    type^KWD(11,4)^  bar^IDENT(11,10)^  =^EQ_OP(11,14)^  array^KWD(11,15)^  of^KWD(11,21)^  foo^IDENT(11,25)^ 
 
-    type^KWD(11,4)^  foo^IDENT(11,10)^  =^EQ_OP(11,14)^  inty^IDENT(11,16)^ 
-    type^KWD(12,4)^  foo1^IDENT(12,10)^  =^EQ_OP(12,15)^  intx^IDENT(12,17)^ 
-    type^KWD(13,4)^  bar^IDENT(13,10)^  =^EQ_OP(13,14)^  array^KWD(13,15)^  of^KWD(13,21)^  foo^IDENT(13,25)^ 
-
-    var^KWD(15,4)^  N^IDENT(15,9)^  :=^ASN_OP(15,11)^  512^PURE_NUM(15,14)^ 
+    var^KWD(13,4)^  N^IDENT(13,9)^  :=^ASN_OP(13,11)^  512^PURE_NUM(13,14)^ 
 
     <^CSt^  ^CEnd^>
-    var^KWD(18,4)^  zeroes^IDENT(18,9)^  :=^ASN_OP(18,16)^  0^PURE_NUM(18,19)^ 
+    var^KWD(16,4)^  zeroes^IDENT(16,9)^  :=^ASN_OP(16,16)^  0^PURE_NUM(16,19)^ 
 
     <^CSt^  ^CEnd^>
     <^CSt^  ^CEnd^>
@@ -24,18 +22,26 @@ let^KWD(1,1)^
     <^CSt^  ^CEnd^>
     <^CSt^  ^CEnd^>
 
-    var^KWD(27,4)^  a^IDENT(27,9)^  :=^ASN_OP(27,11)^  8^PURE_NUM(27,14)^  +^ADD_OP(27,16)^  3^PURE_NUM(27,18)^ 
-    var^KWD(28,4)^  b^IDENT(28,9)^  :=^ASN_OP(28,11)^  5^PURE_NUM(28,14)^  +^ADD_OP(28,16)^  2^PURE_NUM(28,18)^ 
+    var^KWD(25,4)^  a^IDENT(25,9)^  :=^ASN_OP(25,11)^  8^PURE_NUM(25,14)^  +^ADD_OP(25,16)^  3^PURE_NUM(25,18)^ 
+    var^KWD(26,4)^  b^IDENT(26,9)^  :=^ASN_OP(26,11)^  5^PURE_NUM(26,14)^  +^ADD_OP(26,16)^  2^PURE_NUM(26,18)^ 
+
+    <^CSt^  ^CEnd^>
+    <^CSt^  ^CEnd^>
+
+ 
+    <^CSt^  ^CEnd^>
+    var^KWD(33,4)^  c^IDENT(33,9)^  :=^ASN_OP(33,11)^  [^sqLbrace(33,14)^  N^IDENT(33,16)^  ]^sqRbrace(33,18)^  bar^IDENT(33,20)^  of^KWD(33,23)^  zeroes^IDENT(33,27)^  
+
 
 <^CSt^  ^CEnd^>
 
 <^CSt^  ^CEnd^>
 <^CSt^  ^CEnd^>
 
-in^KWD(35,1)^  (^LPARAN(35,4)^ 
-    a^IDENT(36,5)^  :=^ASN_OP(36,7)^  a^IDENT(36,10)^  +^ADD_OP(36,12)^  b^IDENT(36,14)^  +^ADD_OP(36,16)^  10^PURE_NUM(36,18)^ 
-)^rparan^ )^RPARAN(37,1)^ 
+in^KWD(41,1)^  (^LPARAN(41,4)^ 
+    a^IDENT(42,5)^  :=^ASN_OP(42,7)^  a^IDENT(42,10)^  +^ADD_OP(42,12)^  b^IDENT(42,14)^  +^ADD_OP(42,16)^  10^PURE_NUM(42,18)^ 
+)^rparan^ )^RPARAN(43,1)^ 
 
-end^KWD(39,1)^ 
+end^KWD(45,1)^ 
 
 

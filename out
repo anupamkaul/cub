@@ -4,10 +4,10 @@
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1d04c50 (0x0x1d04c50) TO HIGH = 0x1d92a90
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xb3b5a0 (0x0xb3b5a0) TO HIGH = 0xbc93e0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1d0aaf0 (0x0x1d0aaf0) TO HIGH = 0x1d98930
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xb41440 (0x0xb41440) TO HIGH = 0xbcf280
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -16,10 +16,14 @@
 [./src/tc/semant.c] parseASTDec:
 [./src/tc/semant.c]: CASE OF TYPE DECLS
 [./src/tc/semant.c]: TYPE DECL for symbol foo (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (inty)
+[./src/tc/semant.c]: is of Type 1 with symbol name ( int)
 [./src/tc/semant.c]: TYPE DECL for symbol foo1 (NEEDS HANDLING)
 [./src/tc/semant.c]: is of Type 1 with symbol name (intx)
+[./src/tc/semant.c]: TYPE DECL for symbol foo2 (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name ( string)
 [./src/tc/semant.c]: TYPE DECL for symbol bar (NEEDS HANDLING)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
 [./src/tc/semant.c] parseASTDec:
 CASE OF UNKNOWN DECLS !!!
 [./src/tc/semant.c] parseASTDec:

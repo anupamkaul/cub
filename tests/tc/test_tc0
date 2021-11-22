@@ -5,11 +5,9 @@ let
     /* TODO : this line has a syntax error at 'int' */
     /* type foo = "int"--> I have to replace "int" with "inty" for now */
 
-    /* this should work: */
-    /* type foo = int */
-
-    type foo = inty
+    type foo =  int
     type foo1 = intx
+    type foo2 = string
     type bar = array of foo
 
     var N := 512
@@ -26,6 +24,14 @@ let
 
     var a := 8 + 3
     var b := 5 + 2
+
+    /* array declarations are skewed a bit due to a work-around for a reduce-reduce */
+    /* conflict in tig.yac (see array_defn) */
+
+ 
+    /* var c := bar [ N ] of zeroes */
+    var c := [ N ] bar of zeroes 
+
 
 /* execution of the scope */
 

@@ -520,16 +520,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  11
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   182
+#define YYLAST   188
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  52
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  27
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  84
+#define YYNRULES  85
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  177
+#define YYNSTATES  178
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
@@ -581,14 +581,14 @@ static const yytype_uint8 yytranslate[] =
 static const yytype_uint16 yyrline[] =
 {
        0,   146,   146,   160,   205,   216,   225,   237,   246,   272,
-     302,   312,   325,   348,   356,   371,   392,   413,   430,   431,
-     432,   445,   454,   465,   501,   536,   573,   617,   641,   662,
-     691,   713,   735,   763,   806,   834,   859,   885,   913,   940,
-     967,   994,  1021,  1048,  1076,  1102,  1130,  1140,  1162,  1180,
-    1194,  1208,  1221,  1245,  1264,  1282,  1302,  1322,  1334,  1352,
-    1370,  1394,  1413,  1434,  1452,  1459,  1472,  1479,  1492,  1499,
-    1512,  1519,  1532,  1539,  1552,  1579,  1592,  1602,  1618,  1631,
-    1643,  1660,  1684,  1709,  1747
+     302,   312,   325,   348,   356,   371,   390,   400,   421,   438,
+     439,   440,   453,   462,   473,   509,   544,   581,   625,   649,
+     670,   699,   721,   743,   771,   814,   842,   867,   893,   921,
+     948,   975,  1002,  1029,  1056,  1084,  1110,  1138,  1148,  1170,
+    1188,  1202,  1216,  1229,  1253,  1272,  1290,  1310,  1330,  1342,
+    1360,  1378,  1402,  1421,  1442,  1460,  1467,  1480,  1487,  1500,
+    1507,  1520,  1527,  1540,  1547,  1560,  1587,  1600,  1610,  1626,
+    1639,  1651,  1668,  1692,  1717,  1755
 };
 #endif
 
@@ -628,12 +628,12 @@ static const yytype_uint16 yytoknum[] =
 };
 # endif
 
-#define YYPACT_NINF -100
+#define YYPACT_NINF -99
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-100)))
+  (!!((Yystate) == (-99)))
 
-#define YYTABLE_NINF -21
+#define YYTABLE_NINF -22
 
 #define yytable_value_is_error(Yytable_value) \
   0
@@ -642,24 +642,24 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
-      20,     7,    34,  -100,    45,  -100,  -100,    58,    15,     2,
-       7,  -100,     3,    49,    61,  -100,  -100,    67,  -100,  -100,
-    -100,    84,    66,    68,    77,    79,    88,  -100,  -100,  -100,
-      82,    91,    73,    73,    73,  -100,  -100,  -100,   112,   -16,
-    -100,    73,  -100,    73,    85,    -7,  -100,  -100,    98,  -100,
-     -20,  -100,  -100,    27,  -100,  -100,  -100,  -100,  -100,     0,
-      -5,    73,    71,   103,   124,  -100,    73,    73,    73,    73,
-      73,    73,    73,    73,    73,    73,    73,    73,    73,   121,
-     144,   139,   113,   136,    73,  -100,   114,   150,  -100,   140,
-    -100,   137,    37,     1,  -100,  -100,  -100,    76,  -100,    84,
-    -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,
-    -100,  -100,   132,  -100,    49,    49,    73,   141,    24,  -100,
-     -20,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,
-    -100,    84,   111,    84,    49,    84,   143,   117,    73,  -100,
-     156,  -100,   154,  -100,   148,    73,  -100,   147,  -100,  -100,
-    -100,  -100,   149,   146,    49,    84,  -100,    73,    49,    73,
-    -100,   151,    49,    84,  -100,   152,  -100,  -100,   153,    73,
-    -100,  -100,    49,    49,  -100,  -100,  -100
+      -1,    21,    35,   -99,   -13,   -99,   -99,    44,     9,    19,
+      21,   -99,   -17,    46,    41,   -99,   -99,    71,   -99,   -99,
+     -99,    20,    60,    70,    84,    77,    81,   -99,   -99,   -99,
+      66,    88,    63,    63,    63,   -99,   -99,   -99,   117,   -29,
+     -99,    63,   -99,    63,   104,     5,   -99,   -99,   109,   -99,
+     -15,   -99,   -99,    51,   -99,   -99,   -99,   -99,   -99,   138,
+      14,    63,    -6,   100,   106,   -99,    63,    63,    63,    63,
+      63,    63,    63,    63,    63,    63,    63,    63,    63,   119,
+     127,   124,    98,   139,    63,   -99,   111,   152,   -99,   142,
+     -99,   -99,   141,    73,    79,   -99,   -99,   -99,    96,   -99,
+      20,   -99,   -99,   -99,   -99,   -99,   -99,   -99,   -99,   -99,
+     -99,   -99,   -99,   135,   -99,    46,    46,    63,   144,    57,
+     -99,   -15,   -99,   -99,   -99,   -99,   -99,   -99,   -99,   -99,
+     -99,   -99,    20,   105,    20,    46,    20,   146,    97,    63,
+     -99,   159,   -99,   157,   -99,   151,    63,   -99,   150,   -99,
+     -99,   -99,   -99,   153,   149,    46,    20,   -99,    63,    46,
+      63,   -99,   154,    46,    20,   -99,   155,   -99,   -99,   156,
+      63,   -99,   -99,    46,    46,   -99,   -99,   -99
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -667,39 +667,39 @@ static const yytype_int16 yypact[] =
      means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     0,     0,     2,     0,    11,    22,     0,     8,     7,
-       9,     1,     0,     0,     0,     4,    10,     0,     5,    21,
-       6,     0,     0,     0,     0,     0,     0,    18,    19,    20,
-       0,    54,     0,     0,     0,    48,    28,    27,    47,    49,
-      51,     0,    78,     0,     0,    54,    61,    76,     0,    80,
-       0,    74,    64,     0,    66,    70,    72,    68,     3,     0,
-       0,     0,     0,     0,     0,    46,     0,     0,     0,     0,
+       0,     0,     0,     2,     0,    11,    23,     0,     8,     7,
+       9,     1,     0,     0,     0,     4,    10,     0,     5,    22,
+       6,     0,     0,     0,     0,     0,     0,    19,    20,    21,
+       0,    55,     0,     0,     0,    49,    29,    28,    48,    50,
+      52,     0,    79,     0,     0,    55,    62,    77,     0,    81,
+       0,    75,    65,     0,    67,    71,    73,    69,     3,     0,
+       0,     0,     0,     0,     0,    47,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,    62,     0,     0,    13,     0,
-      12,     0,     0,     0,    29,    55,    58,     0,    50,     0,
-      38,    39,    40,    41,    43,    42,    34,    35,    36,    37,
-      44,    45,     0,    53,     0,     0,     0,     0,     0,    60,
-      49,    59,    77,    75,    79,    73,    63,    65,    69,    71,
-      67,     0,     0,     0,     0,     0,     0,     0,     0,    56,
-       0,    52,    81,    82,     0,     0,    30,     0,    14,    15,
-      17,    23,     0,     0,     0,     0,    57,     0,     0,     0,
-      32,     0,     0,     0,    24,     0,    33,    84,     0,     0,
-      25,    16,     0,     0,    31,    26,    83
+       0,     0,     0,     0,     0,    63,     0,     0,    13,     0,
+      12,    16,     0,     0,     0,    30,    56,    59,     0,    51,
+       0,    39,    40,    41,    42,    44,    43,    35,    36,    37,
+      38,    45,    46,     0,    54,     0,     0,     0,     0,     0,
+      61,    50,    60,    78,    76,    80,    74,    64,    66,    70,
+      72,    68,     0,     0,     0,     0,     0,     0,     0,     0,
+      57,     0,    53,    82,    83,     0,     0,    31,     0,    14,
+      15,    18,    24,     0,     0,     0,     0,    58,     0,     0,
+       0,    33,     0,     0,     0,    25,     0,    34,    85,     0,
+       0,    26,    17,     0,     0,    32,    27,    84
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-    -100,  -100,   -18,    72,  -100,  -100,  -100,    87,   -21,  -100,
-    -100,  -100,    92,  -100,  -100,   -30,  -100,   -22,   -17,  -100,
-      40,   -99,  -100,    93,    94,    95,    96
+     -99,   -99,   -19,    94,   -99,   -99,   -99,    86,   -21,   -99,
+     -99,   -99,    93,   -99,   -99,   -22,   -99,   -20,   -18,   -99,
+     -78,   -98,   -99,    95,    99,   101,   102
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3,     7,     8,    16,    90,    93,    48,     9,
-      19,    10,    49,   118,    36,    37,    38,    39,    40,    97,
+      -1,     2,     3,     7,     8,    16,    90,    94,    48,     9,
+      19,    10,    49,   119,    36,    37,    38,    39,    40,    98,
       52,    24,    53,    54,    55,    56,    57
 };
 
@@ -708,48 +708,48 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int16 yytable[] =
 {
-      30,    50,    63,    64,    65,    47,    51,     4,    17,    87,
-      78,    80,     4,    81,    78,   142,   143,    91,   -20,    14,
-       4,    62,    88,     1,    92,    89,    84,    21,   136,    79,
-     137,    94,    96,    79,    11,   151,   100,   101,   102,   103,
-     104,   105,   106,   107,   108,   109,   110,   111,   112,    22,
-     146,   147,     5,     6,   119,   164,    85,     5,     6,   167,
-     134,   135,   120,   170,    50,     5,     6,    12,   123,   125,
-      86,     1,    13,   175,   176,    27,    28,    23,   140,    41,
-      15,    18,    20,    25,    42,    43,   144,    44,    31,    26,
-      45,    27,    28,    31,    32,    31,    33,    46,    58,    32,
-      95,    32,    59,   138,    34,   139,    29,    82,   156,    34,
-     148,    34,   150,    35,   152,   160,    60,     1,    35,    62,
-      35,    27,    28,    83,   121,    41,   126,   166,    61,   168,
-     122,    43,    98,    44,   165,    66,    45,   149,   136,   174,
-     154,   155,   171,   113,    67,    68,    69,    70,    71,    72,
-      73,    74,    75,    76,    77,    99,   114,   115,   117,   116,
-     131,   133,    91,   141,   145,   153,   157,   158,   159,   161,
-     163,   173,   162,     0,   169,   172,   132,     0,   124,   127,
-     128,   129,   130
+      30,    78,     1,    50,    47,    51,   122,    21,   127,    12,
+      63,    64,    65,    14,     4,    78,    31,   143,   144,    80,
+      79,    81,    32,    96,     4,    17,     4,    27,    28,    22,
+     -21,    84,    34,    62,    79,    11,    92,   152,    91,    95,
+      97,    35,    29,    93,   101,   102,   103,   104,   105,   106,
+     107,   108,   109,   110,   111,   112,   113,   165,    13,     5,
+       6,   168,   120,    25,   121,   171,    50,   124,   126,     5,
+       6,     5,     6,     1,    23,   176,   177,    27,    28,   141,
+      85,    41,    31,   147,   148,    31,    42,    43,    32,    44,
+      33,    32,    45,    26,    86,   145,   135,   136,    34,    46,
+      59,    34,    15,    18,    20,    58,   137,    35,   138,    60,
+      35,   149,    61,   151,     1,   153,    62,   157,    27,    28,
+     155,   156,    41,   139,   161,   140,    82,   123,    43,    99,
+      44,   150,   137,    45,    83,   166,   167,   100,   169,   115,
+      66,   114,   116,   172,   117,    27,    28,    87,   175,    67,
+      68,    69,    70,    71,    72,    73,    74,    75,    76,    77,
+      88,   118,   132,    89,    92,   134,   142,   146,   154,   158,
+     159,   160,   162,   164,   174,   133,   163,   170,   173,   125,
+       0,   128,     0,     0,     0,   129,     0,   130,   131
 };
 
 static const yytype_int16 yycheck[] =
 {
-      21,    23,    32,    33,    34,    23,    23,     5,     6,     9,
-      30,    41,     5,    43,    30,   114,   115,    22,    25,     4,
-       5,    28,    22,     3,    29,    25,    46,    24,    27,    49,
-      29,    61,    62,    49,     0,   134,    66,    67,    68,    69,
-      70,    71,    72,    73,    74,    75,    76,    77,    78,    46,
-      26,    27,    50,    51,    84,   154,    29,    50,    51,   158,
-      23,    24,    84,   162,    86,    50,    51,    22,    86,    86,
-      43,     3,    14,   172,   173,     7,     8,    28,    99,    11,
-       8,     9,    10,    22,    16,    17,   116,    19,    22,    22,
-      22,     7,     8,    22,    28,    22,    30,    29,    21,    28,
-      29,    28,    23,    27,    38,    29,    22,    22,   138,    38,
-     131,    38,   133,    47,   135,   145,    28,     3,    47,    28,
-      47,     7,     8,    25,    84,    11,    86,   157,    46,   159,
-      16,    17,    29,    19,   155,    23,    22,    26,    27,   169,
-      23,    24,   163,    22,    32,    33,    34,    35,    36,    37,
-      38,    39,    40,    41,    42,    31,    12,    18,    22,    46,
-      10,    24,    22,    31,    23,    22,    10,    13,    20,    22,
-      24,    18,    23,    -1,    23,    23,    89,    -1,    86,    86,
-      86,    86,    86
+      21,    30,     3,    23,    23,    23,    84,    24,    86,    22,
+      32,    33,    34,     4,     5,    30,    22,   115,   116,    41,
+      49,    43,    28,    29,     5,     6,     5,     7,     8,    46,
+      25,    46,    38,    28,    49,     0,    22,   135,    59,    61,
+      62,    47,    22,    29,    66,    67,    68,    69,    70,    71,
+      72,    73,    74,    75,    76,    77,    78,   155,    14,    50,
+      51,   159,    84,    22,    84,   163,    86,    86,    86,    50,
+      51,    50,    51,     3,    28,   173,   174,     7,     8,   100,
+      29,    11,    22,    26,    27,    22,    16,    17,    28,    19,
+      30,    28,    22,    22,    43,   117,    23,    24,    38,    29,
+      23,    38,     8,     9,    10,    21,    27,    47,    29,    28,
+      47,   132,    46,   134,     3,   136,    28,   139,     7,     8,
+      23,    24,    11,    27,   146,    29,    22,    16,    17,    29,
+      19,    26,    27,    22,    25,   156,   158,    31,   160,    12,
+      23,    22,    18,   164,    46,     7,     8,     9,   170,    32,
+      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
+      22,    22,    10,    25,    22,    24,    31,    23,    22,    10,
+      13,    20,    22,    24,    18,    89,    23,    23,    23,    86,
+      -1,    86,    -1,    -1,    -1,    86,    -1,    86,    86
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -765,43 +765,43 @@ static const yytype_uint8 yystos[] =
       28,    46,    28,    67,    67,    67,    23,    32,    33,    34,
       35,    36,    37,    38,    39,    40,    41,    42,    30,    49,
       67,    67,    22,    25,    46,    29,    43,     9,    22,    25,
-      58,    22,    29,    59,    67,    29,    67,    71,    29,    31,
-      67,    67,    67,    67,    67,    67,    67,    67,    67,    67,
-      67,    67,    67,    22,    12,    18,    46,    22,    65,    67,
-      69,    72,    16,    54,    64,    70,    72,    75,    76,    77,
-      78,    10,    59,    24,    23,    24,    27,    29,    27,    29,
-      60,    31,    73,    73,    67,    23,    26,    27,    60,    26,
-      60,    73,    60,    22,    23,    24,    67,    10,    13,    20,
-      67,    22,    23,    24,    73,    60,    67,    73,    67,    23,
-      73,    60,    23,    18,    67,    73,    73
+      58,    60,    22,    29,    59,    67,    29,    67,    71,    29,
+      31,    67,    67,    67,    67,    67,    67,    67,    67,    67,
+      67,    67,    67,    67,    22,    12,    18,    46,    22,    65,
+      67,    69,    72,    16,    54,    64,    70,    72,    75,    76,
+      77,    78,    10,    59,    24,    23,    24,    27,    29,    27,
+      29,    60,    31,    73,    73,    67,    23,    26,    27,    60,
+      26,    60,    73,    60,    22,    23,    24,    67,    10,    13,
+      20,    67,    22,    23,    24,    73,    60,    67,    73,    67,
+      23,    73,    60,    23,    18,    67,    73,    73
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
        0,    52,    53,    54,    55,    55,    55,    55,    55,    55,
-      56,    56,    57,    58,    58,    58,    59,    59,    60,    60,
-      60,    61,    61,    62,    62,    62,    62,    63,    63,    63,
-      64,    65,    65,    66,    67,    67,    67,    67,    67,    67,
-      67,    67,    67,    67,    67,    67,    67,    67,    68,    68,
-      68,    68,    69,    69,    69,    70,    70,    71,    71,    72,
-      72,    73,    73,    74,    74,    74,    74,    74,    74,    74,
+      56,    56,    57,    58,    58,    58,    58,    59,    59,    60,
+      60,    60,    61,    61,    62,    62,    62,    62,    63,    63,
+      63,    64,    65,    65,    66,    67,    67,    67,    67,    67,
+      67,    67,    67,    67,    67,    67,    67,    67,    67,    68,
+      68,    68,    68,    69,    69,    69,    70,    70,    71,    71,
+      72,    72,    73,    73,    74,    74,    74,    74,    74,    74,
       74,    74,    74,    74,    74,    74,    74,    74,    74,    74,
-      74,    75,    76,    77,    78
+      74,    74,    75,    76,    77,    78
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
        0,     2,     1,     5,     2,     2,     2,     1,     1,     1,
-       2,     1,     4,     1,     3,     3,     5,     3,     1,     1,
-       1,     2,     1,     6,     7,     8,     9,     4,     4,     6,
-       4,     5,     3,     6,     3,     3,     3,     3,     3,     3,
-       3,     3,     3,     3,     3,     3,     2,     1,     1,     1,
-       3,     1,     4,     3,     1,     3,     4,     3,     1,     3,
-       3,     2,     3,     3,     1,     3,     1,     3,     1,     3,
-       1,     3,     1,     3,     1,     3,     1,     3,     1,     3,
-       1,     4,     4,     8,     6
+       2,     1,     4,     1,     3,     3,     1,     5,     3,     1,
+       1,     1,     2,     1,     6,     7,     8,     9,     4,     4,
+       6,     4,     5,     3,     6,     3,     3,     3,     3,     3,
+       3,     3,     3,     3,     3,     3,     3,     2,     1,     1,
+       1,     3,     1,     4,     3,     1,     3,     4,     3,     1,
+       3,     3,     2,     3,     3,     1,     3,     1,     3,     1,
+       3,     1,     3,     1,     3,     1,     3,     1,     3,     1,
+       3,     1,     4,     4,     8,     6
 };
 
 
@@ -1759,7 +1759,19 @@ yyreduce:
     break;
 
   case 16:
-#line 393 "tig.yac" /* yacc.c:1646  */
+#line 391 "tig.yac" /* yacc.c:1646  */
+    {
+
+		           absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
+                           absyn_pos->col  = A_intdup(yylval.strinfo.pos[ident_pos].col); 
+
+                           absyn_ty_rhs = A_nameTy(absyn_pos, (yyvsp[0].strinfo.strval));
+                           }
+#line 1771 "y.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 17:
+#line 401 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -1779,11 +1791,11 @@ yyreduce:
 
                            absyn_fieldList = A_FieldList(A_Field(absyn_pos, (yyvsp[-2].strinfo.strval), (yyvsp[0].strinfo.strval)), absyn_fieldList);
                            }
-#line 1783 "y.tab.c" /* yacc.c:1646  */
+#line 1795 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 17:
-#line 414 "tig.yac" /* yacc.c:1646  */
+  case 18:
+#line 422 "tig.yac" /* yacc.c:1646  */
     {
 
 		           absyn_pos->line = A_intdup(yylval.strinfo.pos[colon_pos].line);
@@ -1799,11 +1811,11 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
                            }
-#line 1803 "y.tab.c" /* yacc.c:1646  */
+#line 1815 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 21:
-#line 445 "tig.yac" /* yacc.c:1646  */
+  case 22:
+#line 453 "tig.yac" /* yacc.c:1646  */
     { 
 
 #ifdef YDUMPMRCF
@@ -1813,11 +1825,11 @@ yyreduce:
                           A_pushfnList(A_FundecList(absyn_fundec, A_popfnList()));
 
                            }
-#line 1817 "y.tab.c" /* yacc.c:1646  */
+#line 1829 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 22:
-#line 454 "tig.yac" /* yacc.c:1646  */
+  case 23:
+#line 462 "tig.yac" /* yacc.c:1646  */
     { 
 
 #ifdef YDUMPMRCF
@@ -1827,11 +1839,11 @@ yyreduce:
                           A_pushfnList(NULL);
 
                            }
-#line 1831 "y.tab.c" /* yacc.c:1646  */
+#line 1843 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 23:
-#line 465 "tig.yac" /* yacc.c:1646  */
+  case 24:
+#line 473 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* 1. a procedure without input parameters */
@@ -1865,11 +1877,11 @@ yyreduce:
 
 #endif
                            }
-#line 1869 "y.tab.c" /* yacc.c:1646  */
+#line 1881 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 24:
-#line 501 "tig.yac" /* yacc.c:1646  */
+  case 25:
+#line 509 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* mark the position */
@@ -1902,11 +1914,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a function_decl (some input, no output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 1906 "y.tab.c" /* yacc.c:1646  */
+#line 1918 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 25:
-#line 536 "tig.yac" /* yacc.c:1646  */
+  case 26:
+#line 544 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* mark the position */
@@ -1941,11 +1953,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a function_decl (no input, some output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 1945 "y.tab.c" /* yacc.c:1646  */
+#line 1957 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 26:
-#line 573 "tig.yac" /* yacc.c:1646  */
+  case 27:
+#line 581 "tig.yac" /* yacc.c:1646  */
     {
 
                            /* mark the position */
@@ -1984,11 +1996,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a function_decl (some input, some output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 1988 "y.tab.c" /* yacc.c:1646  */
+#line 2000 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 27:
-#line 617 "tig.yac" /* yacc.c:1646  */
+  case 28:
+#line 625 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2012,11 +2024,11 @@ yyreduce:
 #endif
 #endif
                                                         }
-#line 2016 "y.tab.c" /* yacc.c:1646  */
+#line 2028 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 28:
-#line 641 "tig.yac" /* yacc.c:1646  */
+  case 29:
+#line 649 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2036,11 +2048,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
 #endif
                                                         }
-#line 2040 "y.tab.c" /* yacc.c:1646  */
+#line 2052 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 29:
-#line 662 "tig.yac" /* yacc.c:1646  */
+  case 30:
+#line 670 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2066,11 +2078,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
 #endif
                                                         }
-#line 2070 "y.tab.c" /* yacc.c:1646  */
+#line 2082 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 30:
-#line 691 "tig.yac" /* yacc.c:1646  */
+  case 31:
+#line 699 "tig.yac" /* yacc.c:1646  */
     {
 
 		           absyn_pos->line = A_intdup(yylval.strinfo.pos[lbrace_pos].line);
@@ -2092,11 +2104,11 @@ yyreduce:
 #endif
 
                            }
-#line 2096 "y.tab.c" /* yacc.c:1646  */
+#line 2108 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 31:
-#line 713 "tig.yac" /* yacc.c:1646  */
+  case 32:
+#line 721 "tig.yac" /* yacc.c:1646  */
     {
 
                            absyn_efieldList=A_EfieldList(A_Efield((yyvsp[-2].strinfo.strval), A_popexp()), 
@@ -2118,11 +2130,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a Rec Creation Parm: %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 2122 "y.tab.c" /* yacc.c:1646  */
+#line 2134 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 32:
-#line 735 "tig.yac" /* yacc.c:1646  */
+  case 33:
+#line 743 "tig.yac" /* yacc.c:1646  */
     {
 
                            absyn_efieldList=A_EfieldList(A_Efield((yyvsp[-2].strinfo.strval), A_popexp()),
@@ -2138,11 +2150,11 @@ yyreduce:
                            fprintf(yyout, "\n<BISON> EVALD a Rec Creation Parm: %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 2142 "y.tab.c" /* yacc.c:1646  */
+#line 2154 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 33:
-#line 763 "tig.yac" /* yacc.c:1646  */
+  case 34:
+#line 771 "tig.yac" /* yacc.c:1646  */
     {
 
                            A_exp size, initval;
@@ -2175,11 +2187,11 @@ yyreduce:
                            A_pushexp(A_ArrayExp(absyn_pos, (yyvsp[-2].strinfo.strval), size, initval));
 
                            }
-#line 2179 "y.tab.c" /* yacc.c:1646  */
+#line 2191 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 34:
-#line 806 "tig.yac" /* yacc.c:1646  */
+  case 35:
+#line 814 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2207,11 +2219,11 @@ yyreduce:
 #endif
                            
                            }
-#line 2211 "y.tab.c" /* yacc.c:1646  */
+#line 2223 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 35:
-#line 834 "tig.yac" /* yacc.c:1646  */
+  case 36:
+#line 842 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2236,11 +2248,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_minusOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2240 "y.tab.c" /* yacc.c:1646  */
+#line 2252 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 36:
-#line 859 "tig.yac" /* yacc.c:1646  */
+  case 37:
+#line 867 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2266,11 +2278,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_timesOp, A_popexp(), A_popexp()));
 
                            }
-#line 2270 "y.tab.c" /* yacc.c:1646  */
+#line 2282 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 37:
-#line 885 "tig.yac" /* yacc.c:1646  */
+  case 38:
+#line 893 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2296,11 +2308,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_divideOp, A_popexp(), A_popexp()));
 
                            }
-#line 2300 "y.tab.c" /* yacc.c:1646  */
+#line 2312 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 38:
-#line 913 "tig.yac" /* yacc.c:1646  */
+  case 39:
+#line 921 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2326,11 +2338,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_eqOp, A_popexp(), A_popexp()));
 
                            }
-#line 2330 "y.tab.c" /* yacc.c:1646  */
+#line 2342 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 39:
-#line 940 "tig.yac" /* yacc.c:1646  */
+  case 40:
+#line 948 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2356,11 +2368,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_neqOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2360 "y.tab.c" /* yacc.c:1646  */
+#line 2372 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 40:
-#line 967 "tig.yac" /* yacc.c:1646  */
+  case 41:
+#line 975 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2386,11 +2398,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_gtOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2390 "y.tab.c" /* yacc.c:1646  */
+#line 2402 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 41:
-#line 994 "tig.yac" /* yacc.c:1646  */
+  case 42:
+#line 1002 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2416,11 +2428,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_ltOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2420 "y.tab.c" /* yacc.c:1646  */
+#line 2432 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 42:
-#line 1021 "tig.yac" /* yacc.c:1646  */
+  case 43:
+#line 1029 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2446,11 +2458,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_geOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2450 "y.tab.c" /* yacc.c:1646  */
+#line 2462 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 43:
-#line 1048 "tig.yac" /* yacc.c:1646  */
+  case 44:
+#line 1056 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2476,11 +2488,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_leOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2480 "y.tab.c" /* yacc.c:1646  */
+#line 2492 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 44:
-#line 1076 "tig.yac" /* yacc.c:1646  */
+  case 45:
+#line 1084 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2506,11 +2518,11 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_andOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2510 "y.tab.c" /* yacc.c:1646  */
+#line 2522 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 45:
-#line 1102 "tig.yac" /* yacc.c:1646  */
+  case 46:
+#line 1110 "tig.yac" /* yacc.c:1646  */
     {
 			   
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2536,32 +2548,32 @@ yyreduce:
 		          A_pushexp(A_OpExp(absyn_pos, A_orOp, A_popexp(), A_popexp()));
                            
                            }
-#line 2540 "y.tab.c" /* yacc.c:1646  */
+#line 2552 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 46:
-#line 1130 "tig.yac" /* yacc.c:1646  */
+  case 47:
+#line 1138 "tig.yac" /* yacc.c:1646  */
     { 
                        
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
                            }
-#line 2551 "y.tab.c" /* yacc.c:1646  */
+#line 2563 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 47:
-#line 1141 "tig.yac" /* yacc.c:1646  */
+  case 48:
+#line 1149 "tig.yac" /* yacc.c:1646  */
     {
 #ifdef YDUMPEXP                          
                            fprintf(yyout, "Discovered an EXPLITEral: %s\n", (yyval.strinfo.strval));
 #endif
                            }
-#line 2561 "y.tab.c" /* yacc.c:1646  */
+#line 2573 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 48:
-#line 1162 "tig.yac" /* yacc.c:1646  */
+  case 49:
+#line 1170 "tig.yac" /* yacc.c:1646  */
     {
 
 #ifdef YDUMPEXP                          
@@ -2579,11 +2591,11 @@ yyreduce:
 #endif
 
 			  }
-#line 2583 "y.tab.c" /* yacc.c:1646  */
+#line 2595 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 49:
-#line 1180 "tig.yac" /* yacc.c:1646  */
+  case 50:
+#line 1188 "tig.yac" /* yacc.c:1646  */
     {
 
 #ifdef YDUMPEXP                          
@@ -2597,11 +2609,11 @@ yyreduce:
 #endif
 
 			  }
-#line 2601 "y.tab.c" /* yacc.c:1646  */
+#line 2613 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 50:
-#line 1194 "tig.yac" /* yacc.c:1646  */
+  case 51:
+#line 1202 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2615,11 +2627,11 @@ yyreduce:
                            */
 
                           }
-#line 2619 "y.tab.c" /* yacc.c:1646  */
+#line 2631 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 52:
-#line 1221 "tig.yac" /* yacc.c:1646  */
+  case 53:
+#line 1229 "tig.yac" /* yacc.c:1646  */
     {
 
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -2643,11 +2655,11 @@ yyreduce:
 #endif
 
                           }
-#line 2647 "y.tab.c" /* yacc.c:1646  */
+#line 2659 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 53:
-#line 1245 "tig.yac" /* yacc.c:1646  */
+  case 54:
+#line 1253 "tig.yac" /* yacc.c:1646  */
     {
 
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -2666,11 +2678,11 @@ yyreduce:
 #endif
 
                           }
-#line 2670 "y.tab.c" /* yacc.c:1646  */
+#line 2682 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 54:
-#line 1264 "tig.yac" /* yacc.c:1646  */
+  case 55:
+#line 1272 "tig.yac" /* yacc.c:1646  */
     {
 
 #ifdef YDUMPVAR                          
@@ -2685,11 +2697,11 @@ yyreduce:
 			  A_pushvar(A_SimpleVar(absyn_pos, (yyval.strinfo.strval))); 
 
                           }
-#line 2689 "y.tab.c" /* yacc.c:1646  */
+#line 2701 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 55:
-#line 1282 "tig.yac" /* yacc.c:1646  */
+  case 56:
+#line 1290 "tig.yac" /* yacc.c:1646  */
     {
 
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -2709,11 +2721,11 @@ yyreduce:
 #endif
  
                           }
-#line 2713 "y.tab.c" /* yacc.c:1646  */
+#line 2725 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 56:
-#line 1302 "tig.yac" /* yacc.c:1646  */
+  case 57:
+#line 1310 "tig.yac" /* yacc.c:1646  */
     {
 
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[ident_pos].line);
@@ -2733,11 +2745,11 @@ yyreduce:
                           fprintf(yyout, "\n<BISON> EVALD a func call: %s\n", (yyval.strinfo.strval));
 #endif
                           }
-#line 2737 "y.tab.c" /* yacc.c:1646  */
+#line 2749 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 57:
-#line 1322 "tig.yac" /* yacc.c:1646  */
+  case 58:
+#line 1330 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2750,45 +2762,45 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2754 "y.tab.c" /* yacc.c:1646  */
+#line 2766 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 58:
-#line 1334 "tig.yac" /* yacc.c:1646  */
+  case 59:
+#line 1342 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push, raise level in the stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
 		          }
-#line 2765 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 59:
-#line 1352 "tig.yac" /* yacc.c:1646  */
-    {
-
-                          (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
-                          (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
-
-                          (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
-                          (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
-
-		          absyn_pos->line = A_intdup(yylval.strinfo.pos[asn_op_pos].line);
-                          absyn_pos->col  = A_intdup(yylval.strinfo.pos[asn_op_pos].col); 
-
-			  A_pushexp(A_AssignExp(absyn_pos, A_popvar(), A_popexp())); 
-#ifdef YASNEXP
-                          fprintf(yyout, "On adding the asn-exp,\n");
-                          prn_aexp(A_peepexp(0));
-#endif
-
-                         }
-#line 2788 "y.tab.c" /* yacc.c:1646  */
+#line 2777 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 1370 "tig.yac" /* yacc.c:1646  */
+#line 1360 "tig.yac" /* yacc.c:1646  */
+    {
+
+                          (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
+                          (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
+
+                          (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
+                          (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
+
+		          absyn_pos->line = A_intdup(yylval.strinfo.pos[asn_op_pos].line);
+                          absyn_pos->col  = A_intdup(yylval.strinfo.pos[asn_op_pos].col); 
+
+			  A_pushexp(A_AssignExp(absyn_pos, A_popvar(), A_popexp())); 
+#ifdef YASNEXP
+                          fprintf(yyout, "On adding the asn-exp,\n");
+                          prn_aexp(A_peepexp(0));
+#endif
+
+                         }
+#line 2800 "y.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 61:
+#line 1378 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2808,11 +2820,11 @@ yyreduce:
 #endif
 
                          }
-#line 2812 "y.tab.c" /* yacc.c:1646  */
+#line 2824 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 61:
-#line 1394 "tig.yac" /* yacc.c:1646  */
+  case 62:
+#line 1402 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2832,11 +2844,11 @@ yyreduce:
 #endif
 
                           }
-#line 2836 "y.tab.c" /* yacc.c:1646  */
+#line 2848 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 62:
-#line 1413 "tig.yac" /* yacc.c:1646  */
+  case 63:
+#line 1421 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2857,11 +2869,11 @@ yyreduce:
 #endif
 
                           }
-#line 2861 "y.tab.c" /* yacc.c:1646  */
+#line 2873 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 63:
-#line 1434 "tig.yac" /* yacc.c:1646  */
+  case 64:
+#line 1442 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2879,162 +2891,134 @@ yyreduce:
 #endif
 
                           }
-#line 2883 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 64:
-#line 1452 "tig.yac" /* yacc.c:1646  */
-    {
-
-                          /* Push new level in explist stack */
-                          A_pushexplist(A_ExpList(A_popexp(),NULL));
-
-                          }
-#line 2894 "y.tab.c" /* yacc.c:1646  */
+#line 2895 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 1459 "tig.yac" /* yacc.c:1646  */
+#line 1460 "tig.yac" /* yacc.c:1646  */
     {
 
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
-
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
-
-                          /* Pop, affect and re-push on the explist stack */
-			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
+                          /* Push new level in explist stack */
+                          A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 2911 "y.tab.c" /* yacc.c:1646  */
+#line 2906 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 1472 "tig.yac" /* yacc.c:1646  */
+#line 1467 "tig.yac" /* yacc.c:1646  */
     {
 
-                          /* Push new level in explist stack */
-                          A_pushexplist(A_ExpList(A_popexp(),NULL));
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
+
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
+
+                          /* Pop, affect and re-push on the explist stack */
+			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2922 "y.tab.c" /* yacc.c:1646  */
+#line 2923 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 1479 "tig.yac" /* yacc.c:1646  */
+#line 1480 "tig.yac" /* yacc.c:1646  */
     {
 
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
-
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
-
-                          /* Pop, affect and re-push on the explist stack */
-			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
+                          /* Push new level in explist stack */
+                          A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 2939 "y.tab.c" /* yacc.c:1646  */
+#line 2934 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 1492 "tig.yac" /* yacc.c:1646  */
+#line 1487 "tig.yac" /* yacc.c:1646  */
     {
 
-                          /* Push new level in explist stack */
-                          A_pushexplist(A_ExpList(A_popexp(),NULL));
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
+
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
+
+                          /* Pop, affect and re-push on the explist stack */
+			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2950 "y.tab.c" /* yacc.c:1646  */
+#line 2951 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 69:
-#line 1499 "tig.yac" /* yacc.c:1646  */
+#line 1500 "tig.yac" /* yacc.c:1646  */
     {
 
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
-
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
-
-                          /* Pop, affect and re-push on the explist stack */
-			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
+                          /* Push new level in explist stack */
+                          A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 2967 "y.tab.c" /* yacc.c:1646  */
+#line 2962 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 1512 "tig.yac" /* yacc.c:1646  */
+#line 1507 "tig.yac" /* yacc.c:1646  */
     {
 
-                          /* Push new level in explist stack */
-                          A_pushexplist(A_ExpList(A_popexp(),NULL));
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
+
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
+
+                          /* Pop, affect and re-push on the explist stack */
+			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 2978 "y.tab.c" /* yacc.c:1646  */
+#line 2979 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 71:
-#line 1519 "tig.yac" /* yacc.c:1646  */
+#line 1520 "tig.yac" /* yacc.c:1646  */
     {
 
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
-
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
-
-                          /* Pop, affect and re-push on the explist stack */
-			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
+                          /* Push new level in explist stack */
+                          A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 2995 "y.tab.c" /* yacc.c:1646  */
+#line 2990 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 72:
-#line 1532 "tig.yac" /* yacc.c:1646  */
+#line 1527 "tig.yac" /* yacc.c:1646  */
     {
 
-                          /* Push new level in explist stack */
-                          A_pushexplist(A_ExpList(A_popexp(),NULL));
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
+
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
+
+                          /* Pop, affect and re-push on the explist stack */
+			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 3006 "y.tab.c" /* yacc.c:1646  */
+#line 3007 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 73:
-#line 1539 "tig.yac" /* yacc.c:1646  */
+#line 1540 "tig.yac" /* yacc.c:1646  */
     {
 
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
-
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
-                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
-
-                          /* Pop, affect and re-push on the explist stack */
-			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
+                          /* Push new level in explist stack */
+                          A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 3023 "y.tab.c" /* yacc.c:1646  */
+#line 3018 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 74:
-#line 1552 "tig.yac" /* yacc.c:1646  */
-    {
-
-                          /* Push new level in explist stack */
-                          A_pushexplist(A_ExpList(A_popexp(),NULL));
-
-                          }
-#line 3034 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 75:
-#line 1579 "tig.yac" /* yacc.c:1646  */
+#line 1547 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3047,22 +3031,50 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 3051 "y.tab.c" /* yacc.c:1646  */
+#line 3035 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 76:
-#line 1592 "tig.yac" /* yacc.c:1646  */
+  case 75:
+#line 1560 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 3062 "y.tab.c" /* yacc.c:1646  */
+#line 3046 "y.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 76:
+#line 1587 "tig.yac" /* yacc.c:1646  */
+    {
+
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[-1].strinfo.strval));
+
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), "\n");
+                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
+
+                          /* Pop, affect and re-push on the explist stack */
+			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
+
+                          }
+#line 3063 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 1602 "tig.yac" /* yacc.c:1646  */
+#line 1600 "tig.yac" /* yacc.c:1646  */
+    {
+
+                          /* Push new level in explist stack */
+                          A_pushexplist(A_ExpList(A_popexp(),NULL));
+
+                          }
+#line 3074 "y.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 78:
+#line 1610 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3078,11 +3090,11 @@ yyreduce:
 			   A_pushexplist(A_ExpList(A_BreakExp(absyn_pos), A_popexplist()));
 
                           }
-#line 3082 "y.tab.c" /* yacc.c:1646  */
+#line 3094 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 78:
-#line 1618 "tig.yac" /* yacc.c:1646  */
+  case 79:
+#line 1626 "tig.yac" /* yacc.c:1646  */
     {
 
 		           absyn_pos->line = A_intdup(yylval.strinfo.pos[break_kwd_pos].line);
@@ -3092,11 +3104,11 @@ yyreduce:
                            A_pushexplist(A_ExpList(A_BreakExp(absyn_pos),NULL));
 
                           }
-#line 3096 "y.tab.c" /* yacc.c:1646  */
+#line 3108 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 79:
-#line 1631 "tig.yac" /* yacc.c:1646  */
+  case 80:
+#line 1639 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3109,22 +3121,22 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
                           }
-#line 3113 "y.tab.c" /* yacc.c:1646  */
+#line 3125 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 80:
-#line 1643 "tig.yac" /* yacc.c:1646  */
+  case 81:
+#line 1651 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
                           }
-#line 3124 "y.tab.c" /* yacc.c:1646  */
+#line 3136 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 81:
-#line 1660 "tig.yac" /* yacc.c:1646  */
+  case 82:
+#line 1668 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3148,11 +3160,11 @@ yyreduce:
 #endif
 
                            }
-#line 3152 "y.tab.c" /* yacc.c:1646  */
+#line 3164 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 82:
-#line 1684 "tig.yac" /* yacc.c:1646  */
+  case 83:
+#line 1692 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3177,11 +3189,11 @@ yyreduce:
 #endif
 
                            }
-#line 3181 "y.tab.c" /* yacc.c:1646  */
+#line 3193 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 83:
-#line 1709 "tig.yac" /* yacc.c:1646  */
+  case 84:
+#line 1717 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3218,11 +3230,11 @@ yyreduce:
 #endif
 
                            }
-#line 3222 "y.tab.c" /* yacc.c:1646  */
+#line 3234 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 84:
-#line 1747 "tig.yac" /* yacc.c:1646  */
+  case 85:
+#line 1755 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3254,11 +3266,11 @@ yyreduce:
 #endif
 
                           }
-#line 3258 "y.tab.c" /* yacc.c:1646  */
+#line 3270 "y.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 3262 "y.tab.c" /* yacc.c:1646  */
+#line 3274 "y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -3486,7 +3498,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 1780 "tig.yac" /* yacc.c:1906  */
+#line 1788 "tig.yac" /* yacc.c:1906  */
 
 
 /* Definition of yacc's main follows: */
