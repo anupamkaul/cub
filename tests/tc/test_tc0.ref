@@ -8,8 +8,8 @@ let
 
     var N := 512
 
-    var a := bar [ N ] of 0 
-    var b := bar [ N ] of 1 
+    var a := [ N ] bar of 0 
+    var b := [ N ] bar of 1 
 
 /* execution of the scope */
 in b+a 
