@@ -1,9 +1,11 @@
 let
  
-    /* scope1 for our type and var defs */
-
-    /* TODO : this line has a syntax error at 'int' */
-    /* type foo = "int"--> I have to replace "int" with "inty" for now */
+    /* scope1 for our type and var defs 
+     *
+     * TODO : this line has a syntax error at 'int' 
+     * type foo = "int"--> I have to replace "int" with "inty" for now
+     * (this is also a test for multiline comments) 
+     */
 
     type foo =  int
     type foo1 = intx
@@ -15,28 +17,29 @@ let
     /* unnecessary defs */
     var zeroes := 0
 
-    /* this should work: (and looks like multi line commenting is broken! ) */
-    /* var a := bar [ N ] of 0 */
-    /* var b := bar [ N ] of 1 */
+    /* this should work: (and looks like multi line commenting is broken! ) 
+     *
+     * var a := bar [ N ] of 0 
+     * var b := bar [ N ] of 1 
 
-    /* var a := bar [ N ] of zeroes */
-    /* var b := bar [ N ] of zeroes */
+     * var a := bar [ N ] of zeroes *
+     * var b := bar [ N ] of zeroes */
 
     var a := 8 + 3
     var b := 5 + 2
 
-    /* array declarations are skewed a bit due to a work-around for a reduce-reduce */
-    /* conflict in tig.yac (see array_defn) */
+    /* array declarations are skewed a bit due to a work-around for a reduce-reduce 
+       conflict in tig.yac (see array_defn) */
 
  
     /* var c := bar [ N ] of zeroes */
     var c := [ N ] bar of zeroes 
 
 
-/* execution of the scope */
+/* execution of the scope 
+ this in clause by itself should work :
 
-/* this in clause by itself should work */
-/* in b+a */
+in b+a */
 
 in (
     a := a + b + 10
