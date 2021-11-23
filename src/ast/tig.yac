@@ -1397,6 +1397,9 @@ char *strmemcat(char* source, char* dest);
 
         /* Expseq is a sequence of (valueless) expressions, seperated by semicolons, and expseq
            begins and ends with paranthesis .. ( exp ; exp ; exp ; ... exp ).
+          
+           TODO: Expseq may also be a non paranthesized single expression, or an l-value that
+           gets evaluated. Need to update grammar below.
          */
 
          expseq :         lparan rparan {
