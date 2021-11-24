@@ -586,9 +586,9 @@ static const yytype_uint16 yyrline[] =
      670,   699,   721,   743,   771,   814,   842,   867,   893,   921,
      948,   975,  1002,  1029,  1056,  1084,  1110,  1138,  1148,  1170,
     1188,  1202,  1216,  1229,  1253,  1272,  1290,  1310,  1330,  1342,
-    1360,  1378,  1402,  1421,  1442,  1460,  1467,  1480,  1487,  1500,
-    1507,  1520,  1527,  1540,  1547,  1560,  1587,  1600,  1610,  1626,
-    1639,  1651,  1668,  1692,  1717,  1755
+    1360,  1378,  1413,  1432,  1453,  1471,  1478,  1491,  1498,  1511,
+    1518,  1531,  1538,  1551,  1558,  1571,  1598,  1611,  1621,  1637,
+    1650,  1662,  1679,  1703,  1728,  1766
 };
 #endif
 
@@ -2824,7 +2824,7 @@ yyreduce:
     break;
 
   case 62:
-#line 1402 "tig.yac" /* yacc.c:1646  */
+#line 1413 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2848,7 +2848,7 @@ yyreduce:
     break;
 
   case 63:
-#line 1421 "tig.yac" /* yacc.c:1646  */
+#line 1432 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2873,7 +2873,7 @@ yyreduce:
     break;
 
   case 64:
-#line 1442 "tig.yac" /* yacc.c:1646  */
+#line 1453 "tig.yac" /* yacc.c:1646  */
     {
 
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2895,7 +2895,7 @@ yyreduce:
     break;
 
   case 65:
-#line 1460 "tig.yac" /* yacc.c:1646  */
+#line 1471 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
@@ -2906,7 +2906,7 @@ yyreduce:
     break;
 
   case 66:
-#line 1467 "tig.yac" /* yacc.c:1646  */
+#line 1478 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2923,7 +2923,7 @@ yyreduce:
     break;
 
   case 67:
-#line 1480 "tig.yac" /* yacc.c:1646  */
+#line 1491 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
@@ -2934,7 +2934,7 @@ yyreduce:
     break;
 
   case 68:
-#line 1487 "tig.yac" /* yacc.c:1646  */
+#line 1498 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2951,7 +2951,7 @@ yyreduce:
     break;
 
   case 69:
-#line 1500 "tig.yac" /* yacc.c:1646  */
+#line 1511 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
@@ -2962,7 +2962,7 @@ yyreduce:
     break;
 
   case 70:
-#line 1507 "tig.yac" /* yacc.c:1646  */
+#line 1518 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -2979,7 +2979,7 @@ yyreduce:
     break;
 
   case 71:
-#line 1520 "tig.yac" /* yacc.c:1646  */
+#line 1531 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
@@ -2990,7 +2990,7 @@ yyreduce:
     break;
 
   case 72:
-#line 1527 "tig.yac" /* yacc.c:1646  */
+#line 1538 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3007,7 +3007,7 @@ yyreduce:
     break;
 
   case 73:
-#line 1540 "tig.yac" /* yacc.c:1646  */
+#line 1551 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
@@ -3018,7 +3018,7 @@ yyreduce:
     break;
 
   case 74:
-#line 1547 "tig.yac" /* yacc.c:1646  */
+#line 1558 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3035,7 +3035,7 @@ yyreduce:
     break;
 
   case 75:
-#line 1560 "tig.yac" /* yacc.c:1646  */
+#line 1571 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
@@ -3046,7 +3046,7 @@ yyreduce:
     break;
 
   case 76:
-#line 1587 "tig.yac" /* yacc.c:1646  */
+#line 1598 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3063,7 +3063,7 @@ yyreduce:
     break;
 
   case 77:
-#line 1600 "tig.yac" /* yacc.c:1646  */
+#line 1611 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
@@ -3074,7 +3074,7 @@ yyreduce:
     break;
 
   case 78:
-#line 1610 "tig.yac" /* yacc.c:1646  */
+#line 1621 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3094,7 +3094,7 @@ yyreduce:
     break;
 
   case 79:
-#line 1626 "tig.yac" /* yacc.c:1646  */
+#line 1637 "tig.yac" /* yacc.c:1646  */
     {
 
 		           absyn_pos->line = A_intdup(yylval.strinfo.pos[break_kwd_pos].line);
@@ -3108,7 +3108,7 @@ yyreduce:
     break;
 
   case 80:
-#line 1639 "tig.yac" /* yacc.c:1646  */
+#line 1650 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3125,7 +3125,7 @@ yyreduce:
     break;
 
   case 81:
-#line 1651 "tig.yac" /* yacc.c:1646  */
+#line 1662 "tig.yac" /* yacc.c:1646  */
     {
 
                           /* Push new level in explist stack */
@@ -3136,7 +3136,7 @@ yyreduce:
     break;
 
   case 82:
-#line 1668 "tig.yac" /* yacc.c:1646  */
+#line 1679 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3164,7 +3164,7 @@ yyreduce:
     break;
 
   case 83:
-#line 1692 "tig.yac" /* yacc.c:1646  */
+#line 1703 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3193,7 +3193,7 @@ yyreduce:
     break;
 
   case 84:
-#line 1717 "tig.yac" /* yacc.c:1646  */
+#line 1728 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3234,7 +3234,7 @@ yyreduce:
     break;
 
   case 85:
-#line 1755 "tig.yac" /* yacc.c:1646  */
+#line 1766 "tig.yac" /* yacc.c:1646  */
     {
 
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
@@ -3498,7 +3498,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 1788 "tig.yac" /* yacc.c:1906  */
+#line 1799 "tig.yac" /* yacc.c:1906  */
 
 
 /* Definition of yacc's main follows: */

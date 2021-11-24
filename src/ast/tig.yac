@@ -1396,10 +1396,18 @@ char *strmemcat(char* source, char* dest);
                          };
 
         /* Expseq is a sequence of (valueless) expressions, seperated by semicolons, and expseq
-           begins and ends with paranthesis .. ( exp ; exp ; exp ; ... exp ).
+           begins and ends with paranthesis when multiple expressions .. ( exp ; exp ; exp ; ... exp ).
+
+           Alt : Expseq is a sequence of zero or more expressions, separated by semicolons. The result (if any)
+           of the last exp in the sequence is the result of expseq. 
+
+           Expseq has paranthesis and semicolons if multiple expressions but for a single expression 
+           paranthesis are optional.
           
-           TODO: Expseq may also be a non paranthesized single expression, or an l-value that
-           gets evaluated. Need to update grammar below.
+           Thus, Expseq may also be a non paranthesized single expression (or an lvalue/expv) that
+           gets evaluated (expv is a valued expression). Need to update grammar below.
+ 
+           We may be missing a %type for a single exp (since we have explist and expseq)?
          */
 
          expseq :         lparan rparan {
