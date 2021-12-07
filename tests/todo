@@ -1,3 +1,13 @@
+TODO: 12.7.2021
+---------------
+
+1. Need a test infra (basic) to run all tests in this folder and report what fails
+2. Should be at 100% pass rate for checkins.
+
+TODO: Stuff below should be moved to src after review:
+------------------------------------------------------ 
+
+
 * * * * *
 1. symbols implementation (replace STR with sym)
 2. implementation of constructor functions, including memory management
