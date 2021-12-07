@@ -9,7 +9,8 @@ type c = b
 type testarray = array of hit  
 
 var try_hit := 2 + elf
-var corona := abcd * zyngert * (now + then - current)
+/* var corona := abcd * zyngert * (now + then - current) */
+var corona := abcd * zyngert * (now + then1 - current)
 
 type intarray = array of int  
 type strarray = array of string  

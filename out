@@ -4,24 +4,44 @@
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xdab5a0 (0x0xdab5a0) TO HIGH = 0xe393e0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x742770 (0x0x742770) TO HIGH = 0x7d05b0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xdb1440 (0x0xdb1440) TO HIGH = 0xe3f280
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x748610 (0x0x748610) TO HIGH = 0x7d6450
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
 [./src/tc/semant.c]: CASE OF LETEXP
-[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c]: LET scope block at (164,2)
 [./src/tc/semant.c] parseASTDec:
 [./src/tc/semant.c]: CASE OF TYPE DECLS
 [./src/tc/semant.c]: TYPE DECL for symbol foo (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name ( int)
-[./src/tc/semant.c]: TYPE DECL for symbol foo1 (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (intx)
-[./src/tc/semant.c]: TYPE DECL for symbol foo2 (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name ( string)
-[./src/tc/semant.c]: TYPE DECL for symbol bar (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (bar)
+[./src/tc/semant.c]: TYPE DECL for symbol meguil (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (baroda)
+[./src/tc/semant.c]: TYPE DECL for symbol lashid (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (tamquan)
+[./src/tc/semant.c]: TYPE DECL for symbol b (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (c)
+[./src/tc/semant.c]: TYPE DECL for symbol c (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (b)
+[./src/tc/semant.c]: TYPE DECL for symbol testarray (NEEDS HANDLING)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol intarray (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol strarray (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol rectype (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol rectype2 (NEEDS HANDLING)
+[./src/tc/semant.c] parseASTDec:
+CASE OF FUNC DECLS -- UNHANDLED
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF FUNC DECLS -- UNHANDLED
 [./src/tc/semant.c] parseASTDec:
 CASE OF UNKNOWN DECLS !!!
 [./src/tc/semant.c] parseASTDec:
@@ -32,8 +52,37 @@ CASE OF UNKNOWN DECLS !!!
 CASE OF UNKNOWN DECLS !!!
 [./src/tc/semant.c] parseASTDec:
 CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol gagola (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (cherubee)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol nagui (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (shacha)
+[./src/tc/semant.c]: TYPE DECL for symbol argulza (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (amerlxio)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol orpheillo (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (nazarienna)
+[./src/tc/semant.c]: TYPE DECL for symbol rr (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol yy (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol zz (NEEDS HANDLING)
 [./src/tc/semant.c] parseASTExp:
 [./src/tc/semant.c]: CASE OF SEQEXP
 [./src/tc/semant.c] parseASTExp:
-[./src/tc/semant.c]: CASE OF ASNEXP
+[./src/tc/semant.c]: CASE OF IFEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
 [tiger]: phase2: Type check and IMT generation .. completed

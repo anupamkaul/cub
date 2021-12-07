@@ -1,3 +1,5 @@
+// ./run ./tests/tc/test_input
+
 ./run ./tests/tc/test_tc0.ref
 
 
