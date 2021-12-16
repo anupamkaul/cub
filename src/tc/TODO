@@ -1,3 +1,19 @@
+12.16.2021
+
+1. symtab.h (and symbols.h) - the symbol table for typedefs should be a hashmap with
+   a stack connection for newest typedefs associated with the identifier, and should allow
+   for nested typedef parsing to arrive at the final type.
+
+2. I see notes on hashtable as a linear array with hashes mapped with a MAX_INDEX. Need to 
+   explore/implement actual tree implementations for a dynamic hashmap.
+
+3. Need to carve out tests commented in ifdef0 as tests, and need to add tests to compare
+   performance of different implementations (DS, Algo) for the most efficient, RAM aware
+   implementation/proposal for the symbol table for tiger. (Still assuming that symbol table
+   also stands for the type / semantics discovery table, not just the variable values but
+   variable types as well)
+
+----------------------------------------------------------------------------
 12.02.2012:
 
 1. Define our standard types to enable type parsing ..... (DOING)
