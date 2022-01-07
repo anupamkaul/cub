@@ -14,7 +14,7 @@ make sure the correct Conda Init is enabled
 '''
 
 import os
-
+import re
 from datetime import date
 
 def runtests():
@@ -30,7 +30,8 @@ def runtests():
 			 #print("File: ", file, "(", os.path.abspath(file), ") in ", filepath, " ", fileabspath)
 
 			 filepath = os.path.join(dir, file);
-			 print("File: ", file, "(", filepath, ")")
+			 if re.search("test", filepath): 
+			 	print("Test: ", file, "(", filepath, ")")
 
 
 
