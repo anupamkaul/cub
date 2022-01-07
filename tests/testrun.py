@@ -18,13 +18,19 @@ import os
 from datetime import date
 
 def runtests():
-	for subdirs, dirs, files in os.walk('./'):
+	for dir, subdirs, files in os.walk('./'):
 
-		print("dirs: ", dirs, "\n");
-		print("subdirs: ", subdirs, "\n");
+		print("\ndir: ", dir);
+		print("subdirs: ", subdirs);
 
 		for file in files:
-			print("File: ", file)
+
+			 # if we need to log absolute paths:
+			 #fileabspath = os.path.join(os.path.abspath(dir), file);
+			 #print("File: ", file, "(", os.path.abspath(file), ") in ", filepath, " ", fileabspath)
+
+			 filepath = os.path.join(dir, file);
+			 print("File: ", file, "(", filepath, ")")
 
 
 
