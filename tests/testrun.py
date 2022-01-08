@@ -15,6 +15,7 @@ make sure the correct Conda Init is enabled
 
 import os
 import re
+import subprocess
 from datetime import date
 
 def runtests():
@@ -25,13 +26,17 @@ def runtests():
 
 		for file in files:
 
-			 # if we need to log absolute paths:
-			 #fileabspath = os.path.join(os.path.abspath(dir), file);
-			 #print("File: ", file, "(", os.path.abspath(file), ") in ", filepath, " ", fileabspath)
+		 # if we need to log absolute paths:
+		 # fileabspath = os.path.join(os.path.abspath(dir), file);
+		 # print("File: ", file, "(", os.path.abspath(file), ") in ", filepath, " ", fileabspath)
 
-			 filepath = os.path.join(dir, file);
-			 if re.search("test", filepath): 
-			 	print("Test: ", file, "(", filepath, ")")
+			filepath = os.path.join(dir, file)
+
+			if re.search("test", filepath): 
+				print("Running Test: ", file, "(", filepath, ")")
+				result = subprocess.run(['../tiger', filepath], stdout=subprocess.PIPE)
+				result.stdout.decode('utf-8')
+				print("Finished execution!")
 
 
 
