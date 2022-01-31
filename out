@@ -4,85 +4,17 @@
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1da1770 (0x0x1da1770) TO HIGH = 0x1e2f5b0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x13e0b60 (0x0x13e0b60) TO HIGH = 0x146e9a0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1da7610 (0x0x1da7610) TO HIGH = 0x1e35450
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x13e6a00 (0x0x13e6a00) TO HIGH = 0x1474840
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
 [./src/tc/semant.c]: CASE OF LETEXP
-[./src/tc/semant.c]: LET scope block at (164,2)
-[./src/tc/semant.c] parseASTDec:
-[./src/tc/semant.c]: CASE OF TYPE DECLS
-[./src/tc/semant.c]: TYPE DECL for symbol foo (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (bar)
-[./src/tc/semant.c]: TYPE DECL for symbol meguil (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (baroda)
-[./src/tc/semant.c]: TYPE DECL for symbol lashid (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (tamquan)
-[./src/tc/semant.c]: TYPE DECL for symbol b (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (c)
-[./src/tc/semant.c]: TYPE DECL for symbol c (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (b)
-[./src/tc/semant.c]: TYPE DECL for symbol testarray (NEEDS HANDLING)
+[./src/tc/semant.c]: LET scope block at (1,1)
 [./src/tc/semant.c] parseASTDec:
 CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-[./src/tc/semant.c]: CASE OF TYPE DECLS
-[./src/tc/semant.c]: TYPE DECL for symbol intarray (NEEDS HANDLING)
-[./src/tc/semant.c]: TYPE DECL for symbol strarray (NEEDS HANDLING)
-[./src/tc/semant.c]: TYPE DECL for symbol rectype (NEEDS HANDLING)
-[./src/tc/semant.c]: TYPE DECL for symbol rectype2 (NEEDS HANDLING)
-[./src/tc/semant.c] parseASTDec:
-CASE OF FUNC DECLS -- UNHANDLED
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF FUNC DECLS -- UNHANDLED
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-[./src/tc/semant.c]: CASE OF TYPE DECLS
-[./src/tc/semant.c]: TYPE DECL for symbol gagola (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (cherubee)
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-[./src/tc/semant.c]: CASE OF TYPE DECLS
-[./src/tc/semant.c]: TYPE DECL for symbol nagui (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (shacha)
-[./src/tc/semant.c]: TYPE DECL for symbol argulza (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (amerlxio)
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTDec:
-[./src/tc/semant.c]: CASE OF TYPE DECLS
-[./src/tc/semant.c]: TYPE DECL for symbol orpheillo (NEEDS HANDLING)
-[./src/tc/semant.c]: is of Type 1 with symbol name (nazarienna)
-[./src/tc/semant.c]: TYPE DECL for symbol rr (NEEDS HANDLING)
-[./src/tc/semant.c]: TYPE DECL for symbol yy (NEEDS HANDLING)
-[./src/tc/semant.c]: TYPE DECL for symbol zz (NEEDS HANDLING)
 [./src/tc/semant.c] parseASTExp:
 [./src/tc/semant.c]: CASE OF SEQEXP
-[./src/tc/semant.c] parseASTExp:
-[./src/tc/semant.c]: CASE OF IFEXP
-[./src/tc/semant.c] parseASTExp:
-[./src/tc/semant.c]: CASE OF CALLEXP
 [tiger]: phase2: Type check and IMT generation .. completed
