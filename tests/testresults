@@ -1,0 +1,520 @@
+test results on  2022-02-01 10:17:13.246772
+
+dir:  ./
+subdirs:  ['tc', 'ast']
+Running Test:  test_input6 ( ./test_input6 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse] At line 25: syntax error
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger] ERROR: NULL ABSTRACT SYNTAX TREE
+Finished execution!
+
+Running Test:  test_input2 ( ./test_input2 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x12e6bc0 (0x0x12e6bc0) TO HIGH = 0x1374a00
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x12eca60 (0x0x12eca60) TO HIGH = 0x137a8a0
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input5 ( ./test_input5 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x181b710 (0x0x181b710) TO HIGH = 0x18a9550
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x18215b0 (0x0x18215b0) TO HIGH = 0x18af3f0
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input ( ./test_input )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1f4f770 (0x0x1f4f770) TO HIGH = 0x1fdd5b0
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1f55610 (0x0x1f55610) TO HIGH = 0x1fe3450
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (164,2)
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol foo (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (bar)
+[./src/tc/semant.c]: TYPE DECL for symbol meguil (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (baroda)
+[./src/tc/semant.c]: TYPE DECL for symbol lashid (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (tamquan)
+[./src/tc/semant.c]: TYPE DECL for symbol b (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (c)
+[./src/tc/semant.c]: TYPE DECL for symbol c (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (b)
+[./src/tc/semant.c]: TYPE DECL for symbol testarray (NEEDS HANDLING)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol intarray (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol strarray (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol rectype (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol rectype2 (NEEDS HANDLING)
+[./src/tc/semant.c] parseASTDec:
+CASE OF FUNC DECLS -- UNHANDLED
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF FUNC DECLS -- UNHANDLED
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol gagola (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (cherubee)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol nagui (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (shacha)
+[./src/tc/semant.c]: TYPE DECL for symbol argulza (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (amerlxio)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol orpheillo (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (nazarienna)
+[./src/tc/semant.c]: TYPE DECL for symbol rr (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol yy (NEEDS HANDLING)
+[./src/tc/semant.c]: TYPE DECL for symbol zz (NEEDS HANDLING)
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF IFEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input4 ( ./test_input4 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x8e4b60 (0x0x8e4b60) TO HIGH = 0x9729a0
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x8eaa00 (0x0x8eaa00) TO HIGH = 0x978840
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input1 ( ./test_input1 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xd22770 (0x0xd22770) TO HIGH = 0xdb05b0
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xd28610 (0x0xd28610) TO HIGH = 0xdb6450
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol foo (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (bar)
+[./src/tc/semant.c]: TYPE DECL for symbol slashid (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (manqueist)
+[./src/tc/semant.c]: TYPE DECL for symbol queryid (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (frombart)
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF IFEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF ASNEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input3 ( ./test_input3 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1b4e860 (0x0x1b4e860) TO HIGH = 0x1bdc6a0
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1b54700 (0x0x1b54700) TO HIGH = 0x1be2540
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input1x ( ./test_input1x )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1917530 (0x0x1917530) TO HIGH = 0x19a5370
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x191d3d0 (0x0x191d3d0) TO HIGH = 0x19ab210
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol bomb (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (babu)
+[./src/tc/semant.c]: TYPE DECL for symbol lashid (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (tamquan)
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF IFEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF ASNEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+
+dir:  ./tc
+subdirs:  []
+Running Test:  test_tc1 ( ./tc/test_tc1 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse] At line 2: syntax error
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger] ERROR: NULL ABSTRACT SYNTAX TREE
+Finished execution!
+
+Running Test:  test_tc3 ( ./tc/test_tc3 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse] At line 1: syntax error
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger] ERROR: NULL ABSTRACT SYNTAX TREE
+Finished execution!
+
+Running Test:  test_tc2 ( ./tc/test_tc2 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse] At line 3: syntax error
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger] ERROR: NULL ABSTRACT SYNTAX TREE
+Finished execution!
+
+Running Test:  test_tc0.ref ( ./tc/test_tc0.ref )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse] At line 15: syntax error
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger] ERROR: NULL ABSTRACT SYNTAX TREE
+Finished execution!
+
+Running Test:  test_tc0 ( ./tc/test_tc0 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x15505a0 (0x0x15505a0) TO HIGH = 0x15de3e0
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1556440 (0x0x1556440) TO HIGH = 0x15e4280
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol foo (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name ( int)
+[./src/tc/semant.c]: TYPE DECL for symbol foo1 (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (intx)
+[./src/tc/semant.c]: TYPE DECL for symbol foo2 (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name ( string)
+[./src/tc/semant.c]: TYPE DECL for symbol bar (NEEDS HANDLING)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF ASNEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+
+dir:  ./ast
+subdirs:  []
+Running Test:  test_input6 ( ./ast/test_input6 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse] At line 25: syntax error
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger] ERROR: NULL ABSTRACT SYNTAX TREE
+Finished execution!
+
+Running Test:  test_input2 ( ./ast/test_input2 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x2599bc0 (0x0x2599bc0) TO HIGH = 0x2627a00
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x259fa60 (0x0x259fa60) TO HIGH = 0x262d8a0
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input5 ( ./ast/test_input5 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1b43710 (0x0x1b43710) TO HIGH = 0x1bd1550
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1b495b0 (0x0x1b495b0) TO HIGH = 0x1bd73f0
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input ( ./ast/test_input )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse] At line 13: syntax error
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger] ERROR: NULL ABSTRACT SYNTAX TREE
+Finished execution!
+
+Running Test:  test_input4 ( ./ast/test_input4 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xf65b60 (0x0xf65b60) TO HIGH = 0xff39a0
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xf6ba00 (0x0xf6ba00) TO HIGH = 0xff9840
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input1 ( ./ast/test_input1 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xa2c770 (0x0xa2c770) TO HIGH = 0xaba5b0
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xa32610 (0x0xa32610) TO HIGH = 0xac0450
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol foo (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (bar)
+[./src/tc/semant.c]: TYPE DECL for symbol slashid (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (manqueist)
+[./src/tc/semant.c]: TYPE DECL for symbol queryid (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (frombart)
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF IFEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF ASNEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input3 ( ./ast/test_input3 )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1e76860 (0x0x1e76860) TO HIGH = 0x1f046a0
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1e7c700 (0x0x1e7c700) TO HIGH = 0x1f0a540
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+CASE OF UNKNOWN DECLS !!!
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+
+Running Test:  test_input1x ( ./ast/test_input1x )
+[tiger]: phase1: Abstract Tree Generation .. start
+[tparse]: finished parsing yacc tree. AST should be ready
+[tiger]: phase1: Abstract Tree Generation .. completed
+[tiger]: phase2: Type check and IMT generation .. start
+[semant]: semantic analysis and typecheck start
+[semant]: initialize symbol table V
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x23a3530 (0x0x23a3530) TO HIGH = 0x2431370
+[symtab]: No. of bytes allocated = 24216
+[semant]: initialize symbol table T
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x23a93d0 (0x0x23a93d0) TO HIGH = 0x2437210
+[symtab]: No. of bytes allocated = 24216
+[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF LETEXP
+[./src/tc/semant.c]: LET scope block at (1,1)
+[./src/tc/semant.c] parseASTDec:
+[./src/tc/semant.c]: CASE OF TYPE DECLS
+[./src/tc/semant.c]: TYPE DECL for symbol bomb (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (babu)
+[./src/tc/semant.c]: TYPE DECL for symbol lashid (NEEDS HANDLING)
+[./src/tc/semant.c]: is of Type 1 with symbol name (tamquan)
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF SEQEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF IFEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF ASNEXP
+[./src/tc/semant.c] parseASTExp:
+[./src/tc/semant.c]: CASE OF CALLEXP
+[tiger]: phase2: Type check and IMT generation .. completed
+Finished execution!
+

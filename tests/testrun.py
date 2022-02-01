@@ -16,13 +16,27 @@ make sure the correct Conda Init is enabled
 import os
 import re
 import subprocess
-from datetime import date
+import sys
+import datetime
 
 def runtests():
+
+	orig_stdout = sys.stdout
+	tresult = open("testresults", "w") 
+	sys.stdout = tresult # map printfs to file
+
+	# python buffers output to files (like with printf)
+	# but subprocess writes directly to files, not to Python buffer
+	# so, to preserve chrono order of printfs to file I flush buffer to file for printf
+
+	print("test results on ", datetime.datetime.now())
+	sys.stdout.flush()
+
 	for dir, subdirs, files in os.walk('./'):
 
 		print("\ndir: ", dir);
 		print("subdirs: ", subdirs);
+		sys.stdout.flush()
 
 		for file in files:
 
@@ -32,17 +46,21 @@ def runtests():
 
 			filepath = os.path.join(dir, file)
 
-			if re.search("test", filepath): 
+			if re.search("test_", filepath): 
 				print("Running Test: ", file, "(", filepath, ")")
-				result = subprocess.run(['../tiger', filepath], stdout=subprocess.PIPE)
-				result.stdout.decode('utf-8')
-				print("Finished execution!")
+				sys.stdout.flush()
+				result = subprocess.call(['../tiger', filepath], stdout=tresult, stderr=tresult)
+				print("Finished execution!\n")
+				sys.stdout.flush()
 
-
+	
+	tresult.close()
+	sys.stdout = orig_stdout
 
 def main():
-	print("Cub test-runner on ", date.today(), "\n")
+	print("Cub test-runner on ", datetime.date.today(), "\n")
 	runtests()
+	print("End Run Cub test-runner on ", datetime.date.today(), "\n")
 
 if __name__ == ' __main__':
 	print ("Hello")
