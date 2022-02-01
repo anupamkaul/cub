@@ -16,9 +16,19 @@ make sure the correct Conda Init is enabled
 import os
 import re
 import subprocess
+import sys
 from datetime import date
 
 def runtests():
+
+	orig_stdout = sys.stdout
+	tresult = open("testrun", "w") 
+	sys.stdout = tresult # map printfs to file
+
+	# python buffers output to files (like with printf)
+	# but subprocess writes directly to files, not to Python buffer
+	# so, to preserve chrono order of printfs to file I flush buffer to file for printf
+
 	for dir, subdirs, files in os.walk('./'):
 
 		print("\ndir: ", dir);
@@ -26,8 +36,8 @@ def runtests():
 
 		testresname = "testrun" + str(date.today())
 		print("test results : ", testresname)
+		sys.stdout.flush()
 
-		tresult = open("testrun", "w") 
 		for file in files:
 
 		 # if we need to log absolute paths:
@@ -38,14 +48,19 @@ def runtests():
 
 			if re.search("test_", filepath): 
 				print("Running Test: ", file, "(", filepath, ")")
+				sys.stdout.flush()
 				result = subprocess.call(['../tiger', filepath], stdout=tresult, stderr=tresult)
-				print("Finished execution!")
+				print("Finished execution!\n")
+				sys.stdout.flush()
 
-		tresult.close()
+	
+	tresult.close()
+	sys.stdout = orig_stdout
 
 def main():
 	print("Cub test-runner on ", date.today(), "\n")
 	runtests()
+	print("End Run Cub test-runner on ", date.today(), "\n")
 
 if __name__ == ' __main__':
 	print ("Hello")
