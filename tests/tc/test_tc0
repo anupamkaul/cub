@@ -1,10 +1,6 @@
 let
  
     /* scope1 for our type and var defs 
-     *
-     * TODO : this line has a syntax error at 'int' 
-     * type foo = "int"--> I have to replace "int" with "inty" for now
-     * (this is also a test for multiline comments) 
      */
 
     type foo =  int

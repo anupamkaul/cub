@@ -60,7 +60,7 @@ def runtests():
 def main():
 	print("Cub test-runner on ", datetime.date.today(), "\n")
 	runtests()
-	print("End Run Cub test-runner on ", datetime.date.today(), "\n")
+	print("Results in testresults \n")
 
 if __name__ == ' __main__':
 	print ("Hello")
