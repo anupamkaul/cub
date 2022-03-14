@@ -1537,7 +1537,7 @@ yyreduce:
                              	/* pop tyList and add to current decList */
                              	/* (note: absyn_pos is not defined ..) */
 #ifdef YDUMP_TYLIST
-                           	fprintf(yyout, "MAIN BAPU TYPE DECL CONTD\n");
+                           	fprintf(yyout, "MAIN TYPE DECL CONSTRUCT CONTD\n");
                              	prn_atyList(A_peeptyList(0));
 #endif
                              	//absyn_decList = A_DecList(A_TypeDec(absyn_pos, A_poptyList()),absyn_decList);
