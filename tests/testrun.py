@@ -46,7 +46,8 @@ def runtests():
 
 			filepath = os.path.join(dir, file)
 
-			if re.search("test_", filepath): 
+			#if re.search("test_", filepath): 
+			if re.search(".tig$", filepath): 
 				print("Running Test: ", file, "(", filepath, ")")
 				sys.stdout.flush()
 				result = subprocess.call(['../tiger', filepath], stdout=tresult, stderr=tresult)
