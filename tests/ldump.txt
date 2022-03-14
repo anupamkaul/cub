@@ -1,0 +1,22 @@
+let^KWD(1,1)^  
+
+type^KWD(3,1)^  bomb^IDENT(3,6)^  =^EQ_OP(3,11)^  babu^IDENT(3,13)^ 
+type^KWD(4,1)^  lashid^IDENT(4,6)^  =^EQ_OP(4,13)^  tamquan^IDENT(4,15)^ 
+
+in^KWD(6,1)^  (^LPARAN(6,4)^  
+     treeLeaves^IDENT(7,6)^ (^LPARAN(7,16)^ 3^PURE_NUM(7,17)^ )^rparan^ )^RPARAN(7,18)^ ;^SEMICOLON(7,19)^ 
+
+     <^CSt^  ^CEnd^>
+     a^IDENT(10,6)^  :=^ASN_OP(10,8)^  5^PURE_NUM(10,11)^  +^ADD_OP(10,13)^  6^PURE_NUM(10,15)^ ;^SEMICOLON(10,16)^  
+     
+if^KWD(12,1)^  (^LPARAN(12,4)^  mama^IDENT(12,6)^  =^EQ_OP(12,11)^  papa^IDENT(12,13)^  )^rparan^ )^RPARAN(12,18)^  then^KWD(12,19)^   
+(^LPARAN(13,1)^ 
+   try1^IDENT(14,4)^ (^LPARAN(14,8)^ )^rparan^ )^RPARAN(14,9)^ ;^SEMICOLON(14,10)^ 
+   tryr^IDENT(15,4)^ (^LPARAN(15,8)^ )^rparan^ )^RPARAN(15,9)^ 
+)^rparan^ )^RPARAN(16,1)^ 
+
+   )^rparan^ )^RPARAN(18,4)^ 
+
+end^KWD(20,1)^  
+
+	
