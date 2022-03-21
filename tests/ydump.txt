@@ -1,42 +1,189 @@
 GOING IN TYPE (FRST, FALSE) ;)
 
-<BISON> EVALD a type_decl: type foo = bar
-GOING IN TYPE FOR symbol foo ;)
-
-<BISON> EVALD a type_decl: type meguil = baroda
-GOING IN TYPE FOR symbol meguil ;)
+<BISON> EVALD a type_decl: type bomb = babu
+GOING IN TYPE FOR symbol bomb ;)
 
 <BISON> EVALD a type_decl: type lashid = tamquan
 GOING IN TYPE FOR symbol lashid ;)
+MAIN BAPU TYPE DECL START
 
-<BISON> EVALD a type_decl: type b = c
-GOING IN TYPE FOR symbol b ;)
 
-<BISON> EVALD a type_decl: type c = b
-GOING IN TYPE FOR symbol c ;)
+NEW TYPE LIST DETAILS
+1 TYPE HEADER
+ TYPE LHS = bomb
+ TYPE RHS: ID TYPE
+ id: babu
+2 TYPE HEADER
+ TYPE LHS = lashid
+ TYPE RHS: ID TYPE
+ id: tamquan
+[END TYPE LIST]
 
-<BISON> EVALD a type_decl: type testarray =  array  of hit
-GOING IN TYPE FOR symbol testarray ;)
-3. EXPLITERAL (pure num): 2 (12, 16)
-1. SIMPLE VAR (l:12, c:20): elf
-3. EXPLITERAL (lvalue): elf
-Discovered an EXPLITEral: elf
-ADD EXP (l:12, c:18): 2 + elf
+
+AVEC A NULL
+3. EXPLITERAL (pure num): 3 (7, 17)
+Discovered an EXPLITEral: 3
+
+<BISON> EVALD a func call: treeLeaves(3)
+ syntax error bcoz assignment not done yet 1. SIMPLE VAR (l:10, c:6): a
+3. EXPLITERAL (pure num): 5 (10, 11)
+3. EXPLITERAL (pure num): 6 (10, 15)
+Discovered an EXPLITEral: 6
+ADD EXP (l:10, c:13): 5 + 6
 In the ADD EXP, exp_left:
-PRNSTAT-EXP: VAR EXP (l:12, c:20): (details below)
-PRNSTAT-VAR: SIMPLE VAR (l:12, c:20): elf
+PRNSTAT-EXP: INT EXP : 6
+PRNSTAT-EXP: INT EXP (l:10, c:15)
 
 In the ADD EXP, exp_right:
-PRNSTAT-EXP: INT EXP : 2
-PRNSTAT-EXP: INT EXP (l:12, c:16)
+PRNSTAT-EXP: INT EXP : 5
+PRNSTAT-EXP: INT EXP (l:10, c:11)
+
+On adding the asn-exp,
+PRNSTAT-EXP: ASN-EXP (l:10, c:8)
+
+LHS of Assign Statement:
+PRNSTAT-VAR: SIMPLE VAR (l:10, c:6): a
+
+RHS of Assign Statement:
+PRNSTAT-EXP: BOP EXP (l:10, c:13): OpType=PLUS
+
+ Printing about Left SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 5
+PRNSTAT-EXP: INT EXP (l:10, c:11)
+
+ Printing about Right SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 6
+PRNSTAT-EXP: INT EXP (l:10, c:15)
+
+(End of Assign Statement)
+On discovering the asn-exp,
+
+Expression List:
+------------------
+[EXPLIST] expression no. 1 is as follows: 
+PRNSTAT-EXP: ASN-EXP (l:10, c:8)
+
+LHS of Assign Statement:
+PRNSTAT-VAR: SIMPLE VAR (l:10, c:6): a
+
+RHS of Assign Statement:
+PRNSTAT-EXP: BOP EXP (l:10, c:13): OpType=PLUS
+
+ Printing about Left SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 5
+PRNSTAT-EXP: INT EXP (l:10, c:11)
+
+ Printing about Right SubExp of PLUS now:
+PRNSTAT-EXP: INT EXP : 6
+PRNSTAT-EXP: INT EXP (l:10, c:15)
+
+(End of Assign Statement)
+[EXPLIST] expression no. 2 is as follows: 
+PRNSTAT-EXP: FUNC-CALL (l:7, c:6) of function 'treeLeaves'
+
+Parameters passed to this function are as follows:
+
+Expression List:
+------------------
+[EXPLIST] expression no. 1 is as follows: 
+PRNSTAT-EXP: INT EXP : 3
+PRNSTAT-EXP: INT EXP (l:7, c:17)
+
+[end expression list]
 
 
-<BISON> EVALD a var_decl: var try_hit := 2 + elf
-TEST: try_hit
-TEST (pos line IS WRONG): 13
-1. SIMPLE VAR (l:13, c:15): abcd
-3. EXPLITERAL (lvalue): abcd
-1. SIMPLE VAR (l:13, c:22): zyngert
-3. EXPLITERAL (lvalue): zyngert
-1. SIMPLE VAR (l:13, c:33): now
-3. EXPLITERAL (lvalue): now
+[end expression list]
+
+
+1. SIMPLE VAR (l:12, c:6): mama
+3. EXPLITERAL (lvalue): mama
+1. SIMPLE VAR (l:12, c:13): papa
+3. EXPLITERAL (lvalue): papa
+Discovered an EXPLITEral: papa
+EQUAL COMPARE EXP (l:12, c:11): mama = papa
+In the EQ-COMP EXP, exp_left:
+PRNSTAT-EXP: VAR EXP (l:12, c:13): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:12, c:13): papa
+
+In the EQ-COMP EXP, exp_right:
+PRNSTAT-EXP: VAR EXP (l:12, c:6): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:12, c:6): mama
+
+Discovered an EXPLITEral: ( mama = papa )
+
+<BISON> EVALD a func call: try1()
+<BISON> EVALD a func call: tryr()
+<BISON> EVALD an if_then_decl: if ( mama = papa )  then ( try1() ;
+tryr() )
+PRNSTAT-EXP: IF-EXP (l:12, c:1)
+
+IF TEST CONDITION EXPRESSION:
+PRNSTAT-EXP: BOP EXP (l:12, c:11): OpType=EQ(COMP)
+
+ Printing about Left SubExp of EQ(COMP) now:
+PRNSTAT-EXP: VAR EXP (l:12, c:6): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:12, c:6): mama
+
+ Printing about Right SubExp of EQ(COMP) now:
+PRNSTAT-EXP: VAR EXP (l:12, c:13): (details below)
+PRNSTAT-VAR: SIMPLE VAR (l:12, c:13): papa
+
+IF THENBODY EXPRESSION:
+PRNSTAT-EXP: SEQ-EXP (l:15, c:8)
+
+BLOCK EXPRESSION STATEMENT IS AS FOLLOWS:
+
+Expression List:
+------------------
+[EXPLIST] expression no. 1 is as follows: 
+PRNSTAT-EXP: FUNC-CALL (l:15, c:4) of function 'tryr'
+
+Parameters passed to this function are as follows:
+
+Expression List:
+------------------
+[end expression list]
+
+
+[EXPLIST] expression no. 2 is as follows: 
+PRNSTAT-EXP: FUNC-CALL (l:14, c:4) of function 'try1'
+
+Parameters passed to this function are as follows:
+
+Expression List:
+------------------
+[end expression list]
+
+
+[end expression list]
+
+
+END OF IF-EXP
+
+<BISON> EVALD a LET_decl (occurance 1,1): let
+[Type]
+false_type
+in
+[Body]
+( treeLeaves(3) ;
+a := 5 + 6 ;
+if ( mama = papa )  then ( try1() ;
+tryr() ) )
+end
+[END]
+
+
+
+(test) ROOT REACHED at : let
+[Type]
+false_type
+in
+[Body]
+( treeLeaves(3) ;
+a := 5 + 6 ;
+if ( mama = papa )  then ( try1() ;
+tryr() ) )
+end
+[END]
+
+

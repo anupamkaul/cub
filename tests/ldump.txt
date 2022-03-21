@@ -1,13 +1,22 @@
 let^KWD(1,1)^  
 
-type^KWD(3,1)^  foo^IDENT(3,6)^  =^EQ_OP(3,10)^  bar^IDENT(3,12)^ 
-type^KWD(4,1)^  meguil^IDENT(4,6)^  =^EQ_OP(4,13)^  baroda^IDENT(4,15)^ 
-type^KWD(5,1)^  lashid^IDENT(5,6)^  =^EQ_OP(5,13)^  tamquan^IDENT(5,15)^ 
+type^KWD(3,1)^  bomb^IDENT(3,6)^  =^EQ_OP(3,11)^  babu^IDENT(3,13)^ 
+type^KWD(4,1)^  lashid^IDENT(4,6)^  =^EQ_OP(4,13)^  tamquan^IDENT(4,15)^ 
 
-type^KWD(7,1)^  b^IDENT(7,6)^ =^EQ_OP(7,7)^ c^IDENT(7,8)^ 
-type^KWD(8,1)^  c^IDENT(8,6)^  =^EQ_OP(8,8)^  b^IDENT(8,10)^  
+in^KWD(6,1)^  (^LPARAN(6,4)^  
+     treeLeaves^IDENT(7,6)^ (^LPARAN(7,16)^ 3^PURE_NUM(7,17)^ )^rparan^ )^RPARAN(7,18)^ ;^SEMICOLON(7,19)^ 
 
-type^KWD(10,1)^  testarray^IDENT(10,6)^  =^EQ_OP(10,16)^  array^KWD(10,17)^  of^KWD(10,23)^  hit^IDENT(10,27)^   
+     <^CSt^  ^CEnd^>
+     a^IDENT(10,6)^  :=^ASN_OP(10,8)^  5^PURE_NUM(10,11)^  +^ADD_OP(10,13)^  6^PURE_NUM(10,15)^ ;^SEMICOLON(10,16)^  
+     
+if^KWD(12,1)^  (^LPARAN(12,4)^  mama^IDENT(12,6)^  =^EQ_OP(12,11)^  papa^IDENT(12,13)^  )^rparan^ )^RPARAN(12,18)^  then^KWD(12,19)^   
+(^LPARAN(13,1)^ 
+   try1^IDENT(14,4)^ (^LPARAN(14,8)^ )^rparan^ )^RPARAN(14,9)^ ;^SEMICOLON(14,10)^ 
+   tryr^IDENT(15,4)^ (^LPARAN(15,8)^ )^rparan^ )^RPARAN(15,9)^ 
+)^rparan^ )^RPARAN(16,1)^ 
 
-var^KWD(12,1)^  try_hit^IDENT(12,5)^  :=^ASN_OP(12,13)^  2^PURE_NUM(12,16)^  +^ADD_OP(12,18)^  elf^IDENT(12,20)^ 
-var^KWD(13,1)^  corona^IDENT(13,5)^  :=^ASN_OP(13,12)^  abcd^IDENT(13,15)^  *^MULT_OP(13,20)^  zyngert^IDENT(13,22)^  *^MULT_OP(13,30)^  (^LPARAN(13,32)^ now^IDENT(13,33)^  +^ADD_OP(13,37)^  then^KWD(13,38)^ 
+   )^rparan^ )^RPARAN(18,4)^ 
+
+end^KWD(20,1)^  
+
+	
