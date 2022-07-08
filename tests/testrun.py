@@ -48,7 +48,7 @@ def runtests():
 
 			#if re.search("test_", filepath): 
 			if re.search(".tig$", filepath): 
-				print("Running Test: ", file, "(", filepath, ")")
+				print("\nRunning Test: ", file, "(", filepath, ")")
 				sys.stdout.flush()
 				result = subprocess.call(['../tiger', filepath], stdout=tresult, stderr=tresult)
 				print("Finished execution!\n")
@@ -62,10 +62,6 @@ def main():
 	print("Cub test-runner on ", datetime.date.today(), "\n")
 	runtests()
 	print("Results in testresults \n")
-
-if __name__ == ' __main__':
-	print ("Hello")
-	main()
 
 main()
 
