@@ -60,12 +60,8 @@ def runtests():
 			#print("File: ", file, "(", os.path.abspath(file), ") in ", filepath, " ", fileabspath)
 
 			if re.search(".tig$", filepath): 
-<<<<<<< HEAD
 
 				print("Running Test: ", file, "(", filepath, ") \ncmd : ../tiger ", filepath, "\ndump in ", newtestpath, "\n")
-=======
-				print("\nRunning Test: ", file, "(", filepath, ")")
->>>>>>> 4ab68335c47337446de91895dc1d9ef29fcbbd19
 				sys.stdout.flush()
 
 				if not os.path.exists(newtestpath): 
