@@ -1,20 +1,4 @@
 [tiger]: phase1: Abstract Tree Generation .. start
+[tparse] At line 15: syntax error
 [tparse]: finished parsing yacc tree. AST should be ready
-[tiger]: phase1: Abstract Tree Generation .. completed
-[tiger]: phase2: Type check and IMT generation .. start
-[semant]: semantic analysis and typecheck start
-[semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x13e0b60 (0x0x13e0b60) TO HIGH = 0x146e9a0
-[symtab]: No. of bytes allocated = 24216
-[semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x13e6a00 (0x0x13e6a00) TO HIGH = 0x1474840
-[symtab]: No. of bytes allocated = 24216
-[./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
-[./src/tc/semant.c] parseASTExp:
-[./src/tc/semant.c]: CASE OF LETEXP
-[./src/tc/semant.c]: LET scope block at (1,1)
-[./src/tc/semant.c] parseASTDec:
-CASE OF UNKNOWN DECLS !!!
-[./src/tc/semant.c] parseASTExp:
-[./src/tc/semant.c]: CASE OF SEQEXP
-[tiger]: phase2: Type check and IMT generation .. completed
+[tiger] ERROR: NULL ABSTRACT SYNTAX TREE
