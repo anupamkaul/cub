@@ -1,10 +1,17 @@
 '''
-scan all files in this directory and recursively
-if the name contains 'test' anywhere, its a test
-run it and scan for output
+.tig recursive test runner
+-------------------------
+
+scan all subdirs and files in this directory recursively
+if file is of type *.tig then run it and log results
+
 for now, identify - errors in the process, or lack of production of files as fails
-we don't have a criteria for pass except that output was generated. Add more pass/fail as we add more stuff
+we don't have a criteria for pass except that output was generated.a
+
+Add more pass/fail as we add more stuff
+
 report fail or pass
+
 '''
 
 '''
@@ -32,25 +39,36 @@ def runtests():
 	print("test results on ", datetime.datetime.now())
 	sys.stdout.flush()
 
+	testpath = "./testruns" 
+
+	if not os.path.exists(testpath): 
+		os.mkdir(testpath);
+
 	for dir, subdirs, files in os.walk('./'):
 
 		print("\ndir: ", dir);
-		print("subdirs: ", subdirs);
+		print("subdirs: ", subdirs, "\n\n");
 		sys.stdout.flush()
 
 		for file in files:
 
-		 # if we need to log absolute paths:
-		 # fileabspath = os.path.join(os.path.abspath(dir), file);
-		 # print("File: ", file, "(", os.path.abspath(file), ") in ", filepath, " ", fileabspath)
-
 			filepath = os.path.join(dir, file)
+			newtestpath = testpath + filepath.strip(".")
 
-			#if re.search("test_", filepath): 
+		        # if we need to log absolute paths:
+			#fileabspath = os.path.join(os.path.abspath(dir), file);
+			#print("File: ", file, "(", os.path.abspath(file), ") in ", filepath, " ", fileabspath)
+
 			if re.search(".tig$", filepath): 
-				print("Running Test: ", file, "(", filepath, ")")
+
+				print("Running Test: ", file, "(", filepath, ") \ncmd : ../tiger ", filepath, "\ndump in ", newtestpath, "\n")
 				sys.stdout.flush()
+
+				if not os.path.exists(newtestpath): 
+					os.makedirs(newtestpath);
+
 				result = subprocess.call(['../tiger', filepath], stdout=tresult, stderr=tresult)
+
 				print("Finished execution!\n")
 				sys.stdout.flush()
 
@@ -62,10 +80,6 @@ def main():
 	print("Cub test-runner on ", datetime.date.today(), "\n")
 	runtests()
 	print("Results in testresults \n")
-
-if __name__ == ' __main__':
-	print ("Hello")
-	main()
 
 main()
 
