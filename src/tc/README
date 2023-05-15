@@ -1,5 +1,17 @@
 
 
-The main file is semant.c (function tc_main()) which takes the AST and starts parsing it for the next step (semantic analysis and type check, error corrections, symbol table creation and lookup, and any other register optimizations etc).
+The main file is semant.c (function tc_main()) 
+
+It calls parseASTExp(symtab_v, symtab_t, AST_root);
+
+- This takes the AST (at root, generated from previous phase) and starts parsing it for the next steps:
+(for all A_Exp type), for that particular A_Exp:
+ -- semantic analysis and type check
+ -- error corrections
+ -- symbol table creation and lookup 
+ -- any other register optimizations etc
+
+The output from this overall phase is calling out errors during type checking
+and preparing for the IR representation next.
 
 
