@@ -67,13 +67,25 @@ def runtests():
 				if not os.path.exists(newtestpath): 
 					os.makedirs(newtestpath);
 
-				result = subprocess.call(['../tiger', filepath], stdout=tresult, stderr=tresult)
+				
+				tresult_local = open("out", "w") 
+				sys.stdout = tresult_local # map printfs to file
+
+				print("Running Test: ", file, "(", filepath, ") \ncmd : ../tiger ", filepath, "\ndump in folder ", newtestpath, "\n")
+				sys.stdout.flush()
+
+				result = subprocess.call(['../tiger', filepath], stdout=tresult_local, stderr=tresult_local)
 
 				print("Finished execution!\n")
 				sys.stdout.flush()
 
+				tresult_local.close()
+				sys.stdout = tresult
+
 				result = subprocess.call(['mv', 'ldump.txt', newtestpath])
-				result = subprocess.call(['mv', 'ydump.txt', newtestpath])
+				result = subprocess.call(['mv', 'ydump.txt', newtestpath]) 
+				result = subprocess.call(['mv', 'out', newtestpath]) 
+
 
 	
 	tresult.close()
