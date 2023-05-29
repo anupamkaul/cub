@@ -1,79 +1,160 @@
-Development of a mini compiler
+Development of a mini compiler (cub)
 
-src
-├── ast
-│   ├── absyn.c
-│   ├── absyn_def.h
-│   ├── absyn.h
-│   ├── absyn_malloc.c
-│   ├── absyn_malloc.h
-│   ├── dbg
-│   ├── lex.yy.c
-│   ├── Makefile
-│   ├── notes
-│   │   ├── gen_note
-│   │   ├── note
-│   │   ├── note1
-│   │   ├── note_linux
-│   │   ├── notes_absyn
-│   │   └── RCS
-│   │       └── note,v
-│   ├── pos_def.h
-│   ├── prn_exp.c
-│   ├── prn_exp.c_
-│   ├── prn_exp.h
-│   ├── RCS
-│   │   ├── pos_def.h,v
-│   │   ├── tig.lex,v
-│   │   └── tig.yac,v
-│   ├── runl
-│   ├── symbols.c
-│   ├── symbols.h
-│   ├── tests
+├── last_run
+├── ldump.txt
+├── Makefile
+├── out
+├── README
+├── README.new
+├── run
+├── scratch
+│   ├── dyn_array
+│   │   ├── a.out
+│   │   ├── d1.c
+│   │   ├── OUT
+│   │   ├── OUT_6k
+│   │   └── run
+│   └── notes
+├── src
+│   ├── ast
+│   │   ├── absyn.c
+│   │   ├── absyn_def.h
+│   │   ├── absyn.h
+│   │   ├── absyn_malloc.c
+│   │   ├── absyn_malloc.h
+│   │   ├── absyn_malloc.o
+│   │   ├── absyn.o
+│   │   ├── dbg
+│   │   ├── lex.yy.c
+│   │   ├── lex.yy.o
+│   │   ├── Makefile
+│   │   ├── notes
+│   │   │   ├── gen_note
+│   │   │   ├── note
+│   │   │   ├── note1
+│   │   │   ├── note_linux
+│   │   │   └── notes_absyn
+│   │   ├── pos_def.h
+│   │   ├── prn_exp.c
+│   │   ├── prn_exp.c_
+│   │   ├── prn_exp.h
+│   │   ├── prn_exp.o
+│   │   ├── runl
+│   │   ├── symbols.c
+│   │   ├── symbols.h
+│   │   ├── tests
+│   │   │   ├── datatypes_test.c
+│   │   │   ├── explanations
+│   │   │   ├── new_test.c
+│   │   │   ├── test_input
+│   │   │   ├── test_input1
+│   │   │   ├── test_input2
+│   │   │   ├── test_input3
+│   │   │   ├── test_input4
+│   │   │   ├── test_input5
+│   │   │   ├── test_input6
+│   │   │   ├── tig.cp
+│   │   │   ├── tig.yac13Sept
+│   │   │   ├── tig.yac.bum
+│   │   │   ├── tig.yac.cp
+│   │   │   ├── todo
+│   │   │   ├── todo_13Sept
+│   │   │   └── val
+│   │   ├── tig.lex
+│   │   ├── tig.yac
+│   │   ├── todo
+│   │   ├── y.output
+│   │   ├── y.tab.c
+│   │   ├── y.tab.h
+│   │   └── y.tab.o
+│   ├── main.c
+│   └── tc
+│       ├── env.c
+│       ├── env.h
+│       ├── makefile
+│       ├── notes
+│       ├── README
+│       ├── semant.c
+│       ├── semant.h
+│       ├── semant_utils.c
+│       ├── semant_utils.h
+│       ├── symbols.c
+│       ├── symbols.h
+│       ├── symtab.c
+│       ├── symtab.c.1
+│       ├── symtab.h
+│       ├── tests
+│       │   └── symtab.c
+│       ├── todo
+│       ├── TODO
+│       ├── types.c
+│       └── types.h
+├── tests
+│   ├── ast
+│   │   ├── test_input1.tig
+│   │   ├── test_input1x.tig
+│   │   ├── test_input2.tig
+│   │   ├── test_input3.tig
+│   │   ├── test_input4.tig
+│   │   ├── test_input5.tig
+│   │   ├── test_input6.tig
+│   │   └── test_input.tig
+│   ├── ldump.txt
+│   ├── misc
 │   │   ├── datatypes_test.c
 │   │   ├── explanations
 │   │   ├── new_test.c
-│   │   ├── test_input
-│   │   ├── test_input1
-│   │   ├── test_input2
-│   │   ├── test_input3
-│   │   ├── test_input4
-│   │   ├── test_input5
-│   │   ├── test_input6
-│   │   ├── tig.cp
-│   │   ├── tig.yac13Sept
-│   │   ├── tig.yac.bum
-│   │   ├── tig.yac.cp
 │   │   ├── todo
 │   │   ├── todo_13Sept
 │   │   └── val
-│   ├── tig.lex
-│   ├── tig.yac
-│   ├── todo
-│   ├── y.output
-│   ├── y.tab.c
-│   └── y.tab.h
-├── main.c
-└── tc
-    ├── env.c
-    ├── env.h
-    ├── makefile
-    ├── notes
-    ├── README
-    ├── semant.c
-    ├── semant.h
-    ├── semant_utils.c
-    ├── semant_utils.h
-    ├── symbols.c
-    ├── symbols.h
-    ├── symtab.c
-    ├── symtab.c.1
-    ├── symtab.h
-    ├── tests
-    │   └── symtab.c
-    ├── todo
-    ├── TODO
-    ├── types.c
-    └── types.h
+│   ├── sample_programs
+│   │   └── queens.tig
+│   ├── tc
+│   │   ├── test_tc0.ref
+│   │   ├── test_tc0.tig
+│   │   ├── test_tc1.tig
+│   │   ├── test_tc2.tig
+│   │   ├── test_tc3.tig
+│   │   └── test_tc4.tig
+│   ├── test_input1.tig
+│   ├── test_input1x.tig
+│   ├── test_input2.tig
+│   ├── test_input3.tig
+│   ├── test_input4.tig
+│   ├── test_input5.tig
+│   ├── test_input6.tig
+│   ├── test_input.tig
+│   ├── testresults
+│   ├── testrun.py
+│   ├── testruns
+│   │   ├── ast
+│   │   │   ├── test_input1.tig
+│   │   │   ├── test_input1x.tig
+│   │   │   ├── test_input2.tig
+│   │   │   ├── test_input3.tig
+│   │   │   ├── test_input4.tig
+│   │   │   ├── test_input5.tig
+│   │   │   ├── test_input6.tig
+│   │   │   └── test_input.tig
+│   │   ├── sample_programs
+│   │   │   └── queens.tig
+│   │   ├── tc
+│   │   │   ├── test_tc0.tig
+│   │   │   ├── test_tc1.tig
+│   │   │   ├── test_tc2.tig
+│   │   │   ├── test_tc3.tig
+│   │   │   └── test_tc4.tig
+│   │   ├── test_input1.tig
+│   │   ├── test_input1x.tig
+│   │   ├── test_input2.tig
+│   │   ├── test_input3.tig
+│   │   ├── test_input4.tig
+│   │   ├── test_input5.tig
+│   │   ├── test_input6.tig
+│   │   └── test_input.tig
+│   ├── tig.cp
+│   └── ydump.txt
+├── tiger
+└── ydump.txt
 
-7 directories, 67 files
+39 directories, 117 files

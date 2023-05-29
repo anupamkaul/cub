@@ -1,7 +1,7 @@
-test results on  2023-05-14 18:38:15.919575
+test results on  2023-05-14 18:52:39.020841
 
 dir:  ./
-subdirs:  ['tc', 'testruns', 'sample_programs', 'ast'] 
+subdirs:  ['tc', 'testruns', 'misc', 'sample_programs', 'ast'] 
 
 
 Running Test:  test_input.tig ( ./test_input.tig ) 
@@ -14,10 +14,10 @@ dump in  ./testruns/test_input.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1205770 (0x0x1205770) TO HIGH = 0x12935b0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1c07770 (0x0x1c07770) TO HIGH = 0x1c955b0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x120b610 (0x0x120b610) TO HIGH = 0x1299450
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1c0d610 (0x0x1c0d610) TO HIGH = 0x1c9b450
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -108,10 +108,10 @@ dump in  ./testruns/test_input3.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x19cc860 (0x0x19cc860) TO HIGH = 0x1a5a6a0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1443860 (0x0x1443860) TO HIGH = 0x14d16a0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x19d2700 (0x0x19d2700) TO HIGH = 0x1a60540
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1449700 (0x0x1449700) TO HIGH = 0x14d7540
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -136,10 +136,10 @@ dump in  ./testruns/test_input5.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x8f4710 (0x0x8f4710) TO HIGH = 0x982550
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x21e9710 (0x0x21e9710) TO HIGH = 0x2277550
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x8fa5b0 (0x0x8fa5b0) TO HIGH = 0x9883f0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x21ef5b0 (0x0x21ef5b0) TO HIGH = 0x227d3f0
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -162,10 +162,10 @@ dump in  ./testruns/test_input2.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1fa9bc0 (0x0x1fa9bc0) TO HIGH = 0x2037a00
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x182fbc0 (0x0x182fbc0) TO HIGH = 0x18bda00
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1fafa60 (0x0x1fafa60) TO HIGH = 0x203d8a0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1835a60 (0x0x1835a60) TO HIGH = 0x18c38a0
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -190,10 +190,10 @@ dump in  ./testruns/test_input1.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x858770 (0x0x858770) TO HIGH = 0x8e65b0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1000770 (0x0x1000770) TO HIGH = 0x108e5b0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x85e610 (0x0x85e610) TO HIGH = 0x8ec450
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1006610 (0x0x1006610) TO HIGH = 0x1094450
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -228,10 +228,10 @@ dump in  ./testruns/test_input6.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1c1bd30 (0x0x1c1bd30) TO HIGH = 0x1ca9b70
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1520d30 (0x0x1520d30) TO HIGH = 0x15aeb70
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1c21bd0 (0x0x1c21bd0) TO HIGH = 0x1cafa10
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1526bd0 (0x0x1526bd0) TO HIGH = 0x15b4a10
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -262,10 +262,10 @@ dump in  ./testruns/test_input4.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1794b60 (0x0x1794b60) TO HIGH = 0x18229a0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xf15b60 (0x0xf15b60) TO HIGH = 0xfa39a0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x179aa00 (0x0x179aa00) TO HIGH = 0x1828840
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xf1ba00 (0x0xf1ba00) TO HIGH = 0xfa9840
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -288,10 +288,10 @@ dump in  ./testruns/test_input1x.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x9fa530 (0x0x9fa530) TO HIGH = 0xa88370
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x10a7530 (0x0x10a7530) TO HIGH = 0x1135370
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xa003d0 (0x0xa003d0) TO HIGH = 0xa8e210
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x10ad3d0 (0x0x10ad3d0) TO HIGH = 0x113b210
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -329,10 +329,10 @@ dump in  ./testruns/tc/test_tc0.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1b755a0 (0x0x1b755a0) TO HIGH = 0x1c033e0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x12905a0 (0x0x12905a0) TO HIGH = 0x131e3e0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1b7b440 (0x0x1b7b440) TO HIGH = 0x1c09280
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1296440 (0x0x1296440) TO HIGH = 0x1324280
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -406,7 +406,7 @@ Finished execution!
 
 
 dir:  ./testruns
-subdirs:  ['tc', 'test_input.tig', 'test_input3.tig', 'test_input5.tig', 'test_input2.tig', 'test_input1.tig', 'test_input6.tig', 'test_input4.tig', 'test_input1x.tig'] 
+subdirs:  ['tc', 'test_input.tig', 'test_input3.tig', 'test_input5.tig', 'test_input2.tig', 'test_input1.tig', 'test_input6.tig', 'sample_programs', 'ast', 'test_input4.tig', 'test_input1x.tig'] 
 
 
 
@@ -470,12 +470,72 @@ subdirs:  []
 
 
 
+dir:  ./testruns/sample_programs
+subdirs:  ['queens.tig'] 
+
+
+
+dir:  ./testruns/sample_programs/queens.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast
+subdirs:  ['test_input.tig', 'test_input3.tig', 'test_input5.tig', 'test_input2.tig', 'test_input1.tig', 'test_input6.tig', 'test_input4.tig', 'test_input1x.tig'] 
+
+
+
+dir:  ./testruns/ast/test_input.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input3.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input5.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input2.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input1.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input6.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input4.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input1x.tig
+subdirs:  [] 
+
+
+
 dir:  ./testruns/test_input4.tig
 subdirs:  [] 
 
 
 
 dir:  ./testruns/test_input1x.tig
+subdirs:  [] 
+
+
+
+dir:  ./misc
 subdirs:  [] 
 
 
@@ -519,10 +579,10 @@ dump in  ./testruns/ast/test_input3.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xa5e860 (0x0xa5e860) TO HIGH = 0xaec6a0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x211a860 (0x0x211a860) TO HIGH = 0x21a86a0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xa64700 (0x0xa64700) TO HIGH = 0xaf2540
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x2120700 (0x0x2120700) TO HIGH = 0x21ae540
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -547,10 +607,10 @@ dump in  ./testruns/ast/test_input5.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x195d710 (0x0x195d710) TO HIGH = 0x19eb550
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1b97710 (0x0x1b97710) TO HIGH = 0x1c25550
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x19635b0 (0x0x19635b0) TO HIGH = 0x19f13f0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1b9d5b0 (0x0x1b9d5b0) TO HIGH = 0x1c2b3f0
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -573,10 +633,10 @@ dump in  ./testruns/ast/test_input2.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1e49bc0 (0x0x1e49bc0) TO HIGH = 0x1ed7a00
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x932bc0 (0x0x932bc0) TO HIGH = 0x9c0a00
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1e4fa60 (0x0x1e4fa60) TO HIGH = 0x1edd8a0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x938a60 (0x0x938a60) TO HIGH = 0x9c68a0
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -601,10 +661,10 @@ dump in  ./testruns/ast/test_input1.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x6cd770 (0x0x6cd770) TO HIGH = 0x75b5b0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x16f0770 (0x0x16f0770) TO HIGH = 0x177e5b0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x6d3610 (0x0x6d3610) TO HIGH = 0x761450
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x16f6610 (0x0x16f6610) TO HIGH = 0x1784450
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -649,10 +709,10 @@ dump in  ./testruns/ast/test_input4.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xa4fb60 (0x0xa4fb60) TO HIGH = 0xadd9a0
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x2197b60 (0x0x2197b60) TO HIGH = 0x22259a0
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0xa55a00 (0x0xa55a00) TO HIGH = 0xae3840
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x219da00 (0x0x219da00) TO HIGH = 0x222b840
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
@@ -675,10 +735,10 @@ dump in  ./testruns/ast/test_input1x.tig
 [tiger]: phase2: Type check and IMT generation .. start
 [semant]: semantic analysis and typecheck start
 [semant]: initialize symbol table V
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x211a530 (0x0x211a530) TO HIGH = 0x21a8370
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1ac8530 (0x0x1ac8530) TO HIGH = 0x1b56370
 [symtab]: No. of bytes allocated = 24216
 [semant]: initialize symbol table T
-[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x21203d0 (0x0x21203d0) TO HIGH = 0x21ae210
+[symtab]: TABLE AREA ALLOCATED FROM LOW = 0x1ace3d0 (0x0x1ace3d0) TO HIGH = 0x1b5c210
 [symtab]: No. of bytes allocated = 24216
 [./src/tc/semant.c]: Tiger: STARTING SEMANTIC ANALYSIS OF AST_ROOT NOW
 [./src/tc/semant.c] parseASTExp:
