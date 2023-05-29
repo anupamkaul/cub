@@ -61,7 +61,7 @@ def runtests():
 
 			if re.search(".tig$", filepath): 
 
-				print("Running Test: ", file, "(", filepath, ") \ncmd : ../tiger ", filepath, "\ndump in ", newtestpath, "\n")
+				print("Running Test: ", file, "(", filepath, ") \ncmd : ../tiger ", filepath, "\ndump in folder ", newtestpath, "\n")
 				sys.stdout.flush()
 
 				if not os.path.exists(newtestpath): 
@@ -71,6 +71,9 @@ def runtests():
 
 				print("Finished execution!\n")
 				sys.stdout.flush()
+
+				result = subprocess.call(['mv', 'ldump.txt', newtestpath])
+				result = subprocess.call(['mv', 'ydump.txt', newtestpath])
 
 	
 	tresult.close()
