@@ -82,9 +82,13 @@ def runtests():
 				tresult_local.close()
 				sys.stdout = tresult
 
+				# copy test results to test folder
 				result = subprocess.call(['mv', 'ldump.txt', newtestpath])
 				result = subprocess.call(['mv', 'ydump.txt', newtestpath]) 
 				result = subprocess.call(['mv', 'out', newtestpath]) 
+
+				refsrc = file.replace(".tig", ".ref")
+				result = subprocess.call(['cp', filepath, newtestpath + "/" + refsrc]) 
 
 
 	
