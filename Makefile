@@ -22,7 +22,7 @@ SRC_TC=  $(PATH_TC)symbols.c \
 #Options for Src files for component AST
 # These options are to enable/disable various logs 
 # generated in semantic analysis phase
-OPT_AST= -DYDUMPVAR -DYDUMPTXT -DYDUMPEXP -DYDUMPMRC -DYDUMP_TYLIST -DYDUMP_VLIST -DYASNEXP -DYDUMPIF 
+OPT_AST= -DYDUMPVAR -DYDUMPTXT -DYDUMPEXP -DYDUMPMRC -DYDUMPMRCF -DYDUMP_TYLIST -DYDUMP_VLIST -DYASNEXP -DYDUMPIF -DYDUMPFOR -DYDUMPFN
 
 # Make the main target
 tiger:   clean tagit lexit yaccit  

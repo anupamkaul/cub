@@ -218,6 +218,10 @@ char *strmemcat(char* source, char* dest);
                            /* TO BE TESTED */
                             /* absyn_pos not defined */
 
+#ifdef YDUMPFN
+                                fprintf(yyout, "\n<PARSE> EVALD a func_decls decls construct: %s\n", $$);
+
+#endif
                                 //absyn_decList = A_DecList(A_FunctionDec(absyn_pos, A_popfnList()), absyn_decList);
                                 A_pushLetdecList(A_DecList(A_FunctionDec(absyn_pos, A_popfnList()), A_popLetdecList()));
 
@@ -240,6 +244,10 @@ char *strmemcat(char* source, char* dest);
                            /* maybe need to add the NULL_DECLIST syntax  .. why was it added really?
                             * investigate ..
                             */
+#ifdef YDUMPFN
+                                fprintf(yyout, "\n<PARSE> EVALD a func_decls (func_decls only) construct: %s\n", $$);
+
+#endif
                                 //absyn_decList = A_DecList(A_FunctionDec(absyn_pos, A_popfnList()), NULL);
                                 A_pushLetdecList(A_DecList(A_FunctionDec(absyn_pos, A_popfnList()), NULL));
                            }
@@ -499,7 +507,6 @@ char *strmemcat(char* source, char* dest);
 
 #ifdef YDUMPFN
                            fprintf(yyout, "\n<PARSE> EVALD a function_decl (no input, no output): %s\n", $$);
-
 
 #endif
                            }

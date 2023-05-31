@@ -954,6 +954,31 @@ int NULL_DECLIST=0;
 
                 }
 
+\(for([ ]|\n)  {
+                /* token: for_kwd */
+
+                if((yytext[yyleng-1] == '\n') || (yytext[yyleng-1] == ' '))
+                {
+                  /* return last-char to input */
+                  unput(yytext[yyleng-1]);
+                  yytext[yyleng-1] = '\0';
+
+                  /* remove first white-space */
+                  /* if(*yytext == ' ')  */
+                  yytext = yytext++;
+
+                }
+
+                fprintf(llout, "%s^KWD(%d,%d)^ ", yytext, lxline, lxcol);
+                yylval.strinfo.strval = strdup(yytext);
+		yylval.strinfo.pos[for_kwd_pos].line=lxline;
+		yylval.strinfo.pos[for_kwd_pos].col=lxcol;
+
+		lxcol+=4;	
+                return for_kwd;
+
+                }
+
 ^to([ ]|\n)     {
                 /* token: to_kwd */
 

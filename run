@@ -1,4 +1,13 @@
+# to compile tiger do:
 # make tiger
+
+# to run tests do:
+# python testrun.py 
+
+# testrun.py creates tiger's testbed framework
+# it generates a testrun folder that creates individual
+# folders per test with detailed dumps for debugging
+# and it automotates the following : 
 
 # run script to check tiger's health
 # ----------------------------------

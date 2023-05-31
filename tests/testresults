@@ -1,4 +1,4 @@
-test results on  2023-05-31 10:40:03.824320
+test results on  2023-05-31 13:48:09.751136
 
 dir:  ./
 subdirs:  ['tc', 'general', 'testruns', 'misc', 'sample_programs', 'ast'] 
@@ -148,7 +148,12 @@ subdirs:  []
 
 
 dir:  ./testruns/sample_programs
-subdirs:  ['queens.tig'] 
+subdirs:  ['queens.mod.tig', 'queens.tig'] 
+
+
+
+dir:  ./testruns/sample_programs/queens.mod.tig
+subdirs:  [] 
 
 
 
