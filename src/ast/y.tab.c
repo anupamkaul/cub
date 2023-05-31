@@ -94,7 +94,7 @@ extern int SEND_FALSE_FUNCTION;
 extern int NULL_DECLIST;
 
 #define Restore_MutRecState               if( (SEND_FALSE_FUNCTION=A_popMutRecState()) < 0)\
-                                          { printf("Internal error in restoring mutrec state\n"); \
+                                          { printf("<PARSE> : Internal error in restoring mutrec state\n"); \
                                             exit(0); }
 
 /* forward definition of strmemcat */
@@ -1482,7 +1482,7 @@ yyreduce:
     {
 
 #ifdef YDUMPTXT
-                           fprintf(yyout, "\n(test) ROOT REACHED at : %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> AST ROOT REACHED at : %s\n", (yyval.strinfo.strval));
 #endif
                            /* take out the final a_exp from stack ; this is the
                             * root pointer of the abstract syntax tree.
@@ -1516,7 +1516,7 @@ yyreduce:
                            NULL_DECLIST=1;
 
 #ifdef YDUMPTXT
-                           fprintf(yyout, "\n<BISON> EVALD a LET_decl (occurance %d,%d): %s\n", 
+                           fprintf(yyout, "\n<PARSE> EVALD a LET_decl (occurance %d,%d): %s\n", 
                            yylval.strinfo.pos[let_kwd_pos].line, 
                            yylval.strinfo.pos[let_kwd_pos].col, (yyval.strinfo.strval));
 #endif
@@ -1537,7 +1537,7 @@ yyreduce:
                              	/* pop tyList and add to current decList */
                              	/* (note: absyn_pos is not defined ..) */
 #ifdef YDUMP_TYLIST
-                           	fprintf(yyout, "MAIN TYPE DECL CONSTRUCT CONTD\n");
+                           	fprintf(yyout, "<PARSE> MAIN TYPE DECL CONSTRUCT CONTD\n");
                              	prn_atyList(A_peeptyList(0));
 #endif
                              	//absyn_decList = A_DecList(A_TypeDec(absyn_pos, A_poptyList()),absyn_decList);
@@ -1564,10 +1564,10 @@ yyreduce:
 #line 226 "tig.yac" /* yacc.c:1646  */
     {
 #ifdef YDUMP_VLIST
-                                fprintf(yyout, "VARLIST - ALSO ADDED (%s)\n",A_peepVardec(0)->dectype.vardec.var);
-                                fprintf(yyout, "Expression associated with this var is as follows:\n");
+                                fprintf(yyout, "<PARSE> VARLIST - ALSO ADDED (%s)\n",A_peepVardec(0)->dectype.vardec.var);
+                                fprintf(yyout, "<PARSE> Expression associated with this var is as follows:\n");
                                 prn_aexp(A_peepVardec(0)->dectype.vardec.init); 
-                                fprintf(yyout,"END-OF-EXP\n\n");
+                                fprintf(yyout,"<PARSE> END-OF-EXP\n\n");
 #endif
                                 //absyn_decList = A_DecList(A_popVardec(), absyn_decList);
                                 A_pushLetdecList(A_DecList(A_popVardec(), A_popLetdecList()));
@@ -1597,13 +1597,13 @@ yyreduce:
                              	/* (note: absyn_pos is not defined ..) */
 
 #ifdef YDUMP_TYLIST
-                             	fprintf(yyout, "MAIN BAPU TYPE DECL START\n");
+                             	fprintf(yyout, "<PARSE> MAIN (type_decls) TYPE DECL START\n");
                              	prn_atyList(A_peeptyList(0));
 #endif
 
                              	if(NULL_DECLIST) {
 #ifdef YDUMP_TYLIST
-                             	fprintf(yyout, "AVEC A NULL\n");
+                             	fprintf(yyout, "<PARSE> type_decls with NULL_DECLIST \n");
 #endif
                              	//absyn_decList = A_DecList(A_TypeDec(absyn_pos, A_poptyList()),NULL);
                              	 A_pushLetdecList(A_DecList(A_TypeDec(absyn_pos, A_poptyList()),NULL));
@@ -1611,7 +1611,7 @@ yyreduce:
                              	}
 		             	else {
 #ifdef YDUMP_TYLIST
-                             	fprintf(yyout, "AVEC THE OLD\n");
+                             	fprintf(yyout, "<PARSE> type_decls without NULL_DECLIST \n");
 #endif
                              	//absyn_decList = A_DecList(A_TypeDec(absyn_pos, A_poptyList()),absyn_decList);
                              	A_pushLetdecList(A_DecList(A_TypeDec(absyn_pos, A_poptyList()),A_popLetdecList()));
@@ -1625,22 +1625,22 @@ yyreduce:
     {
 			   	if(NULL_DECLIST) {
 #ifdef YDUMP_VLIST
-                                fprintf(yyout, "VARLIST (LOOKS FIRST), ADDED TO NULL (%s)\n",
+                                fprintf(yyout, "<PARSE> VARLIST (LOOKS FIRST), ADDED TO NULL (%s)\n",
                                 A_peepVardec(0)->dectype.vardec.var);
-                                fprintf(yyout, "Expression associated with this var is as follows:\n");
+                                fprintf(yyout, "<PARSE> Expression associated with this var is as follows:\n");
                                 prn_aexp(A_peepVardec(0)->dectype.vardec.init); 
-                                fprintf(yyout,"END-OF-EXP\n\n");
+                                fprintf(yyout,"<PARSE> END-OF-EXP\n\n");
 #endif
                                 //absyn_decList = A_DecList(A_popVardec(), NULL);
                                 A_pushLetdecList(A_DecList(A_popVardec(), NULL));
 			        NULL_DECLIST=0;
                                 } else {
 #ifdef YDUMP_VLIST
-                                fprintf(yyout, "VARLIST (LOOKS FIRST), BUT ADDED TO OLD (%s)\n",
+                                fprintf(yyout, "<PARSE> VARLIST (LOOKS FIRST), BUT ADDED TO OLD (%s)\n",
                                 A_peepVardec(0)->dectype.vardec.var);
-                                fprintf(yyout, "Expression associated with this var is as follows:\n");
+                                fprintf(yyout, "<PARSE> Expression associated with this var is as follows:\n");
                                 prn_aexp(A_peepVardec(0)->dectype.vardec.init); 
-                                fprintf(yyout,"END-OF-EXP\n\n");
+                                fprintf(yyout,"<PARSE> END-OF-EXP\n\n");
 #endif
                                 //absyn_decList = A_DecList(A_popVardec(), absyn_decList);
                                 A_pushLetdecList(A_DecList(A_popVardec(), A_popLetdecList()));
@@ -1657,7 +1657,7 @@ yyreduce:
                           A_pushtyList(A_NametyList( absyn_namety, A_poptyList()));
 
 #ifdef YDUMPMRC
-			  fprintf(yyout, "GOING IN TYPE FOR symbol %s ;)\n", absyn_namety->sym); 
+			  fprintf(yyout, "<PARSE> GOING IN TYPE FOR symbol %s \n", absyn_namety->sym); 
 #endif
                            }
 #line 1664 "y.tab.c" /* yacc.c:1646  */
@@ -1670,7 +1670,7 @@ yyreduce:
 			   /* create new level */
 			   A_pushtyList(NULL);
 #ifdef YDUMPMRC
-			   fprintf(yyout, "GOING IN TYPE (FRST, FALSE) ;)\n"); 
+			   fprintf(yyout, "<PARSE> GOING IN TYPE (FALSE, New Level) ;)\n"); 
 #endif
                            }
 #line 1677 "y.tab.c" /* yacc.c:1646  */
@@ -1697,7 +1697,7 @@ yyreduce:
                               for the declaration sequence (A_DecList) */
                            
 #ifdef YDUMPTXT
-                           fprintf(yyout, "\n<BISON> EVALD a type_decl: %s\n", (yyval.strinfo.strval));                            
+                           fprintf(yyout, "\n<PARSE> EVALD a type_decl: %s\n", (yyval.strinfo.strval));                            
 #endif
                            }
 #line 1704 "y.tab.c" /* yacc.c:1646  */
@@ -1819,7 +1819,7 @@ yyreduce:
     { 
 
 #ifdef YDUMPMRCF
-                           fprintf(yyout, "GOING IN FUNCTION\n"); 
+                           fprintf(yyout, "<PARSE> GOING IN FUNCTION\n"); 
 #endif
 			   /* push to the current PMR list in the stack */
                           A_pushfnList(A_FundecList(absyn_fundec, A_popfnList()));
@@ -1833,7 +1833,7 @@ yyreduce:
     { 
 
 #ifdef YDUMPMRCF
-                           fprintf(yyout, "GOING IN FUNCTION (FRST, FALSE) (F)\n"); 
+                           fprintf(yyout, "<PARSE> GOING IN FUNCTION (FALSE, New Level) (F)\n"); 
 #endif
 	                  /* create a new list of PMR stack level */
                           A_pushfnList(NULL);
@@ -1872,7 +1872,7 @@ yyreduce:
 
 
 #ifdef YDUMPFN
-                           fprintf(yyout, "\n<BISON> EVALD a function_decl (no input, no output): %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a function_decl (no input, no output): %s\n", (yyval.strinfo.strval));
 
 
 #endif
@@ -1911,7 +1911,7 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPFN
-                           fprintf(yyout, "\n<BISON> EVALD a function_decl (some input, no output): %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a function_decl (some input, no output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
 #line 1918 "y.tab.c" /* yacc.c:1646  */
@@ -1950,7 +1950,7 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPFN
-                           fprintf(yyout, "\n<BISON> EVALD a function_decl (no input, some output): %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a function_decl (no input, some output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
 #line 1957 "y.tab.c" /* yacc.c:1646  */
@@ -1993,7 +1993,7 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPFN
-                           fprintf(yyout, "\n<BISON> EVALD a function_decl (some input, some output): %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a function_decl (some input, some output): %s\n", (yyval.strinfo.strval));
 #endif
                            }
 #line 2000 "y.tab.c" /* yacc.c:1646  */
@@ -2017,10 +2017,10 @@ yyreduce:
                            A_pushVardec(A_VarDec(absyn_pos, (yyvsp[-2].strinfo.strval), "undefined", A_popexp(0)));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<BISON> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
 #ifdef YDUMPTXT
-                           fprintf(yyout, "TEST: %s\n", A_peepVardec(0)->dectype.vardec.var);
-                           fprintf(yyout, "TEST (pos line IS WRONG): %d\n", *(A_peepVardec(0)->pos->line));
+                           fprintf(yyout, "<PARSE> TEST: %s\n", A_peepVardec(0)->dectype.vardec.var);
+                           fprintf(yyout, "<PARSE> TEST (pos line IS WRONG): %d\n", *(A_peepVardec(0)->pos->line));
 #endif
 #endif
                                                         }
@@ -2045,7 +2045,7 @@ yyreduce:
                            A_pushVardec(A_VarDec(absyn_pos, (yyvsp[-2].strinfo.strval), "array_type", A_popexp()));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<BISON> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
 #endif
                                                         }
 #line 2052 "y.tab.c" /* yacc.c:1646  */
@@ -2075,7 +2075,7 @@ yyreduce:
                            A_pushVardec(A_VarDec(absyn_pos, (yyvsp[-4].strinfo.strval), (yyvsp[-2].strinfo.strval), A_popexp()));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<BISON> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
 #endif
                                                         }
 #line 2082 "y.tab.c" /* yacc.c:1646  */
@@ -2100,7 +2100,7 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPTXT
-                           fprintf(yyout, "\n<BISON> EVALD a Rec Creation Statement: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a Rec Creation Statement: %s\n", (yyval.strinfo.strval));
 #endif
 
                            }
@@ -2127,7 +2127,7 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPTXT
-                           fprintf(yyout, "\n<BISON> EVALD a Rec Creation Parm: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a Rec Creation Parm: %s\n", (yyval.strinfo.strval));
 #endif
                            }
 #line 2134 "y.tab.c" /* yacc.c:1646  */
@@ -2147,7 +2147,7 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPTXT
-                           fprintf(yyout, "\n<BISON> EVALD a Rec Creation Parm: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a Rec Creation Parm: %s\n", (yyval.strinfo.strval));
 #endif
                            }
 #line 2154 "y.tab.c" /* yacc.c:1646  */
@@ -2178,7 +2178,7 @@ yyreduce:
                            absyn_pos->col  = A_intdup(yylval.strinfo.pos[sqLbrace_pos].col); 
 
 #ifdef YDUMPTXT
-                           fprintf(yyout, "Discovered an ARRAY DEFN: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "<PARSE> Discovered an ARRAY DEFN: %s\n", (yyval.strinfo.strval));
 #endif
 
                            initval = A_popexp();
@@ -2200,13 +2200,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), " ");
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "ADD EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[add_op_pos].line,
+                          fprintf(yyout, "<PARSE> ADD EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[add_op_pos].line,
                           yylval.strinfo.pos[add_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the ADD EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the ADD EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the ADD EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the ADD EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2233,13 +2233,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "MINUS EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[minus_op_pos].line,
+                          fprintf(yyout, "<PARSE> MINUS EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[minus_op_pos].line,
                           yylval.strinfo.pos[minus_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the MINUS EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the MINUS EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the MINUS EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the MINUS EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 		          absyn_pos->line = A_intdup(yylval.strinfo.pos[minus_op_pos].line);
@@ -2262,13 +2262,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "MULT EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[mult_op_pos].line,
+                          fprintf(yyout, "<PARSE> MULT EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[mult_op_pos].line,
                           yylval.strinfo.pos[mult_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the MULT EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the MULT EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the MULT EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the MULT EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2292,13 +2292,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "DIV EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[add_op_pos].line,
+                          fprintf(yyout, "<PARSE> DIV EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[add_op_pos].line,
                           yylval.strinfo.pos[div_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the DIV EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the DIV EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the DIV EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the DIV EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2322,13 +2322,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
                        
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "EQUAL COMPARE EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[eq_op_pos].line,
+                          fprintf(yyout, "<PARSE> EQUAL COMPARE EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[eq_op_pos].line,
                           yylval.strinfo.pos[eq_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the EQ-COMP EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the EQ-COMP EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the EQ-COMP EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the EQ-COMP EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2352,13 +2352,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "NEQ COMPARE EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[not_eq_pos].line,
+                          fprintf(yyout, "<PARSE> NEQ COMPARE EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[not_eq_pos].line,
                           yylval.strinfo.pos[not_eq_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the NEQ-COMP EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the NEQ-COMP EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the NEQ-COMP EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the NEQ-COMP EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2382,13 +2382,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "GR-COMP EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[gr_op_pos].line,
+                          fprintf(yyout, "<PARSE> GR-COMP EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[gr_op_pos].line,
                           yylval.strinfo.pos[gr_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the GR-COMP EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the GR-COMP EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the GR-COMP EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the GR-COMP EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2412,13 +2412,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "LT-COMP EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[le_op_pos].line,
+                          fprintf(yyout, "<PARSE> LT-COMP EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[le_op_pos].line,
                           yylval.strinfo.pos[le_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the LT-COMP EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the LT-COMP EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the LT-COMP EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the LT-COMP EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2442,13 +2442,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "GR-EQ-COMP EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[gr_eq_op_pos].line,
+                          fprintf(yyout, "<PARSE> GR-EQ-COMP EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[gr_eq_op_pos].line,
                           yylval.strinfo.pos[gr_eq_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the GR-EQ-COMP EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the GR-EQ-COMP EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the GR-EQ-COMP EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the GR-EQ-COMP EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2472,13 +2472,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "LT-EQ-COMP EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[le_eq_op_pos].line,
+                          fprintf(yyout, "<PARSE> LT-EQ-COMP EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[le_eq_op_pos].line,
                           yylval.strinfo.pos[le_eq_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the LT-EQ-COMP EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the LT-EQ-COMP EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the LT-EQ-COMP EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the LT-EQ-COMP EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2502,13 +2502,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "LOG-AND EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[and_op_pos].line,
+                          fprintf(yyout, "<PARSE> LOG-AND EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[and_op_pos].line,
                           yylval.strinfo.pos[and_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the LOG-AND EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the LOG-AND EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the LOG-AND EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the LOG-AND EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2532,13 +2532,13 @@ yyreduce:
                            (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPEXP                          
-                          fprintf(yyout, "LOG-OR EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[or_op_pos].line,
+                          fprintf(yyout, "<PARSE> LOG-OR EXP (l:%d, c:%d): %s\n", yylval.strinfo.pos[or_op_pos].line,
                           yylval.strinfo.pos[or_op_pos].col, (yyval.strinfo.strval));
 
-                          fprintf(yyout, "In the LOG-OR EXP, exp_left:\n");
+                          fprintf(yyout, "<PARSE> In the LOG-OR EXP, exp_left:\n");
 			  prn_aexp(A_peepexp(0));
                            
-                          fprintf(yyout, "In the LOG-OR EXP, exp_right:\n");
+                          fprintf(yyout, "<PARSE> In the LOG-OR EXP, exp_right:\n");
 			  prn_aexp(A_peepexp(1));
 #endif
 
@@ -2566,7 +2566,7 @@ yyreduce:
 #line 1149 "tig.yac" /* yacc.c:1646  */
     {
 #ifdef YDUMPEXP                          
-                           fprintf(yyout, "Discovered an EXPLITEral: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "<PARSE> Discovered an EXPLITEral: %s\n", (yyval.strinfo.strval));
 #endif
                            }
 #line 2573 "y.tab.c" /* yacc.c:1646  */
@@ -2577,7 +2577,7 @@ yyreduce:
     {
 
 #ifdef YDUMPEXP                          
-			  fprintf(yyout,"3. EXPLITERAL (pure num): %s (%d, %d)\n", (yyval.strinfo.strval), 
+			  fprintf(yyout,"<PARSE> 3. EXPLITERAL (pure num): %s (%d, %d)\n", (yyval.strinfo.strval), 
                           yylval.strinfo.pos[pure_num_pos].line, yylval.strinfo.pos[pure_num_pos].col);
 #endif
 
@@ -2599,7 +2599,7 @@ yyreduce:
     {
 
 #ifdef YDUMPEXP                          
-			  fprintf(yyout,"3. EXPLITERAL (lvalue): %s\n", (yyval.strinfo.strval));
+			  fprintf(yyout,"<PARSE> 3. EXPLITERAL (lvalue): %s\n", (yyval.strinfo.strval));
 #endif
 
                           A_pushexp(A_VarExp(absyn_pos, A_popvar() ));
@@ -2648,7 +2648,7 @@ yyreduce:
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "3. SUBSCRIPT VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> 3. SUBSCRIPT VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, (yyval.strinfo.strval));
 
                           prn_avar(A_peepvar(0));
@@ -2671,7 +2671,7 @@ yyreduce:
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "2. FIELD VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> 2. FIELD VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, (yyval.strinfo.strval));
 
                           //prn_avar(absyn_var);
@@ -2686,7 +2686,7 @@ yyreduce:
     {
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "1. SIMPLE VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> 1. SIMPLE VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, (yyval.strinfo.strval));
                           //prn_avar(absyn_var);
 #endif
@@ -2717,7 +2717,7 @@ yyreduce:
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPTXT
-                          fprintf(yyout, "\n<BISON> EVALD a func call: %s", (yyval.strinfo.strval));
+                          fprintf(yyout, "\n<PARSE> EVALD a func call: %s", (yyval.strinfo.strval));
 #endif
  
                           }
@@ -2742,7 +2742,7 @@ yyreduce:
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPTXT
-                          fprintf(yyout, "\n<BISON> EVALD a func call: %s\n", (yyval.strinfo.strval));
+                          fprintf(yyout, "\n<PARSE> EVALD a func call: %s\n", (yyval.strinfo.strval));
 #endif
                           }
 #line 2749 "y.tab.c" /* yacc.c:1646  */
@@ -2791,7 +2791,7 @@ yyreduce:
 
 			  A_pushexp(A_AssignExp(absyn_pos, A_popvar(), A_popexp())); 
 #ifdef YASNEXP
-                          fprintf(yyout, "On adding the asn-exp,\n");
+                          fprintf(yyout, "<PARSE> On adding the asn-exp,\n");
                           prn_aexp(A_peepexp(0));
 #endif
 
@@ -2815,7 +2815,7 @@ yyreduce:
 			  A_pushexp(A_AssignExp(absyn_pos, A_popvar(), A_popexp())); 
 
 #ifdef YASNEXP
-                          fprintf(yyout, "On adding the asn-exp,\n");
+                          fprintf(yyout, "<PARSE> On adding the asn-exp,\n");
                           prn_aexp(A_peepexp(0));
 #endif
 
@@ -2839,7 +2839,7 @@ yyreduce:
                           A_pushexp(A_SeqExp(absyn_pos, NULL));
 
 #ifdef YEXPSEQ
-                          fprintf(yyout, "GRABBING AN EXPSEQ LIST HERE (NULL CASE):\n");
+                          fprintf(yyout, "<PARSE> GRABBING AN EXPSEQ LIST HERE (NULL CASE):\n");
                           prn_aexp(A_peepexp(0));
 #endif
 
@@ -2864,7 +2864,7 @@ yyreduce:
                           A_pushexp(A_SeqExp(absyn_pos, A_popexplist()) );
 
 #ifdef YEXPSEQ
-                          fprintf(yyout, "GRABBING AN EXPSEQ LIST HERE (NON-EMPTY):\n");
+                          fprintf(yyout, "<PARSE> GRABBING AN EXPSEQ LIST HERE (NON-EMPTY):\n");
                           prn_aexp(A_peepexp(0));
 #endif
 
@@ -2886,7 +2886,7 @@ yyreduce:
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
 
 #ifdef YASNEXP
-                          fprintf(yyout, "On discovering the asn-exp,\n");
+                          fprintf(yyout, "<PARSE> On discovering the asn-exp,\n");
                           prn_aexplist(A_peepexplist(0));
 #endif
 
@@ -3155,7 +3155,7 @@ yyreduce:
                            A_pushexp(A_IfExp(absyn_pos, A_popexp(), A_popexp(), NULL) );
 
 #ifdef YDUMPIF
-                           fprintf(yyout, "\n<BISON> EVALD an if_then_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD an if_then_decl: %s\n", (yyval.strinfo.strval));
                            prn_aexp(A_peepexp(0));
 #endif
 
@@ -3184,7 +3184,7 @@ yyreduce:
 
                            /* TO BE TESTED */
 #ifdef YDUMPWHL
-                           fprintf(yyout, "\n<BISON> EVALD a while_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a while_decl: %s\n", (yyval.strinfo.strval));
                            prn_aexp(A_peepexp(0));
 #endif
 
@@ -3225,7 +3225,7 @@ yyreduce:
 
                            /* TO BE TESTED */
 #ifdef YDUMPFOR
-                           fprintf(yyout, "\n<BISON> EVALD a FOR_LOOP_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a FOR_LOOP_decl: %s\n", (yyval.strinfo.strval));
                            prn_aexp(A_peepexp(0));
 #endif
 
@@ -3261,7 +3261,7 @@ yyreduce:
                            /* TO BE TESTED (core dump + live examples) */
 
 #ifdef YDUMPIF
-                           fprintf(yyout, "\n<BISON> EVALD an if_then_else_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD an if_then_else_decl: %s\n", (yyval.strinfo.strval));
                            prn_aexp(A_peepexp(0));
 #endif
 
@@ -3518,14 +3518,14 @@ absyn_pos->line = A_intdup(0);
 absyn_pos->col  = A_intdup(0); 
 
 if(argc == 1) {
-fprintf(stderr, "[tparse]: input file name required\n");
+fprintf(stderr, "<PARSE> : input file name required\n");
 exit(1);
 }
 
 tfin = fopen(argv[1], "r");
 
 if(tfin == NULL) {
-fprintf(stderr, "tparse: input %s does not exist\n", argv[1]);
+fprintf(stderr, "<PARSE> : input %s does not exist\n", argv[1]);
 exit(1);
 }
 
@@ -3533,12 +3533,12 @@ tfout =  fopen("ydump.txt", "w");
 llout =  fopen("ldump.txt", "w");
 
 if(tfout == NULL) {
-fprintf(stderr, "[tparse]: not enough space for fopen\n");
+fprintf(stderr, "<PARSE> : not enough space for fopen\n");
 exit(1);
 }
 
 if(llout == NULL) {
-fprintf(stderr, "[tparse]: not enough space for fopen\n");
+fprintf(stderr, "<PARSE> : not enough space for fopen\n");
 exit(1);
 }
 
@@ -3549,7 +3549,7 @@ while(!(feof(yyin))) {
 yyparse();
 };
 
-fprintf(stderr, "[tparse]: finished parsing yacc tree. AST should be ready\n");
+fprintf(stderr, "<PARSE> : finished parsing yacc tree. AST should be ready\n");
 
 fclose(llout);
 fclose(yyout);
@@ -3564,7 +3564,7 @@ return 0;
 yyerror(s)
 char *s;
 {
-fprintf(stderr, "[tparse] At line %d: %s\n", lxline, s);
+fprintf(stderr, "<PARSE> (Error) At line %d: %s\n", lxline, s);
 }
 
 /* The problem with strcat was that I was not
@@ -3584,7 +3584,7 @@ char *strmemcat(char *source,  char *dest)
   char *head=ret;
 
   if( ret == NULL) { /* realloc failure */
-  printf("No space for strmemcat\n");
+  printf("<PARSE> : No space for strmemcat\n");
   exit(0);
   }
 
