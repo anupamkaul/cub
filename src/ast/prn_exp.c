@@ -106,7 +106,7 @@ prn_avar(A_var a_var)
 	        break;
 
 	default:
-	       fprintf(yyout, "\nPRNSTAT: No Match Found!\n");
+	       fprintf(yyout, "\nPRNSTAT: Error: No Match Found!\n");
 	break;
         }
 
@@ -263,7 +263,7 @@ void Dbprn_expstack()
 {
   A_expstack x = absyn_expstack;
   int lev=1;
-  fprintf(yyout, " * * * * * * * STACK CONTENTS BEGIN * * * * *\n");
+  fprintf(yyout, "PRNSTAT-Stack * * * * * * * STACK CONTENTS BEGIN * * * * *\n");
 
   while(x != NULL)
   {
@@ -272,7 +272,7 @@ void Dbprn_expstack()
   x=x->next;
   }
 
-  fprintf(yyout, " * * * * * * * STACK CONTENTS END * * * * *\n\n");
+  fprintf(yyout, "PRNSTAT-Stack * * * * * * * STACK CONTENTS END * * * * *\n\n");
   return;
 
 }
@@ -280,14 +280,14 @@ void Dbprn_expstack()
 void prn_afieldList(A_fieldList a_fieldList)
 {
 
-fprintf(yyout, "FIELD LIST DETAILS:\n");
+fprintf(yyout, "PRNSTAT-FIELD-LIST DETAILS:\n");
 A_fieldList x = a_fieldList;
 while(x != NULL) {
         fprintf(yyout, "symbol %s for type %s\n", x->head->name,
         x->head->typ);
         x = x->tail;
 }
-fprintf(yyout, "[END]\n");
+fprintf(yyout, "PRNSTAT-FIELD-LIST END\n");
 
 }
 
@@ -298,18 +298,18 @@ A_ty x = a_ty;
 switch(x->kind)
 {
  case rec:
-          fprintf(yyout, " TYPE RHS: RECORD TYPE\n");
+          fprintf(yyout, "PRNSTAT TYPE RHS: RECORD TYPE\n");
           prn_afieldList(x->which.rectype.record);
           break;
 
  case ary:
-          fprintf(yyout, " TYPE RHS: ARRAY TYPE\n");
-          fprintf(yyout, " array: %s\n",x->which.arytype.array);
+          fprintf(yyout, "PRNSTAT TYPE RHS: ARRAY TYPE\n");
+          fprintf(yyout, "PRNSTAT array: %s\n",x->which.arytype.array);
           break;
 
  case name:
-          fprintf(yyout, " TYPE RHS: ID TYPE\n");
-          fprintf(yyout, " id: %s\n",x->which.nametype.sym); 
+          fprintf(yyout, "PRNSTAT TYPE RHS: ID TYPE\n");
+          fprintf(yyout, "PRNSTAT id: %s\n",x->which.nametype.sym); 
           break;
 
 }
@@ -325,7 +325,7 @@ int tyno=0;
 
 fprintf(yyout, "\n\n");
 
-fprintf(yyout, "NEW TYPE LIST DETAILS\n");
+fprintf(yyout, "PRNSTAT NEW TYPE LIST DETAILS\n");
 while(x != NULL)
 { 
 	tyno++;
@@ -336,7 +336,7 @@ while(x != NULL)
 x=x->tail;
 }
 
-fprintf(yyout, "[END TYPE LIST]\n");
+fprintf(yyout, "PRNSTAT [END TYPE LIST]\n");
 fprintf(yyout, "\n\n");
 
 }
@@ -348,7 +348,7 @@ int listele=0;
 
 fprintf(yyout, "\n");
 
-fprintf(yyout,"Expression List:\n");
+fprintf(yyout,"PRNSTAT Expression List:\n");
 fprintf(yyout,"------------------\n");
 
 while(x != NULL)
@@ -358,7 +358,7 @@ while(x != NULL)
  prn_aexp(x->head);
  x=x->tail;
 }
-fprintf(yyout, "[end expression list]\n");
+fprintf(yyout, "PRNSTAT [end expression list]\n");
 fprintf(yyout, "\n\n");
 
 } 

@@ -2017,7 +2017,7 @@ yyreduce:
                            A_pushVardec(A_VarDec(absyn_pos, (yyvsp[-2].strinfo.strval), "undefined", A_popexp(0)));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl (type expv): %s\n", (yyval.strinfo.strval));
 #ifdef YDUMPTXT
                            fprintf(yyout, "<PARSE> TEST: %s\n", A_peepVardec(0)->dectype.vardec.var);
                            fprintf(yyout, "<PARSE> TEST (pos line IS WRONG): %d\n", *(A_peepVardec(0)->pos->line));
@@ -2045,7 +2045,7 @@ yyreduce:
                            A_pushVardec(A_VarDec(absyn_pos, (yyvsp[-2].strinfo.strval), "array_type", A_popexp()));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl (type array_defn): %s\n", (yyval.strinfo.strval));
 #endif
                                                         }
 #line 2052 "y.tab.c" /* yacc.c:1646  */
@@ -2075,7 +2075,7 @@ yyreduce:
                            A_pushVardec(A_VarDec(absyn_pos, (yyvsp[-4].strinfo.strval), (yyvsp[-2].strinfo.strval), A_popexp()));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl (colon typeid equals expv): %s\n", (yyval.strinfo.strval));
 #endif
                                                         }
 #line 2082 "y.tab.c" /* yacc.c:1646  */
@@ -2566,7 +2566,7 @@ yyreduce:
 #line 1149 "tig.yac" /* yacc.c:1646  */
     {
 #ifdef YDUMPEXP                          
-                           fprintf(yyout, "<PARSE> Discovered an EXPLITEral: %s\n", (yyval.strinfo.strval));
+                           fprintf(yyout, "<PARSE> Discovered an EXPLITERAL: %s\n", (yyval.strinfo.strval));
 #endif
                            }
 #line 2573 "y.tab.c" /* yacc.c:1646  */
@@ -2577,7 +2577,7 @@ yyreduce:
     {
 
 #ifdef YDUMPEXP                          
-			  fprintf(yyout,"<PARSE> 3. EXPLITERAL (pure num): %s (%d, %d)\n", (yyval.strinfo.strval), 
+			  fprintf(yyout,"\n<PARSE> EXPLITERAL (pure num): %s (%d, %d)\n", (yyval.strinfo.strval), 
                           yylval.strinfo.pos[pure_num_pos].line, yylval.strinfo.pos[pure_num_pos].col);
 #endif
 
@@ -2599,7 +2599,7 @@ yyreduce:
     {
 
 #ifdef YDUMPEXP                          
-			  fprintf(yyout,"<PARSE> 3. EXPLITERAL (lvalue): %s\n", (yyval.strinfo.strval));
+			  fprintf(yyout,"\n<PARSE> EXPLITERAL (lvalue): %s\n", (yyval.strinfo.strval));
 #endif
 
                           A_pushexp(A_VarExp(absyn_pos, A_popvar() ));
@@ -2648,7 +2648,7 @@ yyreduce:
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "<PARSE> 3. SUBSCRIPT VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> SUBSCRIPT VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, (yyval.strinfo.strval));
 
                           prn_avar(A_peepvar(0));
@@ -2671,7 +2671,7 @@ yyreduce:
                           (yyval.strinfo.strval) = (char*) strmemcat((yyval.strinfo.strval), (yyvsp[0].strinfo.strval));
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "<PARSE> 2. FIELD VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> FIELD VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, (yyval.strinfo.strval));
 
                           //prn_avar(absyn_var);
@@ -2686,7 +2686,7 @@ yyreduce:
     {
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "<PARSE> 1. SIMPLE VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> SIMPLE VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, (yyval.strinfo.strval));
                           //prn_avar(absyn_var);
 #endif

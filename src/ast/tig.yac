@@ -638,7 +638,7 @@ char *strmemcat(char* source, char* dest);
                            A_pushVardec(A_VarDec(absyn_pos, $2, "undefined", A_popexp(0)));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", $$);
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl (type expv): %s\n", $$);
 #ifdef YDUMPTXT
                            fprintf(yyout, "<PARSE> TEST: %s\n", A_peepVardec(0)->dectype.vardec.var);
                            fprintf(yyout, "<PARSE> TEST (pos line IS WRONG): %d\n", *(A_peepVardec(0)->pos->line));
@@ -662,7 +662,7 @@ char *strmemcat(char* source, char* dest);
                            A_pushVardec(A_VarDec(absyn_pos, $2, "array_type", A_popexp()));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", $$);
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl (type array_defn): %s\n", $$);
 #endif
                                                         }
 
@@ -689,7 +689,7 @@ char *strmemcat(char* source, char* dest);
                            A_pushVardec(A_VarDec(absyn_pos, $2, $4, A_popexp()));
 
 #ifdef YDUMP_VLIST
-                           fprintf(yyout, "\n<PARSE> EVALD a var_decl: %s\n", $$);
+                           fprintf(yyout, "\n<PARSE> EVALD a var_decl (colon typeid equals expv): %s\n", $$);
 #endif
                                                         };
 
@@ -1148,7 +1148,7 @@ char *strmemcat(char* source, char* dest);
            |               expliteral 
                            {
 #ifdef YDUMPEXP                          
-                           fprintf(yyout, "<PARSE> Discovered an EXPLITEral: %s\n", $$);
+                           fprintf(yyout, "<PARSE> Discovered an EXPLITERAL: %s\n", $$);
 #endif
                            }
                            ;
@@ -1170,7 +1170,7 @@ char *strmemcat(char* source, char* dest);
        expliteral:        pure_num {
 
 #ifdef YDUMPEXP                          
-			  fprintf(yyout,"<PARSE> 3. EXPLITERAL (pure num): %s (%d, %d)\n", $$, 
+			  fprintf(yyout,"\n<PARSE> EXPLITERAL (pure num): %s (%d, %d)\n", $$, 
                           yylval.strinfo.pos[pure_num_pos].line, yylval.strinfo.pos[pure_num_pos].col);
 #endif
 
@@ -1188,7 +1188,7 @@ char *strmemcat(char* source, char* dest);
                  |        lvalue {
 
 #ifdef YDUMPEXP                          
-			  fprintf(yyout,"<PARSE> 3. EXPLITERAL (lvalue): %s\n", $$);
+			  fprintf(yyout,"\n<PARSE> EXPLITERAL (lvalue): %s\n", $$);
 #endif
 
                           A_pushexp(A_VarExp(absyn_pos, A_popvar() ));
@@ -1242,7 +1242,7 @@ char *strmemcat(char* source, char* dest);
                           $$ = (char*) strmemcat($$, $4);
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "<PARSE> 3. SUBSCRIPT VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> SUBSCRIPT VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, $$);
 
                           prn_avar(A_peepvar(0));
@@ -1261,7 +1261,7 @@ char *strmemcat(char* source, char* dest);
                           $$ = (char*) strmemcat($$, $3);
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "<PARSE> 2. FIELD VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> FIELD VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, $$);
 
                           //prn_avar(absyn_var);
@@ -1272,7 +1272,7 @@ char *strmemcat(char* source, char* dest);
          |                ident {
 
 #ifdef YDUMPVAR                          
-                          fprintf(yyout, "<PARSE> 1. SIMPLE VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
+                          fprintf(yyout, "<PARSE> SIMPLE VAR (l:%d, c:%d): %s\n", yylval.strinfo.pos[ident_pos].line,
                           yylval.strinfo.pos[ident_pos].col, $$);
                           //prn_avar(absyn_var);
 #endif

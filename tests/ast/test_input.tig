@@ -9,6 +9,8 @@ type c = b
 type testarray = array of hit  
 
 var try_hit := 2 + elf
+
+/* should call our ERROR that 'then' is a keyword not a var ..*/
 var corona := abcd * zyngert * (now + then - current)
 
 type intarray = array of int  
