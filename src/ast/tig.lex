@@ -1189,7 +1189,6 @@ int NULL_DECLIST=0;
 \)              {
 
                 /* token: rparan */
-                fprintf(llout, "%s^rparan^ ", yytext);
                 fprintf(llout, "%s^RPARAN(%d,%d)^ ", yytext, lxline, lxcol);
                 yylval.strinfo.strval = strdup(yytext);
 		yylval.strinfo.pos[rparan_pos].line=lxline;

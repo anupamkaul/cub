@@ -2242,7 +2242,6 @@ YY_RULE_SETUP
 {
 
                 /* token: rparan */
-                fprintf(llout, "%s^rparan^ ", yytext);
                 fprintf(llout, "%s^RPARAN(%d,%d)^ ", yytext, lxline, lxcol);
                 yylval.strinfo.strval = strdup(yytext);
 		yylval.strinfo.pos[rparan_pos].line=lxline;
@@ -2254,7 +2253,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 1202 "tig.lex"
+#line 1201 "tig.lex"
 {
 
                 /* token: sqLbrace */
@@ -2269,7 +2268,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 1214 "tig.lex"
+#line 1213 "tig.lex"
 {
 
                 /* token: sqRbrace */
@@ -2284,7 +2283,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 1226 "tig.lex"
+#line 1225 "tig.lex"
 {
 
                 /* token: not_eq */
@@ -2299,7 +2298,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 1238 "tig.lex"
+#line 1237 "tig.lex"
 {
 
                 /* token: gr_op */
@@ -2314,7 +2313,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 1250 "tig.lex"
+#line 1249 "tig.lex"
 {
 
                 /* token: le_op */
@@ -2329,7 +2328,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 1262 "tig.lex"
+#line 1261 "tig.lex"
 {
 
                 /* token: le_eq_op */
@@ -2344,7 +2343,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 1274 "tig.lex"
+#line 1273 "tig.lex"
 {
 
                 /* token: gr_eq_op */
@@ -2359,7 +2358,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 1286 "tig.lex"
+#line 1285 "tig.lex"
 {
 
                 /* token: add_op */
@@ -2374,7 +2373,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 1298 "tig.lex"
+#line 1297 "tig.lex"
 {
 
                 /* token: minus_op (two tokens: negation (unary) and subtraction (binary) */
@@ -2389,7 +2388,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 1310 "tig.lex"
+#line 1309 "tig.lex"
 {
 
                 /* token: mult_op (no pointers) */
@@ -2404,7 +2403,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 1322 "tig.lex"
+#line 1321 "tig.lex"
 {
 
                 /* token: div_op */
@@ -2419,7 +2418,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 1334 "tig.lex"
+#line 1333 "tig.lex"
 {
 
                 /* token: and_op (logical, no address reference) */
@@ -2434,7 +2433,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 1346 "tig.lex"
+#line 1345 "tig.lex"
 {
 
                 /* token: or_op */
@@ -2449,7 +2448,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 1358 "tig.lex"
+#line 1357 "tig.lex"
 {
 
                 /* token: semicolon */
@@ -2464,7 +2463,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 1370 "tig.lex"
+#line 1369 "tig.lex"
 {
 
                 /* token: dquote */
@@ -2479,7 +2478,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 1382 "tig.lex"
+#line 1381 "tig.lex"
 {
 
                 /* token: squote */
@@ -2494,7 +2493,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 1394 "tig.lex"
+#line 1393 "tig.lex"
 {
 
                 /* token: asn_op */
@@ -2509,7 +2508,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 1406 "tig.lex"
+#line 1405 "tig.lex"
 {
 
                 /* token: pure_num */
@@ -2525,7 +2524,7 @@ YY_RULE_SETUP
 case 68:
 /* rule 68 can match eol */
 YY_RULE_SETUP
-#line 1418 "tig.lex"
+#line 1417 "tig.lex"
 {
 
                 /* token: pure_str */
@@ -2540,7 +2539,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 1430 "tig.lex"
+#line 1429 "tig.lex"
 {
            
                 /* token: period */
@@ -2557,7 +2556,7 @@ YY_RULE_SETUP
 case 70:
 /* rule 70 can match eol */
 YY_RULE_SETUP
-#line 1443 "tig.lex"
+#line 1442 "tig.lex"
 {
                 	if(yytext[yyleng-1] == '\n') {
                 	lxline++;
@@ -2572,10 +2571,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 1455 "tig.lex"
+#line 1454 "tig.lex"
 ECHO;
 	YY_BREAK
-#line 2579 "lex.yy.c"
+#line 2578 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(cmtmode):
 	yyterminate();
@@ -3580,7 +3579,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 1455 "tig.lex"
+#line 1454 "tig.lex"
 
 
 
