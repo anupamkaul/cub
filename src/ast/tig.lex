@@ -580,6 +580,27 @@ int NULL_DECLIST=0;
 
                 }
 
+if([ ]|\n)      {
+                /* token: if_kwd */
+                /* cases like (if */
+
+                if((yytext[yyleng-1] == '\n') || (yytext[yyleng-1] == ' '))
+                {
+                  /* return last-char to input */
+                  unput(yytext[yyleng-1]);
+                  yytext[yyleng-1] = '\0';
+                 
+                }
+
+                fprintf(llout, "%s^KWD(%d,%d)^ ", yytext, lxline, lxcol);
+                yylval.strinfo.strval = strdup(yytext);
+		yylval.strinfo.pos[if_kwd_pos].line=lxline;
+		yylval.strinfo.pos[if_kwd_pos].col=lxcol;
+
+		lxcol+=2;	
+                return if_kwd;
+
+                }
 
 ^then([ ]|\n)   {
                 /* token: then_kwd */
@@ -908,55 +929,9 @@ int NULL_DECLIST=0;
                 }
 
 
-^for([ ]|\n)    {
-                /* token: for_kwd */
-
-                if((yytext[yyleng-1] == '\n') || (yytext[yyleng-1] == ' '))
-                {
-                  /* return last-char to input */
-                  unput(yytext[yyleng-1]);
-                  yytext[yyleng-1] = '\0';
-                 
-                }
-
-                fprintf(llout, "%s^KWD(%d,%d)^ ", yytext, lxline, lxcol);
-                yylval.strinfo.strval = strdup(yytext);
-		yylval.strinfo.pos[for_kwd_pos].line=lxline;
-		yylval.strinfo.pos[for_kwd_pos].col=lxcol;
-
-		lxcol+=3;	
-                return for_kwd;
-
-                }
-
-[ ]for([ ]|\n)  {
-                /* token: for_kwd */
-
-                if((yytext[yyleng-1] == '\n') || (yytext[yyleng-1] == ' '))
-                {
-                  /* return last-char to input */
-                  unput(yytext[yyleng-1]);
-                  yytext[yyleng-1] = '\0';
-
-                  /* remove first white-space */
-                  /* if(*yytext == ' ')  */
-                  yytext = yytext++;
-
-                }
-
-                fprintf(llout, "%s^KWD(%d,%d)^ ", yytext, lxline, lxcol);
-                yylval.strinfo.strval = strdup(yytext);
-		yylval.strinfo.pos[for_kwd_pos].line=lxline;
-		yylval.strinfo.pos[for_kwd_pos].col=lxcol;
-
-		lxcol+=4;	
-                return for_kwd;
-
-                }
-
 for([ ]|\n)     {
                 /* token: for_kwd */
-                /* cases like "(for .." are better disambiguated in their own constructs */
+                /* for doesn't care what precedes it : $ [] ( */
 
                 if((yytext[yyleng-1] == '\n') || (yytext[yyleng-1] == ' '))
                 {

@@ -1,0 +1,26 @@
+Syntax based on constructs:
+
+Tests for for-loops:
+1. show different spaces around for symbols (pass and fail)
+2. show different characters before for (bfor, before, b for, b-for, forb, (for, for(, (for) etc)
+3. show nested for loops (with variable scope)
+4. show for loop in a function call
+5. show incomplete for loops
+6. for for (etc) 
+7. for i = 1 to for (etc)
+8. fo r i = 1 to .. (etc)
+
+Tests for function calls:
+1. print (args)  [space after print should make it an ident and error out]
+2. print(<expression>) like if .. (should work if if-syntax is correct)
+3. for( )   .. is a for loop not a function call
+4. to( ) ... is incorrect as to is a keyword
+5. do( ) ... is a do loop and not an overridable function call
+6. nested function calls
+7. show spaces in and around function calls with pass and fail cases
+
+
+Test for if statements:
+
+
+
