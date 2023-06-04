@@ -954,19 +954,16 @@ int NULL_DECLIST=0;
 
                 }
 
-\(for([ ]|\n)  {
+for([ ]|\n)     {
                 /* token: for_kwd */
+                /* cases like "(for .." are better disambiguated in their own constructs */
 
                 if((yytext[yyleng-1] == '\n') || (yytext[yyleng-1] == ' '))
                 {
                   /* return last-char to input */
                   unput(yytext[yyleng-1]);
                   yytext[yyleng-1] = '\0';
-
-                  /* remove first white-space */
-                  /* if(*yytext == ' ')  */
-                  yytext = yytext++;
-
+                 
                 }
 
                 fprintf(llout, "%s^KWD(%d,%d)^ ", yytext, lxline, lxcol);
@@ -974,7 +971,7 @@ int NULL_DECLIST=0;
 		yylval.strinfo.pos[for_kwd_pos].line=lxline;
 		yylval.strinfo.pos[for_kwd_pos].col=lxcol;
 
-		lxcol+=4;	
+		lxcol+=3;	
                 return for_kwd;
 
                 }

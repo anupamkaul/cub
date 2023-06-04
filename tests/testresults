@@ -1,4 +1,4 @@
-test results on  2023-05-31 17:55:38.390799
+test results on  2023-06-04 08:55:33.658207
 
 dir:  ./
 subdirs:  ['tc', 'general', 'testruns', 'misc', 'sample_programs', 'ast'] 
@@ -68,7 +68,7 @@ dump in folder  ./testruns/general/test_input1x.tig
 
 
 dir:  ./testruns
-subdirs:  ['tc', 'general'] 
+subdirs:  ['tc', 'general', 'sample_programs', 'ast'] 
 
 
 
@@ -143,6 +143,71 @@ subdirs:  []
 
 
 dir:  ./testruns/general/test_input1x.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/sample_programs
+subdirs:  ['queens.mod.tig', 'queens.mod2.tig', 'queens.tig'] 
+
+
+
+dir:  ./testruns/sample_programs/queens.mod.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/sample_programs/queens.mod2.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/sample_programs/queens.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast
+subdirs:  ['test_input.tig', 'test_input3.tig', 'test_input5.tig', 'test_input2.tig', 'test_input1.tig', 'test_input6.tig', 'test_input4.tig', 'test_input1x.tig'] 
+
+
+
+dir:  ./testruns/ast/test_input.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input3.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input5.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input2.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input1.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input6.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input4.tig
+subdirs:  [] 
+
+
+
+dir:  ./testruns/ast/test_input1x.tig
 subdirs:  [] 
 
 
