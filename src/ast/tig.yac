@@ -1155,7 +1155,7 @@ char *strmemcat(char* source, char* dest);
            |               expliteral 
                            {
 #ifdef YDUMPEXP                          
-                           fprintf(yyout, "<PARSE> Discovered an EXPLITERAL: %s\n", $$);
+                           fprintf(yyout, "\n<PARSE> Discovered an EXPLITERAL: %s\n", $$);
 #endif
                            }
                            ;
@@ -1192,6 +1192,24 @@ char *strmemcat(char* source, char* dest);
 
 			  }
 
+                 |        pure_str {
+
+#ifdef YDUMPEXP                          
+			  fprintf(yyout,"\n<PARSE> EXPLITERAL (pure string literal): %s (%d, %d)\n", $$, 
+                          yylval.strinfo.pos[pure_num_pos].line, yylval.strinfo.pos[pure_num_pos].col);
+#endif
+
+		          absyn_pos->line = A_intdup(yylval.strinfo.pos[pure_str_pos].line);
+                          absyn_pos->col  = A_intdup(yylval.strinfo.pos[pure_str_pos].col); 
+
+                          A_pushexp(A_StringExp(absyn_pos, $$));
+
+#ifdef PRN_STACK
+                          Dbprn_expstack(); 
+#endif
+
+			  }
+
                  |        lvalue {
 
 #ifdef YDUMPEXP                          
@@ -1219,6 +1237,9 @@ char *strmemcat(char* source, char* dest);
                            */
 
                           } 
+
+                 /* need to differentiate proc_call (no ret value) and func_call. Here I mean
+                  * a valued (returning) call which is a value func_call */
 
                  |        func_call;
 
@@ -1344,6 +1365,9 @@ char *strmemcat(char* source, char* dest);
 
                           /* Pop, affect, push */
 			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
+#ifdef YDUMPTXT
+                          fprintf(yyout, "\n<PARSE> EVALD a parameter list for a func call: %s\n", $$);
+#endif
 
                           }
                        |  expv {
@@ -1351,8 +1375,10 @@ char *strmemcat(char* source, char* dest);
                           /* Push, raise level in the stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
+#ifdef YDUMPTXT
+                          fprintf(yyout, "\n<PARSE> EVALD a (simple, no comma) parameter list for a func call: %s\n", $$);
+#endif
 		          };
-
 
         /* Expseq is a sequence of expressions, seperated by semicolons, and expseq
            begins and ends with paranthesis .. ( exp ; exp ; exp ; ... exp ).
@@ -1402,7 +1428,7 @@ char *strmemcat(char* source, char* dest);
 
                          };
 
-        /* Expseq is a sequence of (valueless) expressions, seperated by semicolons, and expseq
+        /* Expseq is a sequence of (valued) expressions, seperated by semicolons, and expseq
            begins and ends with paranthesis when multiple expressions .. ( exp ; exp ; exp ; ... exp ).
 
            Alt : Expseq is a sequence of zero or more expressions, separated by semicolons. The result (if any)
@@ -1417,7 +1443,7 @@ char *strmemcat(char* source, char* dest);
            We may be missing a %type for a single exp (since we have explist and expseq)?
          */
 
-         expseq :         lparan rparan {
+         expseq:          lparan rparan {
 
                           $$ = (char*) strmemcat($$, " ");
                           $$ = (char*) strmemcat($$, $2);
@@ -1456,6 +1482,15 @@ char *strmemcat(char* source, char* dest);
 #endif
 
                           };
+
+         /* TODO : this should be called seq-explist because it assumes semicolon between valued sequential exprs
+            (the def of expseq) but I can't use it for comma between expressions (e.g. parameter_list in func_calls)
+            which may also have if_then in func params and may not need lparan-rparan. (Parameter_list invokes expv
+            which does not contain if_then, only expseq -> explist does)
+
+            Also expuv (unvalued) needs to be a formal %type, as we get closer to the definition of an 'expression'.
+            Also a cub program is an 'expression'
+         */
 
          explist:         explist semicolon asn_exp {
 
@@ -1671,8 +1706,28 @@ char *strmemcat(char* source, char* dest);
                           /* Push new level in explist stack */
                           A_pushexplist(A_ExpList(A_popexp(),NULL));
 
-                          } ;
+                          } 
 
+               /* and valued expressions (expv) */
+
+               |          explist semicolon expv {
+
+                           $$ = (char*) strmemcat($$, " ");
+                           $$ = (char*) strmemcat($$, $2);
+
+                           $$ = (char*) strmemcat($$, "\n");
+                           $$ = (char*) strmemcat($$, $3);
+
+                          /* Pop, affect and re-push on the explist stack */
+			  A_pushexplist(A_ExpList(A_popexp(), A_popexplist()));
+
+                          }
+               |          expv {
+
+                          /* Push new level in explist stack */
+                          A_pushexplist(A_ExpList(A_popexp(),NULL));
+
+                          }; 
 
   /* Following are the elements of expuv(implicit). The unvalued expressions are:
      1. If-Then (Else)                    <in explist, and call explist>

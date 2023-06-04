@@ -1,1 +1,7 @@
-tig.yac: warning: 5 reduce/reduce conflicts [-Wconflicts-rr]
+tig.yac: warning: 9 reduce/reduce conflicts [-Wconflicts-rr]
+tig.yac:1600.27-1611.27: warning: rule useless in parser due to conflicts [-Wother]
+                |          explist semicolon func_call {
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tig.yac:1613.27-1618.27: warning: rule useless in parser due to conflicts [-Wother]
+                |          func_call {
+                           ^^^^^^^^^^^
