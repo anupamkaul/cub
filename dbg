@@ -1,0 +1,117 @@
+tig.lex:87:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:181:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:235:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:330:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:384:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:430:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:477:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:523:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:569:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:637:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:684:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:731:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:778:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:825:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:871:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:917:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:986:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+tig.lex:1032:34: warning: multiple unsequenced modifications to 'yytext' [-Wunsequenced]
+                  yytext = yytext++;
+                         ~       ^
+18 warnings generated.
+tig.yac:649:117: warning: passing arguments to 'A_popexp' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                           A_pushVardec(A_VarDec(absyn_pos, (yyvsp[(2) - (4)].strinfo.strval), "undefined", A_popexp(0)));
+                                                                                                                    ^
+tig.yac:1927:6: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+void yyerror(s)
+     ^
+2 warnings generated.
+./src/ast/absyn.c:188:17: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a subsequent definition [-Wdeprecated-non-prototype]
+int             A_peepMutRecState();
+                ^
+./src/ast/absyn.c:896:17: note: conflicting prototype is here
+int             A_peepMutRecState(int level)
+                ^
+1 warning generated.
+./src/tc/symtab.c:65:45: warning: cast to smaller integer type 'int' from 'symbol' (aka 'struct symbol_ *') [-Wpointer-to-int-cast]
+  fprintf(stderr, "sym2index = %d\n", (int)((int)sym % MAX_SYMBOLS));
+                                            ^~~~~~~~
+./src/tc/symtab.c:66:16: warning: cast to smaller integer type 'int' from 'symbol' (aka 'struct symbol_ *') [-Wpointer-to-int-cast]
+  return (int)((int)sym % MAX_SYMBOLS);
+               ^~~~~~~~
+./src/tc/symtab.c:130:13: warning: cast to smaller integer type 'unsigned int' from 'table' (aka 'struct table_ *') [-Wpointer-to-int-cast]
+        t->L_Add = (unsigned int)t;
+                   ^~~~~~~~~~~~~~~
+./src/tc/symtab.c:131:13: warning: cast to smaller integer type 'unsigned int' from 'table' (aka 'struct table_ *') [-Wpointer-to-int-cast]
+        t->H_Add = (unsigned int)(t + (MAX_SYMBOLS * sizeof(struct table_)));
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./src/tc/symtab.c:134:61: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        fprintf(stderr, "[symtab]: No. of bytes allocated = %d\n", MAX_SYMBOLS * sizeof(struct table_));
+                                                            ~~     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                            %lu
+./src/tc/symtab.h:23:21: note: expanded from macro 'MAX_SYMBOLS'
+#define MAX_SYMBOLS     1009
+                        ^
+./src/tc/symtab.c:167:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+}
+^
+6 warnings generated.
+./src/tc/types.c:59:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+1 warning generated.
+./src/tc/semant_utils.c:286:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+} /* end of tc_var */
+^
+1 warning generated.
+./src/main.c:23:21: warning: 'extern' variable has an initializer [-Wextern-initializer]
+extern A_exp        AST_root=NULL;              /* Abstract Syntax Tree */
+                    ^
+./src/main.c:25:1: warning: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
+main (int argc, char *argv[]) {
+^
+int
+./src/main.c:30:20: warning: incompatible pointer types passing 'char **' to parameter of type 'char *'; dereference with * [-Wincompatible-pointer-types]
+    ast_main(argc, argv);
+                   ^~~~
+                   *
+./src/main.c:20:33: note: passing argument to parameter here
+extern void ast_main(int, char* );
+                                ^
+3 warnings generated.
+ld: library 'fl' not found
+clang: error: linker command failed with exit code 1 (use -v to see invocation)

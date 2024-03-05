@@ -28,6 +28,7 @@ OPT_AST= -DYDUMPVAR -DYDUMPTXT -DYDUMPEXP -DYDUMPMRC -DYDUMPMRCF -DYDUMP_TYLIST 
 tiger:   clean tagit lexit yaccit  
 	 echo Creating ast source ..
 	 gcc -o $(COMP) $(SRC_AST) $(SRC_TC) $(OPT_AST) ./src/main.c -lfl 1>dbg 2>dbg  
+	 #gcc -o $(COMP) $(SRC_AST) $(SRC_TC) $(OPT_AST) ./src/main.c -L/usr/local/opt/flex/lib/lfl 1>dbg 2>dbg  
 	 rm -f dbg # works only if gcc was successful
 
 #	/bin/sh -c 'if [ -s dbg ]; then  \

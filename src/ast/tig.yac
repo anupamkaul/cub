@@ -21,8 +21,12 @@ extern FILE *yyin, *yyout;
 extern int lxline; 
 
 /* add this to avoid gcc's implicit function prototype legacy warning */
-extern int yylex(void); 
+// extern int yylex(void); 
 // #define yyerror  goto yyerrorlab
+
+/* add to ignore macbook compilation errors with the lex/yacc version I'm using (implicit declarations) */
+int yylex(void);
+void yyerror(char* s);
 
 /* sockets between lex n yacc */
 extern int SEND_FALSE_FUNCTION;
@@ -1920,7 +1924,7 @@ return 0;
 
 } /* end of main */
 
-yyerror(s)
+void yyerror(s)
 char *s;
 {
 fprintf(stderr, "<PARSE> (Error) At line %d: %s\n", lxline, s);

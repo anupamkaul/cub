@@ -1,0 +1,68 @@
+https://stackoverflow.com/questions/16050362/how-to-fix-a-missing-ld-library-for-lfl-while-compiling
+
+anupkaul@147dda4c0851 cub % brew install flex
+Running `brew update --auto-update`...
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+actions-batch         edbrowse              liborigin             mmdbinspect           phodav                sigi                  wstunnel
+bluez                 gimmecert             libsql                nmail                 pkl                   taskopen
+bpftop                gptscript             lsusb-laniksj         npm-check-updates     prjtrellis            typstfmt
+cargo-fuzz            kubeshark             mdsh                  pass-import           scala@3.3             vrc-get
+==> New Casks
+apidog-europe            deelay                   motion                   segger-ozone             stashpad                 youlean-loudness-meter
+
+You have 7 outdated formulae installed.
+
+==> Downloading https://ghcr.io/v2/homebrew/core/flex/manifests/2.6.4_2
+################################################################################################################################################# 100.0%
+==> Fetching dependencies for flex: gettext
+==> Downloading https://ghcr.io/v2/homebrew/core/gettext/manifests/0.22.5
+################################################################################################################################################# 100.0%
+==> Fetching gettext
+==> Downloading https://ghcr.io/v2/homebrew/core/gettext/blobs/sha256:13492dddf82cad8dcb20d1c6375138a0712ce8e3c25b612256672446175c9727
+################################################################################################################################################# 100.0%
+==> Fetching flex
+==> Downloading https://ghcr.io/v2/homebrew/core/flex/blobs/sha256:cebd471efdf0faed6d8fdc615c7637a99bef34e5a21d41f75317d0067ffcc293
+################################################################################################################################################# 100.0%
+==> Installing dependencies for flex: gettext
+==> Installing flex dependency: gettext
+==> Downloading https://ghcr.io/v2/homebrew/core/gettext/manifests/0.22.5
+Already downloaded: /Users/anupkaul/Library/Caches/Homebrew/downloads/447e45b77bb47ede0377f7eab1863825298ecaaaeed0bbd84aca3bd300b00508--gettext-0.22.5.bottle_manifest.json
+==> Pouring gettext--0.22.5.sonoma.bottle.tar.gz
+🍺  /usr/local/Cellar/gettext/0.22.5: 2,043 files, 23.8MB
+==> Installing flex
+==> Pouring flex--2.6.4_2.sonoma.bottle.tar.gz
+==> Caveats
+flex is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+If you need to have flex first in your PATH, run:
+  echo 'export PATH="/usr/local/opt/flex/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find flex you may need to set:
+  export LDFLAGS="-L/usr/local/opt/flex/lib"
+  export CPPFLAGS="-I/usr/local/opt/flex/include"
+==> Summary
+🍺  /usr/local/Cellar/flex/2.6.4_2: 46 files, 1.5MB
+==> Running `brew cleanup flex`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+==> flex
+flex is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+If you need to have flex first in your PATH, run:
+  echo 'export PATH="/usr/local/opt/flex/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find flex you may need to set:
+  export LDFLAGS="-L/usr/local/opt/flex/lib"
+  export CPPFLAGS="-I/usr/local/opt/flex/include"
+
+---
+
+note: added export LDFLAGS to .zprofile om macbook..
+

@@ -16,6 +16,10 @@
  * (or using the make tparse option for e.g.)
  * ***************************************************************/
 
+// externs to skip macbook compilation
+extern void ast_main(int, char* );
+extern void tc_main();
+
 extern A_exp        AST_root=NULL;		/* Abstract Syntax Tree */
 
 main (int argc, char *argv[]) {

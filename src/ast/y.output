@@ -1,11 +1,11 @@
-Terminals unused in grammar
+Terminals which are not used
 
    nil_kwd
    dquote
    squote
 
 
-Rules useless in parser due to conflicts
+Rules never reduced
 
    74 explist: explist semicolon func_call
    75        | func_call
@@ -222,9 +222,9 @@ rec_defn_param (65)
 array_defn (66)
     on left: 33, on right: 28
 expv (67)
-    on left: 34 35 36 37 38 39 40 41 42 43 44 45 46 47, on right: 27
-    29 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 51 53 58 59
-    61 82 83 84 85 86 87
+    on left: 34 35 36 37 38 39 40 41 42 43 44 45 46 47,
+    on right: 27 29 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+    51 53 58 59 61 82 83 84 85 86 87
 expliteral (68)
     on left: 48 49 50 51 52, on right: 34 35 36 37 38 39 40 41 42 43
     44 45 47
@@ -251,7 +251,7 @@ if_then_else_decl (78)
     on left: 87, on right: 68 69
 
 
-State 0
+state 0
 
     0 $accept: . tig_root $end
 
@@ -261,7 +261,7 @@ State 0
     let_decl  go to state 3
 
 
-State 1
+state 1
 
     2 let_decl: let_kwd . decls in_kwd expseq end_kwd
 
@@ -275,21 +275,21 @@ State 1
     var_decl    go to state 10
 
 
-State 2
+state 2
 
     0 $accept: tig_root . $end
 
     $end  shift, and go to state 11
 
 
-State 3
+state 3
 
     1 tig_root: let_decl .
 
     $default  reduce using rule 1 (tig_root)
 
 
-State 4
+state 4
 
    27 var_decl: var_kwd . ident asn_op expv
    28         | var_kwd . ident asn_op array_defn
@@ -298,28 +298,28 @@ State 4
     ident  shift, and go to state 12
 
 
-State 5
+state 5
 
    10 type_decls: false_type_kwd .
 
     $default  reduce using rule 10 (type_decls)
 
 
-State 6
+state 6
 
    22 func_decls: false_function_kwd .
 
     $default  reduce using rule 22 (func_decls)
 
 
-State 7
+state 7
 
     2 let_decl: let_kwd decls . in_kwd expseq end_kwd
 
     in_kwd  shift, and go to state 13
 
 
-State 8
+state 8
 
     3 decls: type_decls . decls
     7      | type_decls .
@@ -339,7 +339,7 @@ State 8
     var_decl    go to state 10
 
 
-State 9
+state 9
 
     4 decls: func_decls . decls
     6      | func_decls .
@@ -359,7 +359,7 @@ State 9
     var_decl    go to state 10
 
 
-State 10
+state 10
 
     5 decls: var_decl . decls
     8      | var_decl .
@@ -376,14 +376,14 @@ State 10
     var_decl    go to state 10
 
 
-State 11
+state 11
 
     0 $accept: tig_root $end .
 
     $default  accept
 
 
-State 12
+state 12
 
    27 var_decl: var_kwd ident . asn_op expv
    28         | var_kwd ident . asn_op array_defn
@@ -393,7 +393,7 @@ State 12
     asn_op  shift, and go to state 22
 
 
-State 13
+state 13
 
     2 let_decl: let_kwd decls in_kwd . expseq end_kwd
 
@@ -402,28 +402,28 @@ State 13
     expseq  go to state 24
 
 
-State 14
+state 14
 
    11 type_decl: type_kwd . ident eq_op ty_rhs
 
     ident  shift, and go to state 25
 
 
-State 15
+state 15
 
     3 decls: type_decls decls .
 
     $default  reduce using rule 3 (decls)
 
 
-State 16
+state 16
 
     9 type_decls: type_decls type_decl .
 
     $default  reduce using rule 9 (type_decls)
 
 
-State 17
+state 17
 
    23 func_decl: fn_kwd . ident lparan rparan eq_op expseq
    24          | fn_kwd . ident lparan tyfields rparan eq_op expseq
@@ -433,28 +433,28 @@ State 17
     ident  shift, and go to state 26
 
 
-State 18
+state 18
 
     4 decls: func_decls decls .
 
     $default  reduce using rule 4 (decls)
 
 
-State 19
+state 19
 
    21 func_decls: func_decls func_decl .
 
     $default  reduce using rule 21 (func_decls)
 
 
-State 20
+state 20
 
     5 decls: var_decl decls .
 
     $default  reduce using rule 5 (decls)
 
 
-State 21
+state 21
 
    29 var_decl: var_kwd ident colon . typeid asn_op expv
 
@@ -465,7 +465,7 @@ State 21
     typeid  go to state 30
 
 
-State 22
+state 22
 
    27 var_decl: var_kwd ident asn_op . expv
    28         | var_kwd ident asn_op . array_defn
@@ -484,7 +484,7 @@ State 22
     func_call   go to state 41
 
 
-State 23
+state 23
 
    62 expseq: lparan . rparan
    63       | lparan . explist rparan
@@ -518,21 +518,21 @@ State 23
     if_then_else_decl  go to state 59
 
 
-State 24
+state 24
 
     2 let_decl: let_kwd decls in_kwd expseq . end_kwd
 
     end_kwd  shift, and go to state 60
 
 
-State 25
+state 25
 
    11 type_decl: type_kwd ident . eq_op ty_rhs
 
     eq_op  shift, and go to state 61
 
 
-State 26
+state 26
 
    23 func_decl: fn_kwd ident . lparan rparan eq_op expseq
    24          | fn_kwd ident . lparan tyfields rparan eq_op expseq
@@ -542,35 +542,35 @@ State 26
     lparan  shift, and go to state 62
 
 
-State 27
+state 27
 
    18 typeid: int_kwd .
 
     $default  reduce using rule 18 (typeid)
 
 
-State 28
+state 28
 
    19 typeid: string_kwd .
 
     $default  reduce using rule 19 (typeid)
 
 
-State 29
+state 29
 
    20 typeid: ident .
 
     $default  reduce using rule 20 (typeid)
 
 
-State 30
+state 30
 
    29 var_decl: var_kwd ident colon typeid . asn_op expv
 
     asn_op  shift, and go to state 63
 
 
-State 31
+state 31
 
    55 lvalue: ident .
    56 func_call: ident . lparan rparan
@@ -581,7 +581,7 @@ State 31
     $default  reduce using rule 55 (lvalue)
 
 
-State 32
+state 32
 
    51 expliteral: lparan . expv rparan
 
@@ -597,7 +597,7 @@ State 32
     func_call   go to state 41
 
 
-State 33
+state 33
 
    33 array_defn: sqLbrace . expv sqRbrace typeid of_kwd expv
 
@@ -613,7 +613,7 @@ State 33
     func_call   go to state 41
 
 
-State 34
+state 34
 
    46 expv: minus_op . expv
 
@@ -629,35 +629,35 @@ State 34
     func_call   go to state 41
 
 
-State 35
+state 35
 
    48 expliteral: pure_num .
 
     $default  reduce using rule 48 (expliteral)
 
 
-State 36
+state 36
 
    49 expliteral: pure_str .
 
     $default  reduce using rule 49 (expliteral)
 
 
-State 37
+state 37
 
    28 var_decl: var_kwd ident asn_op array_defn .
 
     $default  reduce using rule 28 (var_decl)
 
 
-State 38
+state 38
 
    27 var_decl: var_kwd ident asn_op expv .
 
     $default  reduce using rule 27 (var_decl)
 
 
-State 39
+state 39
 
    34 expv: expliteral . add_op expv
    35     | expliteral . minus_op expv
@@ -689,7 +689,7 @@ State 39
     $default  reduce using rule 47 (expv)
 
 
-State 40
+state 40
 
    50 expliteral: lvalue .
    53 lvalue: lvalue . sqLbrace expv sqRbrace
@@ -701,14 +701,14 @@ State 40
     $default  reduce using rule 50 (expliteral)
 
 
-State 41
+state 41
 
    52 expliteral: func_call .
 
     $default  reduce using rule 52 (expliteral)
 
 
-State 42
+state 42
 
    84 if_then_decl: if_kwd . expv then_kwd expseq
    87 if_then_else_decl: if_kwd . expv then_kwd expseq else_kwd expseq
@@ -725,14 +725,14 @@ State 42
     func_call   go to state 41
 
 
-State 43
+state 43
 
    79 explist: break_kwd .
 
     $default  reduce using rule 79 (explist)
 
 
-State 44
+state 44
 
    85 while_decl: while_kwd . expv do_kwd expseq
 
@@ -748,14 +748,14 @@ State 44
     func_call   go to state 41
 
 
-State 45
+state 45
 
    86 for_decl: for_kwd . ident asn_op expv to_kwd expv do_kwd expseq
 
     ident  shift, and go to state 84
 
 
-State 46
+state 46
 
    20 typeid: ident .
    55 lvalue: ident .
@@ -768,42 +768,42 @@ State 46
     $default  reduce using rule 55 (lvalue)
 
 
-State 47
+state 47
 
    62 expseq: lparan rparan .
 
     $default  reduce using rule 62 (expseq)
 
 
-State 48
+state 48
 
    77 explist: let_decl .
 
     $default  reduce using rule 77 (explist)
 
 
-State 49
+state 49
 
    30 rec_defn: typeid . lbrace rec_defn_param rbrace
 
     lbrace  shift, and go to state 85
 
 
-State 50
+state 50
 
    81 explist: rec_defn .
 
     $default  reduce using rule 81 (explist)
 
 
-State 51
+state 51
 
    83 explist: expv .
 
     $default  reduce using rule 83 (explist)
 
 
-State 52
+state 52
 
    50 expliteral: lvalue .
    53 lvalue: lvalue . sqLbrace expv sqRbrace
@@ -818,7 +818,7 @@ State 52
     $default  reduce using rule 50 (expliteral)
 
 
-State 53
+state 53
 
    52 expliteral: func_call .
    75 explist: func_call .
@@ -830,14 +830,14 @@ State 53
     $default   reduce using rule 52 (expliteral)
 
 
-State 54
+state 54
 
    65 explist: asn_exp .
 
     $default  reduce using rule 65 (explist)
 
 
-State 55
+state 55
 
    63 expseq: lparan explist . rparan
    64 explist: explist . semicolon asn_exp
@@ -855,42 +855,42 @@ State 55
     semicolon  shift, and go to state 88
 
 
-State 56
+state 56
 
    67 explist: if_then_decl .
 
     $default  reduce using rule 67 (explist)
 
 
-State 57
+state 57
 
    71 explist: while_decl .
 
     $default  reduce using rule 71 (explist)
 
 
-State 58
+state 58
 
    73 explist: for_decl .
 
     $default  reduce using rule 73 (explist)
 
 
-State 59
+state 59
 
    69 explist: if_then_else_decl .
 
     $default  reduce using rule 69 (explist)
 
 
-State 60
+state 60
 
     2 let_decl: let_kwd decls in_kwd expseq end_kwd .
 
     $default  reduce using rule 2 (let_decl)
 
 
-State 61
+state 61
 
    11 type_decl: type_kwd ident eq_op . ty_rhs
 
@@ -904,7 +904,7 @@ State 61
     typeid  go to state 93
 
 
-State 62
+state 62
 
    23 func_decl: fn_kwd ident lparan . rparan eq_op expseq
    24          | fn_kwd ident lparan . tyfields rparan eq_op expseq
@@ -917,7 +917,7 @@ State 62
     tyfields  go to state 96
 
 
-State 63
+state 63
 
    29 var_decl: var_kwd ident colon typeid asn_op . expv
 
@@ -933,7 +933,7 @@ State 63
     func_call   go to state 41
 
 
-State 64
+state 64
 
    56 func_call: ident lparan . rparan
    57          | ident lparan . parameter_list rparan
@@ -952,28 +952,28 @@ State 64
     parameter_list  go to state 100
 
 
-State 65
+state 65
 
    51 expliteral: lparan expv . rparan
 
     rparan  shift, and go to state 101
 
 
-State 66
+state 66
 
    33 array_defn: sqLbrace expv . sqRbrace typeid of_kwd expv
 
     sqRbrace  shift, and go to state 102
 
 
-State 67
+state 67
 
    46 expv: minus_op expv .
 
     $default  reduce using rule 46 (expv)
 
 
-State 68
+state 68
 
    38 expv: expliteral eq_op . expv
 
@@ -989,7 +989,7 @@ State 68
     func_call   go to state 41
 
 
-State 69
+state 69
 
    39 expv: expliteral not_eq . expv
 
@@ -1005,7 +1005,7 @@ State 69
     func_call   go to state 41
 
 
-State 70
+state 70
 
    40 expv: expliteral gr_op . expv
 
@@ -1021,7 +1021,7 @@ State 70
     func_call   go to state 41
 
 
-State 71
+state 71
 
    41 expv: expliteral le_op . expv
 
@@ -1037,7 +1037,7 @@ State 71
     func_call   go to state 41
 
 
-State 72
+state 72
 
    43 expv: expliteral le_eq_op . expv
 
@@ -1053,7 +1053,7 @@ State 72
     func_call   go to state 41
 
 
-State 73
+state 73
 
    42 expv: expliteral gr_eq_op . expv
 
@@ -1069,7 +1069,7 @@ State 73
     func_call   go to state 41
 
 
-State 74
+state 74
 
    34 expv: expliteral add_op . expv
 
@@ -1085,7 +1085,7 @@ State 74
     func_call   go to state 41
 
 
-State 75
+state 75
 
    35 expv: expliteral minus_op . expv
 
@@ -1101,7 +1101,7 @@ State 75
     func_call   go to state 41
 
 
-State 76
+state 76
 
    36 expv: expliteral mult_op . expv
 
@@ -1117,7 +1117,7 @@ State 76
     func_call   go to state 41
 
 
-State 77
+state 77
 
    37 expv: expliteral div_op . expv
 
@@ -1133,7 +1133,7 @@ State 77
     func_call   go to state 41
 
 
-State 78
+state 78
 
    44 expv: expliteral and_op . expv
 
@@ -1149,7 +1149,7 @@ State 78
     func_call   go to state 41
 
 
-State 79
+state 79
 
    45 expv: expliteral or_op . expv
 
@@ -1165,7 +1165,7 @@ State 79
     func_call   go to state 41
 
 
-State 80
+state 80
 
    53 lvalue: lvalue sqLbrace . expv sqRbrace
 
@@ -1181,14 +1181,14 @@ State 80
     func_call   go to state 41
 
 
-State 81
+state 81
 
    54 lvalue: lvalue period . ident
 
     ident  shift, and go to state 116
 
 
-State 82
+state 82
 
    84 if_then_decl: if_kwd expv . then_kwd expseq
    87 if_then_else_decl: if_kwd expv . then_kwd expseq else_kwd expseq
@@ -1196,21 +1196,21 @@ State 82
     then_kwd  shift, and go to state 117
 
 
-State 83
+state 83
 
    85 while_decl: while_kwd expv . do_kwd expseq
 
     do_kwd  shift, and go to state 118
 
 
-State 84
+state 84
 
    86 for_decl: for_kwd ident . asn_op expv to_kwd expv do_kwd expseq
 
     asn_op  shift, and go to state 119
 
 
-State 85
+state 85
 
    30 rec_defn: typeid lbrace . rec_defn_param rbrace
 
@@ -1219,7 +1219,7 @@ State 85
     rec_defn_param  go to state 121
 
 
-State 86
+state 86
 
    60 asn_exp: lvalue asn_op . asn_exp
    61        | lvalue asn_op . expv
@@ -1237,14 +1237,14 @@ State 86
     asn_exp     go to state 123
 
 
-State 87
+state 87
 
    63 expseq: lparan explist rparan .
 
     $default  reduce using rule 63 (expseq)
 
 
-State 88
+state 88
 
    64 explist: explist semicolon . asn_exp
    66        | explist semicolon . if_then_decl
@@ -1284,14 +1284,14 @@ State 88
     if_then_else_decl  go to state 133
 
 
-State 89
+state 89
 
    13 ty_rhs: array_kwd . of_kwd typeid
 
     of_kwd  shift, and go to state 134
 
 
-State 90
+state 90
 
    12 ty_rhs: ident .
    20 typeid: ident .
@@ -1309,7 +1309,7 @@ State 90
     $default            reduce using rule 12 (ty_rhs)
 
 
-State 91
+state 91
 
    14 ty_rhs: lbrace . tyfields rbrace
 
@@ -1318,28 +1318,28 @@ State 91
     tyfields  go to state 135
 
 
-State 92
+state 92
 
    11 type_decl: type_kwd ident eq_op ty_rhs .
 
     $default  reduce using rule 11 (type_decl)
 
 
-State 93
+state 93
 
    15 ty_rhs: typeid .
 
     $default  reduce using rule 15 (ty_rhs)
 
 
-State 94
+state 94
 
    17 tyfields: ident . colon typeid
 
     colon  shift, and go to state 136
 
 
-State 95
+state 95
 
    23 func_decl: fn_kwd ident lparan rparan . eq_op expseq
    25          | fn_kwd ident lparan rparan . colon typeid eq_op expseq
@@ -1348,7 +1348,7 @@ State 95
     colon  shift, and go to state 138
 
 
-State 96
+state 96
 
    16 tyfields: tyfields . comma ident colon typeid
    24 func_decl: fn_kwd ident lparan tyfields . rparan eq_op expseq
@@ -1358,28 +1358,28 @@ State 96
     rparan  shift, and go to state 140
 
 
-State 97
+state 97
 
    29 var_decl: var_kwd ident colon typeid asn_op expv .
 
     $default  reduce using rule 29 (var_decl)
 
 
-State 98
+state 98
 
    56 func_call: ident lparan rparan .
 
     $default  reduce using rule 56 (func_call)
 
 
-State 99
+state 99
 
    59 parameter_list: expv .
 
     $default  reduce using rule 59 (parameter_list)
 
 
-State 100
+state 100
 
    57 func_call: ident lparan parameter_list . rparan
    58 parameter_list: parameter_list . comma expv
@@ -1388,14 +1388,14 @@ State 100
     rparan  shift, and go to state 142
 
 
-State 101
+state 101
 
    51 expliteral: lparan expv rparan .
 
     $default  reduce using rule 51 (expliteral)
 
 
-State 102
+state 102
 
    33 array_defn: sqLbrace expv sqRbrace . typeid of_kwd expv
 
@@ -1406,105 +1406,105 @@ State 102
     typeid  go to state 143
 
 
-State 103
+state 103
 
    38 expv: expliteral eq_op expv .
 
     $default  reduce using rule 38 (expv)
 
 
-State 104
+state 104
 
    39 expv: expliteral not_eq expv .
 
     $default  reduce using rule 39 (expv)
 
 
-State 105
+state 105
 
    40 expv: expliteral gr_op expv .
 
     $default  reduce using rule 40 (expv)
 
 
-State 106
+state 106
 
    41 expv: expliteral le_op expv .
 
     $default  reduce using rule 41 (expv)
 
 
-State 107
+state 107
 
    43 expv: expliteral le_eq_op expv .
 
     $default  reduce using rule 43 (expv)
 
 
-State 108
+state 108
 
    42 expv: expliteral gr_eq_op expv .
 
     $default  reduce using rule 42 (expv)
 
 
-State 109
+state 109
 
    34 expv: expliteral add_op expv .
 
     $default  reduce using rule 34 (expv)
 
 
-State 110
+state 110
 
    35 expv: expliteral minus_op expv .
 
     $default  reduce using rule 35 (expv)
 
 
-State 111
+state 111
 
    36 expv: expliteral mult_op expv .
 
     $default  reduce using rule 36 (expv)
 
 
-State 112
+state 112
 
    37 expv: expliteral div_op expv .
 
     $default  reduce using rule 37 (expv)
 
 
-State 113
+state 113
 
    44 expv: expliteral and_op expv .
 
     $default  reduce using rule 44 (expv)
 
 
-State 114
+state 114
 
    45 expv: expliteral or_op expv .
 
     $default  reduce using rule 45 (expv)
 
 
-State 115
+state 115
 
    53 lvalue: lvalue sqLbrace expv . sqRbrace
 
     sqRbrace  shift, and go to state 144
 
 
-State 116
+state 116
 
    54 lvalue: lvalue period ident .
 
     $default  reduce using rule 54 (lvalue)
 
 
-State 117
+state 117
 
    84 if_then_decl: if_kwd expv then_kwd . expseq
    87 if_then_else_decl: if_kwd expv then_kwd . expseq else_kwd expseq
@@ -1514,7 +1514,7 @@ State 117
     expseq  go to state 145
 
 
-State 118
+state 118
 
    85 while_decl: while_kwd expv do_kwd . expseq
 
@@ -1523,7 +1523,7 @@ State 118
     expseq  go to state 146
 
 
-State 119
+state 119
 
    86 for_decl: for_kwd ident asn_op . expv to_kwd expv do_kwd expseq
 
@@ -1539,14 +1539,14 @@ State 119
     func_call   go to state 41
 
 
-State 120
+state 120
 
    32 rec_defn_param: ident . eq_op expv
 
     eq_op  shift, and go to state 148
 
 
-State 121
+state 121
 
    30 rec_defn: typeid lbrace rec_defn_param . rbrace
    31 rec_defn_param: rec_defn_param . comma ident eq_op expv
@@ -1555,49 +1555,49 @@ State 121
     comma   shift, and go to state 150
 
 
-State 122
+state 122
 
    61 asn_exp: lvalue asn_op expv .
 
     $default  reduce using rule 61 (asn_exp)
 
 
-State 123
+state 123
 
    60 asn_exp: lvalue asn_op asn_exp .
 
     $default  reduce using rule 60 (asn_exp)
 
 
-State 124
+state 124
 
    78 explist: explist semicolon break_kwd .
 
     $default  reduce using rule 78 (explist)
 
 
-State 125
+state 125
 
    76 explist: explist semicolon let_decl .
 
     $default  reduce using rule 76 (explist)
 
 
-State 126
+state 126
 
    80 explist: explist semicolon rec_defn .
 
     $default  reduce using rule 80 (explist)
 
 
-State 127
+state 127
 
    82 explist: explist semicolon expv .
 
     $default  reduce using rule 82 (explist)
 
 
-State 128
+state 128
 
    52 expliteral: func_call .
    74 explist: explist semicolon func_call .
@@ -1609,42 +1609,42 @@ State 128
     $default   reduce using rule 52 (expliteral)
 
 
-State 129
+state 129
 
    64 explist: explist semicolon asn_exp .
 
     $default  reduce using rule 64 (explist)
 
 
-State 130
+state 130
 
    66 explist: explist semicolon if_then_decl .
 
     $default  reduce using rule 66 (explist)
 
 
-State 131
+state 131
 
    70 explist: explist semicolon while_decl .
 
     $default  reduce using rule 70 (explist)
 
 
-State 132
+state 132
 
    72 explist: explist semicolon for_decl .
 
     $default  reduce using rule 72 (explist)
 
 
-State 133
+state 133
 
    68 explist: explist semicolon if_then_else_decl .
 
     $default  reduce using rule 68 (explist)
 
 
-State 134
+state 134
 
    13 ty_rhs: array_kwd of_kwd . typeid
 
@@ -1655,7 +1655,7 @@ State 134
     typeid  go to state 151
 
 
-State 135
+state 135
 
    14 ty_rhs: lbrace tyfields . rbrace
    16 tyfields: tyfields . comma ident colon typeid
@@ -1664,7 +1664,7 @@ State 135
     comma   shift, and go to state 139
 
 
-State 136
+state 136
 
    17 tyfields: ident colon . typeid
 
@@ -1675,7 +1675,7 @@ State 136
     typeid  go to state 153
 
 
-State 137
+state 137
 
    23 func_decl: fn_kwd ident lparan rparan eq_op . expseq
 
@@ -1684,7 +1684,7 @@ State 137
     expseq  go to state 154
 
 
-State 138
+state 138
 
    25 func_decl: fn_kwd ident lparan rparan colon . typeid eq_op expseq
 
@@ -1695,14 +1695,14 @@ State 138
     typeid  go to state 155
 
 
-State 139
+state 139
 
    16 tyfields: tyfields comma . ident colon typeid
 
     ident  shift, and go to state 156
 
 
-State 140
+state 140
 
    24 func_decl: fn_kwd ident lparan tyfields rparan . eq_op expseq
    26          | fn_kwd ident lparan tyfields rparan . colon typeid eq_op expseq
@@ -1711,7 +1711,7 @@ State 140
     colon  shift, and go to state 158
 
 
-State 141
+state 141
 
    58 parameter_list: parameter_list comma . expv
 
@@ -1727,28 +1727,28 @@ State 141
     func_call   go to state 41
 
 
-State 142
+state 142
 
    57 func_call: ident lparan parameter_list rparan .
 
     $default  reduce using rule 57 (func_call)
 
 
-State 143
+state 143
 
    33 array_defn: sqLbrace expv sqRbrace typeid . of_kwd expv
 
     of_kwd  shift, and go to state 160
 
 
-State 144
+state 144
 
    53 lvalue: lvalue sqLbrace expv sqRbrace .
 
     $default  reduce using rule 53 (lvalue)
 
 
-State 145
+state 145
 
    84 if_then_decl: if_kwd expv then_kwd expseq .
    87 if_then_else_decl: if_kwd expv then_kwd expseq . else_kwd expseq
@@ -1758,21 +1758,21 @@ State 145
     $default  reduce using rule 84 (if_then_decl)
 
 
-State 146
+state 146
 
    85 while_decl: while_kwd expv do_kwd expseq .
 
     $default  reduce using rule 85 (while_decl)
 
 
-State 147
+state 147
 
    86 for_decl: for_kwd ident asn_op expv . to_kwd expv do_kwd expseq
 
     to_kwd  shift, and go to state 162
 
 
-State 148
+state 148
 
    32 rec_defn_param: ident eq_op . expv
 
@@ -1788,63 +1788,63 @@ State 148
     func_call   go to state 41
 
 
-State 149
+state 149
 
    30 rec_defn: typeid lbrace rec_defn_param rbrace .
 
     $default  reduce using rule 30 (rec_defn)
 
 
-State 150
+state 150
 
    31 rec_defn_param: rec_defn_param comma . ident eq_op expv
 
     ident  shift, and go to state 164
 
 
-State 151
+state 151
 
    13 ty_rhs: array_kwd of_kwd typeid .
 
     $default  reduce using rule 13 (ty_rhs)
 
 
-State 152
+state 152
 
    14 ty_rhs: lbrace tyfields rbrace .
 
     $default  reduce using rule 14 (ty_rhs)
 
 
-State 153
+state 153
 
    17 tyfields: ident colon typeid .
 
     $default  reduce using rule 17 (tyfields)
 
 
-State 154
+state 154
 
    23 func_decl: fn_kwd ident lparan rparan eq_op expseq .
 
     $default  reduce using rule 23 (func_decl)
 
 
-State 155
+state 155
 
    25 func_decl: fn_kwd ident lparan rparan colon typeid . eq_op expseq
 
     eq_op  shift, and go to state 165
 
 
-State 156
+state 156
 
    16 tyfields: tyfields comma ident . colon typeid
 
     colon  shift, and go to state 166
 
 
-State 157
+state 157
 
    24 func_decl: fn_kwd ident lparan tyfields rparan eq_op . expseq
 
@@ -1853,7 +1853,7 @@ State 157
     expseq  go to state 167
 
 
-State 158
+state 158
 
    26 func_decl: fn_kwd ident lparan tyfields rparan colon . typeid eq_op expseq
 
@@ -1864,14 +1864,14 @@ State 158
     typeid  go to state 168
 
 
-State 159
+state 159
 
    58 parameter_list: parameter_list comma expv .
 
     $default  reduce using rule 58 (parameter_list)
 
 
-State 160
+state 160
 
    33 array_defn: sqLbrace expv sqRbrace typeid of_kwd . expv
 
@@ -1887,7 +1887,7 @@ State 160
     func_call   go to state 41
 
 
-State 161
+state 161
 
    87 if_then_else_decl: if_kwd expv then_kwd expseq else_kwd . expseq
 
@@ -1896,7 +1896,7 @@ State 161
     expseq  go to state 170
 
 
-State 162
+state 162
 
    86 for_decl: for_kwd ident asn_op expv to_kwd . expv do_kwd expseq
 
@@ -1912,21 +1912,21 @@ State 162
     func_call   go to state 41
 
 
-State 163
+state 163
 
    32 rec_defn_param: ident eq_op expv .
 
     $default  reduce using rule 32 (rec_defn_param)
 
 
-State 164
+state 164
 
    31 rec_defn_param: rec_defn_param comma ident . eq_op expv
 
     eq_op  shift, and go to state 172
 
 
-State 165
+state 165
 
    25 func_decl: fn_kwd ident lparan rparan colon typeid eq_op . expseq
 
@@ -1935,7 +1935,7 @@ State 165
     expseq  go to state 173
 
 
-State 166
+state 166
 
    16 tyfields: tyfields comma ident colon . typeid
 
@@ -1946,42 +1946,42 @@ State 166
     typeid  go to state 174
 
 
-State 167
+state 167
 
    24 func_decl: fn_kwd ident lparan tyfields rparan eq_op expseq .
 
     $default  reduce using rule 24 (func_decl)
 
 
-State 168
+state 168
 
    26 func_decl: fn_kwd ident lparan tyfields rparan colon typeid . eq_op expseq
 
     eq_op  shift, and go to state 175
 
 
-State 169
+state 169
 
    33 array_defn: sqLbrace expv sqRbrace typeid of_kwd expv .
 
     $default  reduce using rule 33 (array_defn)
 
 
-State 170
+state 170
 
    87 if_then_else_decl: if_kwd expv then_kwd expseq else_kwd expseq .
 
     $default  reduce using rule 87 (if_then_else_decl)
 
 
-State 171
+state 171
 
    86 for_decl: for_kwd ident asn_op expv to_kwd expv . do_kwd expseq
 
     do_kwd  shift, and go to state 176
 
 
-State 172
+state 172
 
    31 rec_defn_param: rec_defn_param comma ident eq_op . expv
 
@@ -1997,21 +1997,21 @@ State 172
     func_call   go to state 41
 
 
-State 173
+state 173
 
    25 func_decl: fn_kwd ident lparan rparan colon typeid eq_op expseq .
 
     $default  reduce using rule 25 (func_decl)
 
 
-State 174
+state 174
 
    16 tyfields: tyfields comma ident colon typeid .
 
     $default  reduce using rule 16 (tyfields)
 
 
-State 175
+state 175
 
    26 func_decl: fn_kwd ident lparan tyfields rparan colon typeid eq_op . expseq
 
@@ -2020,7 +2020,7 @@ State 175
     expseq  go to state 178
 
 
-State 176
+state 176
 
    86 for_decl: for_kwd ident asn_op expv to_kwd expv do_kwd . expseq
 
@@ -2029,21 +2029,21 @@ State 176
     expseq  go to state 179
 
 
-State 177
+state 177
 
    31 rec_defn_param: rec_defn_param comma ident eq_op expv .
 
     $default  reduce using rule 31 (rec_defn_param)
 
 
-State 178
+state 178
 
    26 func_decl: fn_kwd ident lparan tyfields rparan colon typeid eq_op expseq .
 
     $default  reduce using rule 26 (func_decl)
 
 
-State 179
+state 179
 
    86 for_decl: for_kwd ident asn_op expv to_kwd expv do_kwd expseq .
 

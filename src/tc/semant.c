@@ -59,9 +59,9 @@ struct expty parseASTDec(S_table venv, S_table tenv, A_dec d);
 void EM_error(int pos, STR string);
 
 #ifdef RUN_AND_TEST_TC
-main()
+void main()
 #else
-tc_main()
+void tc_main()
 #endif
 {
 
