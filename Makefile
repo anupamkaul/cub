@@ -19,6 +19,9 @@ SRC_TC=  $(PATH_TC)symbols.c \
 	 $(PATH_TC)semant.c \
 	 $(PATH_TC)semant_utils.c 
 
+# Library path for libfl.a (flex) (isolate for mac and other OS)
+LIBS_PATH = /usr/local/opt/flex/lib
+
 #Options for Src files for component AST
 # These options are to enable/disable various logs 
 # generated in semantic analysis phase
@@ -27,8 +30,8 @@ OPT_AST= -DYDUMPVAR -DYDUMPTXT -DYDUMPEXP -DYDUMPMRC -DYDUMPMRCF -DYDUMP_TYLIST 
 # Make the main target
 tiger:   clean tagit lexit yaccit  
 	 echo Creating ast source ..
-	 gcc -o $(COMP) $(SRC_AST) $(SRC_TC) $(OPT_AST) ./src/main.c -lfl 1>dbg 2>dbg  
-	 #gcc -o $(COMP) $(SRC_AST) $(SRC_TC) $(OPT_AST) ./src/main.c -L/usr/local/opt/flex/lib/lfl 1>dbg 2>dbg  
+	 #gcc -o $(COMP) $(SRC_AST) $(SRC_TC) $(OPT_AST) ./src/main.c -lfl 1>dbg 2>dbg  (non mac-os version) 
+	 gcc -o $(COMP) $(SRC_AST) $(SRC_TC) $(OPT_AST) ./src/main.c -L$(LIBS_PATH) -lfl 1>dbg 2>dbg  
 	 rm -f dbg # works only if gcc was successful
 
 #	/bin/sh -c 'if [ -s dbg ]; then  \
